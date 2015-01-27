@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OleDb;
 using System.Globalization;
+using System.IO;
 
 namespace Aplicativo
 {
@@ -23,6 +24,8 @@ namespace Aplicativo
         string user,unidad;
         double rodilla,cintura,cabeza,costo,costoJornal;
         string modificar,estado;
+        string fechaExpedicion,costoFinal;
+        int OT, semana;
 
         public void cargarDepartamentos()
         {
@@ -265,10 +268,13 @@ namespace Aplicativo
                 if (myReader.Read())
                 {
                     label2.Text = "Orden de Trabajo #: " + myReader.GetInt32(0);
+                    OT = myReader.GetInt32(0);
+                    fechaExpedicion = myReader.GetString(1);
                     label1.Text = "Fecha de Expedición: " + myReader.GetString(1);
                     DateTimeFormatInfo dfi = DateTimeFormatInfo.CurrentInfo;
                     DateTime date1 = DateTime.ParseExact(myReader.GetString(1), "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
                     Calendar cal = dfi.Calendar;
+                    semana = cal.GetWeekOfYear(date1, dfi.CalendarWeekRule, dfi.FirstDayOfWeek);
                     label8.Text = "Semana de Expidición: " + cal.GetWeekOfYear(date1, dfi.CalendarWeekRule, dfi.FirstDayOfWeek).ToString();
                     txtContrato.SelectedValue = myReader.GetInt32(2);
                     txtOperador.SelectedValue = myReader.GetInt32(3);
@@ -289,6 +295,7 @@ namespace Aplicativo
                     comboBox2.SelectedValue = myReader.GetInt32(18);
                     txtCostoFinal.Text = String.Format("{0:c}",myReader.GetInt32(19));
                     txtCostoJornalFinal.Text = String.Format("{0:c}",myReader.GetInt32(20));
+                    costoFinal = String.Format("{0:c}", (Int32.Parse(txtCostoJornalFinal.Text, NumberStyles.Currency) + Int32.Parse(txtCostoFinal.Text, NumberStyles.Currency)));
                     label33.Text = "Total: " + String.Format("{0:c}", (Int32.Parse(txtCostoJornalFinal.Text,NumberStyles.Currency) + Int32.Parse(txtCostoFinal.Text,NumberStyles.Currency)));
                 }
             }
@@ -1433,6 +1440,90 @@ namespace Aplicativo
         {
             frmResumenOrden newFrm = new frmResumenOrden(Int32.Parse(modificar));
             newFrm.Show();
+        }
+
+        public void imprimirOT()
+        {
+            Directory.CreateDirectory("C:\\Users\\" + Environment.UserName + "\\Dropbox\\Formatos");
+            Microsoft.Office.Interop.Excel.Application XcelApp = new Microsoft.Office.Interop.Excel.Application();
+            string[] prueba = Directory.GetFiles("C:\\Users\\" + Environment.UserName + "\\Dropbox\\Formatos\\", "OT*");
+            XcelApp.Application.Workbooks.Add(prueba[0]);
+            XcelApp.Cells[5, "C"] = fechaExpedicion;
+            XcelApp.Cells[5, "L"] = OT;
+            XcelApp.Cells[7, "C"] = txtOperador.Text;
+            XcelApp.Cells[7, "H"] = txtDepartamento.Text;
+            XcelApp.Cells[7, "L"] = txtSupervisor.Text;
+            XcelApp.Cells[9, "C"] = dateTimePicker1.Text;
+            XcelApp.Cells[11, "C"] = dateTimePicker2.Text;
+            DateTimeFormatInfo dfi = DateTimeFormatInfo.CurrentInfo;
+            DateTime date1 = dateTimePicker1.Value;
+            Calendar cal = dfi.Calendar;
+            XcelApp.Cells[9, "I"] = cal.GetWeekOfYear(date1, dfi.CalendarWeekRule, dfi.FirstDayOfWeek).ToString();
+            XcelApp.Cells[11, "I"] = semana;
+            XcelApp.Cells[15, "C"] = comboBox4.Text;
+            XcelApp.Cells[15, "H"] = comboBox2.Text;
+            XcelApp.Cells[13, "L"] = txtContrato.Text;
+            XcelApp.Cells[15, "L"] = comboBox3.Text;
+            XcelApp.Cells[17, "C"] = txtTipoActividad.Text;
+            XcelApp.Cells[17, "H"] = txtActividad.Text;
+            XcelApp.Cells[17, "L"] = txtCentroDeCostos.Text;
+            XcelApp.Cells[20, "C"] = txtDescripcion.Text;
+            XcelApp.Cells[22, "C"] = txtCondiciones.Text;
+            XcelApp.Cells[25, "C"] = txtCodLote.Text;
+            XcelApp.Cells[27, "G"] = txtCodLote.Text;
+            XcelApp.Cells[27, "C"] = txtLote.Text;
+            XcelApp.Cells[25, "K"] = txtLote.Text;
+            XcelApp.Cells[25, "G"] = txtPredio.Text;
+            XcelApp.Cells[27, "K"] = txtArea.Text;
+            if (label23.Visible)
+            {
+                if(radioButton1.Checked)
+                    XcelApp.Cells[30, "E"] = "Si";
+                else
+                    XcelApp.Cells[30, "E"] = "No";
+                XcelApp.Cells[30, "I"] = txtAreaIntervenir.Text;
+            }
+            else
+            {
+                XcelApp.Cells[30, "C"] = label26.Text;
+                XcelApp.Cells[30, "E"] = textBox1.Text;
+                XcelApp.Cells[30, "G"] = "";
+            }
+            if (comboBox1.Visible)
+            {
+                XcelApp.Cells[30, "L"] = comboBox1.Text;
+                XcelApp.Cells[30, "K"] = label27.Text;
+            }
+            else
+            {
+                XcelApp.Cells[30, "L"] = txtEstado.Text;
+                XcelApp.Cells[30, "K"] = label14.Text;
+            }
+            XcelApp.Cells[33, "C"] = txtCosto.Text;
+            XcelApp.Cells[33, "F"] = txtCostoJornalFinal.Text;
+            XcelApp.Cells[33, "I"] = txtCostoFinal.Text;
+            XcelApp.Cells[33, "L"] = costoFinal;
+            XcelApp.Cells[20, "J"] = getFormatoSeparado(listBox1);
+            XcelApp.Cells[6, "P"] = getFormatoSeparado(listBox2);
+            XcelApp.Visible = true;
+        }
+
+        public string getFormatoSeparado(ListBox lb)
+        {
+            string texto = "";
+            for (int i = 0; i < lb.Items.Count; i++)
+            {
+                if(i == 0)
+                    texto += lb.Items[i].ToString();
+                else
+                    texto += "\n" + lb.Items[i].ToString();                
+            }
+            return texto;
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            imprimirOT();
         }
     }
 }
