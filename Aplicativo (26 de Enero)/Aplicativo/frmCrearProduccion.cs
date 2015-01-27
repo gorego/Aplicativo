@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OleDb;
 using System.Globalization;
+using System.IO;
 
 namespace Aplicativo
 {
@@ -19,6 +20,8 @@ namespace Aplicativo
         List<string> empleados = new List<string>();
         int OP = 0;
         int tipousuario = 0;
+        int semanaExpedicion;
+        string fechaExpedicion;
 
         public frmCrearProduccion(int tipo)
         {
@@ -174,10 +177,12 @@ namespace Aplicativo
                 if (myReader.Read())
                 {
                     label2.Text = "Orden de Producción #: " + myReader.GetInt32(0);
+                    fechaExpedicion = myReader.GetString(1);                    
                     label1.Text = "Fecha de Expedición: " + myReader.GetString(1);
                     DateTimeFormatInfo dfi = DateTimeFormatInfo.CurrentInfo;
                     DateTime date1 = DateTime.ParseExact(myReader.GetString(1), "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
                     Calendar cal = dfi.Calendar;
+                    semanaExpedicion = cal.GetWeekOfYear(date1, dfi.CalendarWeekRule, dfi.FirstDayOfWeek);
                     label8.Text = "Semana de Expidición: " + cal.GetWeekOfYear(date1, dfi.CalendarWeekRule, dfi.FirstDayOfWeek).ToString();
                     dateTimePicker1.Value = DateTime.ParseExact(myReader.GetString(2), "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
                     dateTimePicker2.Value = DateTime.ParseExact(myReader.GetString(3), "HH:mm", System.Globalization.CultureInfo.InvariantCulture);
@@ -895,6 +900,56 @@ namespace Aplicativo
         private void label12_Click(object sender, EventArgs e)
         {
 
+        }
+
+        public void imprimirOP()
+        {
+            Directory.CreateDirectory("C:\\Users\\" + Environment.UserName + "\\Dropbox\\Formatos");
+            Microsoft.Office.Interop.Excel.Application XcelApp = new Microsoft.Office.Interop.Excel.Application();
+            string[] prueba = Directory.GetFiles("C:\\Users\\" + Environment.UserName + "\\Dropbox\\Formatos\\", "OP*");
+            XcelApp.Application.Workbooks.Add(prueba[0]);
+            DateTimeFormatInfo dfi = DateTimeFormatInfo.CurrentInfo;
+            DateTime date1 = dateTimePicker1.Value;
+            Calendar cal = dfi.Calendar;
+            XcelApp.Cells[5, "C"] = fechaExpedicion;
+            XcelApp.Cells[5, "I"] = OP;
+            XcelApp.Cells[8, "C"] = dateTimePicker1.Text + " - " + dateTimePicker2.Text;
+            XcelApp.Cells[10, "C"] = dateTimePicker3.Text;
+            XcelApp.Cells[8, "I"] = cal.GetWeekOfYear(date1, dfi.CalendarWeekRule, dfi.FirstDayOfWeek).ToString();
+            XcelApp.Cells[10, "I"] = semanaExpedicion;
+            XcelApp.Cells[14, "C"] = txtTipo.Text;
+            XcelApp.Cells[14, "I"] = comboBox1.Text;
+            XcelApp.Cells[17, "C"] = txtCliente.Text;
+            XcelApp.Cells[17, "I"] = txtDestino.Text;
+            XcelApp.Cells[22, "B"] = getFormatoSeparado(listBox2);
+            int row = 23;
+            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            {
+                XcelApp.Cells[row, "G"] = dataGridView1.Rows[i].Cells[2].Value;
+                XcelApp.Cells[row, "H"] = dataGridView1.Rows[i].Cells[3].Value;
+                XcelApp.Cells[row, "I"] = dataGridView1.Rows[i].Cells[4].Value;
+                row++;
+            }
+
+            XcelApp.Visible = true;
+        }
+
+        public string getFormatoSeparado(ListBox lb)
+        {
+            string texto = "";
+            for (int i = 0; i < lb.Items.Count; i++)
+            {
+                if (i == 0)
+                    texto += lb.Items[i].ToString();
+                else
+                    texto += "\n" + lb.Items[i].ToString();
+            }
+            return texto;
+        }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            imprimirOP();
         }
     }
 }
