@@ -1,0 +1,727 @@
+c:\users\gorego\documents\visual studio 2013\Projects\Aplicativo\Aplicativo\bin\Release\Aplicativo.exe.config
+C:\Users\Gorego\Documents\Visual Studio 2013\Projects\Aplicativo\Aplicativo\bin\Release\Aplicativo.exe
+C:\Users\Gorego\Documents\Visual Studio 2013\Projects\Aplicativo\Aplicativo\bin\Release\Aplicativo.pdb
+C:\Users\Gorego\Documents\Visual Studio 2013\Projects\Aplicativo\Aplicativo\obj\Release\Aplicativo.frmIngreso.resources
+C:\Users\Gorego\Documents\Visual Studio 2013\Projects\Aplicativo\Aplicativo\obj\Release\Aplicativo.frmInicio.resources
+C:\Users\Gorego\Documents\Visual Studio 2013\Projects\Aplicativo\Aplicativo\obj\Release\Aplicativo.Properties.Resources.resources
+C:\Users\Gorego\Documents\Visual Studio 2013\Projects\Aplicativo\Aplicativo\obj\Release\Aplicativo.csproj.GenerateResource.Cache
+C:\Users\Gorego\Documents\Visual Studio 2013\Projects\Aplicativo\Aplicativo\obj\Release\Aplicativo.exe
+C:\Users\Gorego\Documents\Visual Studio 2013\Projects\Aplicativo\Aplicativo\obj\Release\Aplicativo.pdb
+C:\Users\Gorego\Documents\Visual Studio 2013\Projects\Aplicativo\Aplicativo\obj\Release\Aplicativo.frmOperDepar.resources
+C:\Users\Gorego\Documents\Visual Studio 2013\Projects\Aplicativo\Aplicativo\obj\Release\Aplicativo.frmSupervisor.resources
+C:\Users\Gorego\Documents\Visual Studio 2013\Projects\Aplicativo\Aplicativo\obj\Release\Aplicativo.frmActividades.resources
+C:\Users\Gorego\Documents\Visual Studio 2013\Projects\Aplicativo\Aplicativo\obj\Release\Aplicativo.frmMaquinaria.resources
+C:\Users\Gorego\Documents\Visual Studio 2013\Projects\Aplicativo\Aplicativo\obj\Release\Aplicativo.frmVerMaquinaria.resources
+C:\Users\Gorego\Documents\Visual Studio 2013\Projects\Aplicativo\Aplicativo\obj\Release\Aplicativo.frmCargosLaborales.resources
+C:\Users\Gorego\Documents\Visual Studio 2013\Projects\Aplicativo\Aplicativo\obj\Release\Aplicativo.frmEmpleados.resources
+C:\Users\Gorego\Documents\Visual Studio 2013\Projects\Aplicativo\Aplicativo\obj\Release\Aplicativo.frmBanco.resources
+C:\Users\Gorego\Documents\Visual Studio 2013\Projects\Aplicativo\Aplicativo\obj\Release\Aplicativo.frmLotes.resources
+C:\Users\Gorego\Documents\Visual Studio 2013\Projects\Aplicativo\Aplicativo\obj\Release\Aplicativo.frmUnidadDeManejo.resources
+C:\Users\Gorego\Documents\Visual Studio 2013\Projects\Aplicativo\Aplicativo\obj\Release\Aplicativo.frmMunicipios.resources
+C:\Users\Gorego\Documents\Visual Studio 2013\Projects\Aplicativo\Aplicativo\obj\Release\Aplicativo.frmPropietarios.resources
+C:\Users\Gorego\Documents\Visual Studio 2013\Projects\Aplicativo\Aplicativo\obj\Release\Aplicativo.frmCentro.resources
+C:\Users\Gorego\Documents\Visual Studio 2013\Projects\Aplicativo\Aplicativo\obj\Release\Aplicativo.frmEstudio.resources
+C:\Users\Gorego\Documents\Visual Studio 2013\Projects\Aplicativo\Aplicativo\obj\Release\Aplicativo.frmInfoBanco.resources
+C:\Users\Gorego\Documents\Visual Studio 2013\Projects\Aplicativo\Aplicativo\obj\Release\Aplicativo.frmMaquinaPropietarios.resources
+C:\Users\Gorego\Documents\Visual Studio 2013\Projects\Aplicativo\Aplicativo\obj\Release\Aplicativo.frmMaquinaEstado.resources
+C:\Users\Gorego\Documents\Visual Studio 2013\Projects\Aplicativo\Aplicativo\obj\Release\Aplicativo.frmInsumos.resources
+C:\Users\GR1NG0\Documents\Visual Studio 2013\Projects\Aplicativo\Aplicativo\bin\Release\Aplicativo.exe.config
+C:\Users\GR1NG0\Documents\Visual Studio 2013\Projects\Aplicativo\Aplicativo\obj\Release\Aplicativo.exe
+C:\Users\GR1NG0\Documents\Visual Studio 2013\Projects\Aplicativo\Aplicativo\obj\Release\Aplicativo.pdb
+C:\Users\GR1NG0\Documents\Visual Studio 2013\Projects\Aplicativo\Aplicativo\bin\Release\Aplicativo.exe
+C:\Users\GR1NG0\Documents\Visual Studio 2013\Projects\Aplicativo\Aplicativo\bin\Release\Aplicativo.pdb
+C:\Users\GR1NG0\Documents\Visual Studio 2013\Projects\Aplicativo\Aplicativo\obj\Release\Aplicativo.csprojResolveAssemblyReference.cache
+C:\Users\GR1NG0\Documents\Visual Studio 2013\Projects\Aplicativo\Aplicativo\obj\Release\Aplicativo.frmActividades.resources
+C:\Users\GR1NG0\Documents\Visual Studio 2013\Projects\Aplicativo\Aplicativo\obj\Release\Aplicativo.frmBanco.resources
+C:\Users\GR1NG0\Documents\Visual Studio 2013\Projects\Aplicativo\Aplicativo\obj\Release\Aplicativo.frmCargosLaborales.resources
+C:\Users\GR1NG0\Documents\Visual Studio 2013\Projects\Aplicativo\Aplicativo\obj\Release\Aplicativo.frmCentro.resources
+C:\Users\GR1NG0\Documents\Visual Studio 2013\Projects\Aplicativo\Aplicativo\obj\Release\Aplicativo.frmEmpleados.resources
+C:\Users\GR1NG0\Documents\Visual Studio 2013\Projects\Aplicativo\Aplicativo\obj\Release\Aplicativo.frmEstudio.resources
+C:\Users\GR1NG0\Documents\Visual Studio 2013\Projects\Aplicativo\Aplicativo\obj\Release\Aplicativo.frmInfoBanco.resources
+C:\Users\GR1NG0\Documents\Visual Studio 2013\Projects\Aplicativo\Aplicativo\obj\Release\Aplicativo.frmIngreso.resources
+C:\Users\GR1NG0\Documents\Visual Studio 2013\Projects\Aplicativo\Aplicativo\obj\Release\Aplicativo.frmInicio.resources
+C:\Users\GR1NG0\Documents\Visual Studio 2013\Projects\Aplicativo\Aplicativo\obj\Release\Aplicativo.frmInsumos.resources
+C:\Users\GR1NG0\Documents\Visual Studio 2013\Projects\Aplicativo\Aplicativo\obj\Release\Aplicativo.frmLotes.resources
+C:\Users\GR1NG0\Documents\Visual Studio 2013\Projects\Aplicativo\Aplicativo\obj\Release\Aplicativo.frmMaquinaEstado.resources
+C:\Users\GR1NG0\Documents\Visual Studio 2013\Projects\Aplicativo\Aplicativo\obj\Release\Aplicativo.frmMaquinaPropietarios.resources
+C:\Users\GR1NG0\Documents\Visual Studio 2013\Projects\Aplicativo\Aplicativo\obj\Release\Aplicativo.frmMaquinaria.resources
+C:\Users\GR1NG0\Documents\Visual Studio 2013\Projects\Aplicativo\Aplicativo\obj\Release\Aplicativo.frmMunicipios.resources
+C:\Users\GR1NG0\Documents\Visual Studio 2013\Projects\Aplicativo\Aplicativo\obj\Release\Aplicativo.frmOperDepar.resources
+C:\Users\GR1NG0\Documents\Visual Studio 2013\Projects\Aplicativo\Aplicativo\obj\Release\Aplicativo.frmPropietarios.resources
+C:\Users\GR1NG0\Documents\Visual Studio 2013\Projects\Aplicativo\Aplicativo\obj\Release\Aplicativo.frmSupervisor.resources
+C:\Users\GR1NG0\Documents\Visual Studio 2013\Projects\Aplicativo\Aplicativo\obj\Release\Aplicativo.frmUnidadDeManejo.resources
+C:\Users\GR1NG0\Documents\Visual Studio 2013\Projects\Aplicativo\Aplicativo\obj\Release\Aplicativo.frmVerMaquinaria.resources
+C:\Users\GR1NG0\Documents\Visual Studio 2013\Projects\Aplicativo\Aplicativo\obj\Release\Aplicativo.Properties.Resources.resources
+C:\Users\GR1NG0\Documents\Visual Studio 2013\Projects\Aplicativo\Aplicativo\obj\Release\Aplicativo.csproj.GenerateResource.Cache
+C:\Users\GR1NG0\Documents\Visual Studio 2013\Projects\Aplicativo\Aplicativo\obj\Release\Aplicativo.frmCrearOrden.resources
+C:\Users\GR1NG0\Documents\Visual Studio 2013\Projects\Aplicativo\Aplicativo\obj\Release\Aplicativo.frmHistoricoOrdenes.resources
+C:\Users\Gorego\Documents\Visual Studio 2013\Projects\Aplicativo\Aplicativo\obj\Release\Aplicativo.frmCrearOrden.resources
+C:\Users\Gorego\Documents\Visual Studio 2013\Projects\Aplicativo\Aplicativo\obj\Release\Aplicativo.frmHistoricoOrdenes.resources
+C:\Users\Gorego\Documents\Visual Studio 2013\Projects\Aplicativo\Aplicativo\obj\Release\Aplicativo.frmSupervisorFijos.resources
+C:\Users\Gorego\Documents\Visual Studio 2013\Projects\Aplicativo\Aplicativo\obj\Release\Aplicativo.frmAsistenciaFijos.resources
+C:\Users\Gorego\Documents\Visual Studio 2013\Projects\Aplicativo\Aplicativo\obj\Release\Aplicativo.csproj.ResolveComReference.cache
+C:\Users\Gorego\Documents\Visual Studio 2013\Projects\Aplicativo\Aplicativo\obj\Release\Aplicativo.csprojResolveAssemblyReference.cache
+C:\Users\Gorego\Documents\Visual Studio 2013\Projects\Aplicativo\Aplicativo\obj\Release\Aplicativo.frmContratos.resources
+C:\Users\Gorego\Documents\Visual Studio 2013\Projects\Aplicativo\Aplicativo\obj\Release\Aplicativo.frmLiquidacion.resources
+C:\Users\GR1NG0\Desktop\Aplicativo\Aplicativo\bin\Release\Aplicativo.exe.config
+C:\Users\GR1NG0\Desktop\Aplicativo\Aplicativo\obj\Release\Aplicativo.csproj.ResolveComReference.cache
+C:\Users\GR1NG0\Desktop\Aplicativo\Aplicativo\obj\Release\Aplicativo.exe
+C:\Users\GR1NG0\Desktop\Aplicativo\Aplicativo\obj\Release\Aplicativo.pdb
+C:\Users\GR1NG0\Desktop\Aplicativo\Aplicativo\bin\Release\Aplicativo.exe
+C:\Users\GR1NG0\Desktop\Aplicativo\Aplicativo\bin\Release\Aplicativo.pdb
+C:\Users\GR1NG0\Desktop\Aplicativo\Aplicativo\obj\Release\Aplicativo.csprojResolveAssemblyReference.cache
+C:\Users\GR1NG0\Desktop\Aplicativo\Aplicativo\obj\Release\Aplicativo.frmActividades.resources
+C:\Users\GR1NG0\Desktop\Aplicativo\Aplicativo\obj\Release\Aplicativo.frmAsistenciaFijos.resources
+C:\Users\GR1NG0\Desktop\Aplicativo\Aplicativo\obj\Release\Aplicativo.frmBanco.resources
+C:\Users\GR1NG0\Desktop\Aplicativo\Aplicativo\obj\Release\Aplicativo.frmCargosLaborales.resources
+C:\Users\GR1NG0\Desktop\Aplicativo\Aplicativo\obj\Release\Aplicativo.frmCentro.resources
+C:\Users\GR1NG0\Desktop\Aplicativo\Aplicativo\obj\Release\Aplicativo.frmContratos.resources
+C:\Users\GR1NG0\Desktop\Aplicativo\Aplicativo\obj\Release\Aplicativo.frmCrearOrden.resources
+C:\Users\GR1NG0\Desktop\Aplicativo\Aplicativo\obj\Release\Aplicativo.frmEmpleados.resources
+C:\Users\GR1NG0\Desktop\Aplicativo\Aplicativo\obj\Release\Aplicativo.frmEstudio.resources
+C:\Users\GR1NG0\Desktop\Aplicativo\Aplicativo\obj\Release\Aplicativo.frmHistoricoOrdenes.resources
+C:\Users\GR1NG0\Desktop\Aplicativo\Aplicativo\obj\Release\Aplicativo.frmInfoBanco.resources
+C:\Users\GR1NG0\Desktop\Aplicativo\Aplicativo\obj\Release\Aplicativo.frmIngreso.resources
+C:\Users\GR1NG0\Desktop\Aplicativo\Aplicativo\obj\Release\Aplicativo.frmInicio.resources
+C:\Users\GR1NG0\Desktop\Aplicativo\Aplicativo\obj\Release\Aplicativo.frmInsumos.resources
+C:\Users\GR1NG0\Desktop\Aplicativo\Aplicativo\obj\Release\Aplicativo.frmLiquidacion.resources
+C:\Users\GR1NG0\Desktop\Aplicativo\Aplicativo\obj\Release\Aplicativo.frmLotes.resources
+C:\Users\GR1NG0\Desktop\Aplicativo\Aplicativo\obj\Release\Aplicativo.frmMaquinaEstado.resources
+C:\Users\GR1NG0\Desktop\Aplicativo\Aplicativo\obj\Release\Aplicativo.frmMaquinaPropietarios.resources
+C:\Users\GR1NG0\Desktop\Aplicativo\Aplicativo\obj\Release\Aplicativo.frmMaquinaria.resources
+C:\Users\GR1NG0\Desktop\Aplicativo\Aplicativo\obj\Release\Aplicativo.frmMunicipios.resources
+C:\Users\GR1NG0\Desktop\Aplicativo\Aplicativo\obj\Release\Aplicativo.frmOperDepar.resources
+C:\Users\GR1NG0\Desktop\Aplicativo\Aplicativo\obj\Release\Aplicativo.frmPropietarios.resources
+C:\Users\GR1NG0\Desktop\Aplicativo\Aplicativo\obj\Release\Aplicativo.frmSupervisor.resources
+C:\Users\GR1NG0\Desktop\Aplicativo\Aplicativo\obj\Release\Aplicativo.frmSupervisorFijos.resources
+C:\Users\GR1NG0\Desktop\Aplicativo\Aplicativo\obj\Release\Aplicativo.frmUnidadDeManejo.resources
+C:\Users\GR1NG0\Desktop\Aplicativo\Aplicativo\obj\Release\Aplicativo.frmVerMaquinaria.resources
+C:\Users\GR1NG0\Desktop\Aplicativo\Aplicativo\obj\Release\Aplicativo.Properties.Resources.resources
+C:\Users\GR1NG0\Desktop\Aplicativo\Aplicativo\obj\Release\Aplicativo.csproj.GenerateResource.Cache
+C:\Users\Gorego\Desktop\Aplicativo\Aplicativo\bin\Release\Aplicativo.exe.config
+C:\Users\Gorego\Desktop\Aplicativo\Aplicativo\obj\Release\Aplicativo.csproj.ResolveComReference.cache
+C:\Users\Gorego\Desktop\Aplicativo\Aplicativo\obj\Release\Aplicativo.exe
+C:\Users\Gorego\Desktop\Aplicativo\Aplicativo\obj\Release\Aplicativo.pdb
+C:\Users\Gorego\Desktop\Aplicativo\Aplicativo\bin\Release\Aplicativo.exe
+C:\Users\Gorego\Desktop\Aplicativo\Aplicativo\bin\Release\Aplicativo.pdb
+C:\Users\Gorego\Desktop\Aplicativo\Aplicativo\obj\Release\Aplicativo.csprojResolveAssemblyReference.cache
+C:\Users\Gorego\Desktop\Aplicativo\Aplicativo\obj\Release\Aplicativo.frmActividades.resources
+C:\Users\Gorego\Desktop\Aplicativo\Aplicativo\obj\Release\Aplicativo.frmAsistenciaFijos.resources
+C:\Users\Gorego\Desktop\Aplicativo\Aplicativo\obj\Release\Aplicativo.frmBanco.resources
+C:\Users\Gorego\Desktop\Aplicativo\Aplicativo\obj\Release\Aplicativo.frmCargosLaborales.resources
+C:\Users\Gorego\Desktop\Aplicativo\Aplicativo\obj\Release\Aplicativo.frmCentro.resources
+C:\Users\Gorego\Desktop\Aplicativo\Aplicativo\obj\Release\Aplicativo.frmContratos.resources
+C:\Users\Gorego\Desktop\Aplicativo\Aplicativo\obj\Release\Aplicativo.frmCrearOrden.resources
+C:\Users\Gorego\Desktop\Aplicativo\Aplicativo\obj\Release\Aplicativo.frmEmpleados.resources
+C:\Users\Gorego\Desktop\Aplicativo\Aplicativo\obj\Release\Aplicativo.frmEstudio.resources
+C:\Users\Gorego\Desktop\Aplicativo\Aplicativo\obj\Release\Aplicativo.frmHistoricoOrdenes.resources
+C:\Users\Gorego\Desktop\Aplicativo\Aplicativo\obj\Release\Aplicativo.frmInfoBanco.resources
+C:\Users\Gorego\Desktop\Aplicativo\Aplicativo\obj\Release\Aplicativo.frmIngreso.resources
+C:\Users\Gorego\Desktop\Aplicativo\Aplicativo\obj\Release\Aplicativo.frmInicio.resources
+C:\Users\Gorego\Desktop\Aplicativo\Aplicativo\obj\Release\Aplicativo.frmInsumos.resources
+C:\Users\Gorego\Desktop\Aplicativo\Aplicativo\obj\Release\Aplicativo.frmLiquidacion.resources
+C:\Users\Gorego\Desktop\Aplicativo\Aplicativo\obj\Release\Aplicativo.frmLotes.resources
+C:\Users\Gorego\Desktop\Aplicativo\Aplicativo\obj\Release\Aplicativo.frmMaquinaEstado.resources
+C:\Users\Gorego\Desktop\Aplicativo\Aplicativo\obj\Release\Aplicativo.frmMaquinaPropietarios.resources
+C:\Users\Gorego\Desktop\Aplicativo\Aplicativo\obj\Release\Aplicativo.frmMaquinaria.resources
+C:\Users\Gorego\Desktop\Aplicativo\Aplicativo\obj\Release\Aplicativo.frmMunicipios.resources
+C:\Users\Gorego\Desktop\Aplicativo\Aplicativo\obj\Release\Aplicativo.frmOperDepar.resources
+C:\Users\Gorego\Desktop\Aplicativo\Aplicativo\obj\Release\Aplicativo.frmPropietarios.resources
+C:\Users\Gorego\Desktop\Aplicativo\Aplicativo\obj\Release\Aplicativo.frmSupervisor.resources
+C:\Users\Gorego\Desktop\Aplicativo\Aplicativo\obj\Release\Aplicativo.frmSupervisorFijos.resources
+C:\Users\Gorego\Desktop\Aplicativo\Aplicativo\obj\Release\Aplicativo.frmUnidadDeManejo.resources
+C:\Users\Gorego\Desktop\Aplicativo\Aplicativo\obj\Release\Aplicativo.frmVerMaquinaria.resources
+C:\Users\Gorego\Desktop\Aplicativo\Aplicativo\obj\Release\Aplicativo.Properties.Resources.resources
+C:\Users\Gorego\Desktop\Aplicativo\Aplicativo\obj\Release\Aplicativo.csproj.GenerateResource.Cache
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (24 de Oct DIA)\Aplicativo\bin\Release\Aplicativo.exe.config
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (24 de Oct DIA)\Aplicativo\obj\Release\Aplicativo.csproj.ResolveComReference.cache
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (24 de Oct DIA)\Aplicativo\obj\Release\Aplicativo.exe
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (24 de Oct DIA)\Aplicativo\obj\Release\Aplicativo.pdb
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (24 de Oct DIA)\Aplicativo\bin\Release\Aplicativo.exe
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (24 de Oct DIA)\Aplicativo\bin\Release\Aplicativo.pdb
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (24 de Oct DIA)\Aplicativo\obj\Release\Aplicativo.csprojResolveAssemblyReference.cache
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (24 de Oct DIA)\Aplicativo\obj\Release\Aplicativo.frmActividades.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (24 de Oct DIA)\Aplicativo\obj\Release\Aplicativo.frmAsistenciaFijos.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (24 de Oct DIA)\Aplicativo\obj\Release\Aplicativo.frmBanco.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (24 de Oct DIA)\Aplicativo\obj\Release\Aplicativo.frmCargosLaborales.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (24 de Oct DIA)\Aplicativo\obj\Release\Aplicativo.frmCentro.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (24 de Oct DIA)\Aplicativo\obj\Release\Aplicativo.frmContratos.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (24 de Oct DIA)\Aplicativo\obj\Release\Aplicativo.frmCrearOrden.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (24 de Oct DIA)\Aplicativo\obj\Release\Aplicativo.frmEmpleados.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (24 de Oct DIA)\Aplicativo\obj\Release\Aplicativo.frmEstudio.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (24 de Oct DIA)\Aplicativo\obj\Release\Aplicativo.frmHistoricoOrdenes.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (24 de Oct DIA)\Aplicativo\obj\Release\Aplicativo.frmInfoBanco.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (24 de Oct DIA)\Aplicativo\obj\Release\Aplicativo.frmIngreso.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (24 de Oct DIA)\Aplicativo\obj\Release\Aplicativo.frmInicio.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (24 de Oct DIA)\Aplicativo\obj\Release\Aplicativo.frmInsumos.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (24 de Oct DIA)\Aplicativo\obj\Release\Aplicativo.frmLiquidacion.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (24 de Oct DIA)\Aplicativo\obj\Release\Aplicativo.frmLotes.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (24 de Oct DIA)\Aplicativo\obj\Release\Aplicativo.frmMaquinaEstado.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (24 de Oct DIA)\Aplicativo\obj\Release\Aplicativo.frmMaquinaPropietarios.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (24 de Oct DIA)\Aplicativo\obj\Release\Aplicativo.frmMaquinaria.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (24 de Oct DIA)\Aplicativo\obj\Release\Aplicativo.frmMunicipios.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (24 de Oct DIA)\Aplicativo\obj\Release\Aplicativo.frmOperDepar.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (24 de Oct DIA)\Aplicativo\obj\Release\Aplicativo.frmPropietarios.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (24 de Oct DIA)\Aplicativo\obj\Release\Aplicativo.frmSupervisor.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (24 de Oct DIA)\Aplicativo\obj\Release\Aplicativo.frmSupervisorFijos.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (24 de Oct DIA)\Aplicativo\obj\Release\Aplicativo.frmUnidadDeManejo.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (24 de Oct DIA)\Aplicativo\obj\Release\Aplicativo.frmVerMaquinaria.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (24 de Oct DIA)\Aplicativo\obj\Release\Aplicativo.Properties.Resources.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (24 de Oct DIA)\Aplicativo\obj\Release\Aplicativo.csproj.GenerateResource.Cache
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (24 de Oct DIA)\Aplicativo\obj\Release\Aplicativo.frmFormatos.resources
+C:\Users\Gorego\Desktop\Aplicativo (24 de Oct NOCHE)\Aplicativo\bin\Release\Aplicativo.exe.config
+C:\Users\Gorego\Desktop\Aplicativo (24 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.csproj.ResolveComReference.cache
+C:\Users\Gorego\Desktop\Aplicativo (24 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.exe
+C:\Users\Gorego\Desktop\Aplicativo (24 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.pdb
+C:\Users\Gorego\Desktop\Aplicativo (24 de Oct NOCHE)\Aplicativo\bin\Release\Aplicativo.exe
+C:\Users\Gorego\Desktop\Aplicativo (24 de Oct NOCHE)\Aplicativo\bin\Release\Aplicativo.pdb
+C:\Users\Gorego\Desktop\Aplicativo (24 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.csprojResolveAssemblyReference.cache
+C:\Users\Gorego\Desktop\Aplicativo (24 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmActividades.resources
+C:\Users\Gorego\Desktop\Aplicativo (24 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmAsistenciaFijos.resources
+C:\Users\Gorego\Desktop\Aplicativo (24 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmBanco.resources
+C:\Users\Gorego\Desktop\Aplicativo (24 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmCargosLaborales.resources
+C:\Users\Gorego\Desktop\Aplicativo (24 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmCentro.resources
+C:\Users\Gorego\Desktop\Aplicativo (24 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmContratos.resources
+C:\Users\Gorego\Desktop\Aplicativo (24 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmCrearOrden.resources
+C:\Users\Gorego\Desktop\Aplicativo (24 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmEmpleados.resources
+C:\Users\Gorego\Desktop\Aplicativo (24 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmEstudio.resources
+C:\Users\Gorego\Desktop\Aplicativo (24 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmFormatos.resources
+C:\Users\Gorego\Desktop\Aplicativo (24 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmHistoricoOrdenes.resources
+C:\Users\Gorego\Desktop\Aplicativo (24 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmInfoBanco.resources
+C:\Users\Gorego\Desktop\Aplicativo (24 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmIngreso.resources
+C:\Users\Gorego\Desktop\Aplicativo (24 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmInicio.resources
+C:\Users\Gorego\Desktop\Aplicativo (24 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmInsumos.resources
+C:\Users\Gorego\Desktop\Aplicativo (24 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmLiquidacion.resources
+C:\Users\Gorego\Desktop\Aplicativo (24 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmLotes.resources
+C:\Users\Gorego\Desktop\Aplicativo (24 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmMaquinaEstado.resources
+C:\Users\Gorego\Desktop\Aplicativo (24 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmMaquinaPropietarios.resources
+C:\Users\Gorego\Desktop\Aplicativo (24 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmMaquinaria.resources
+C:\Users\Gorego\Desktop\Aplicativo (24 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmMunicipios.resources
+C:\Users\Gorego\Desktop\Aplicativo (24 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmOperDepar.resources
+C:\Users\Gorego\Desktop\Aplicativo (24 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmPropietarios.resources
+C:\Users\Gorego\Desktop\Aplicativo (24 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmSupervisor.resources
+C:\Users\Gorego\Desktop\Aplicativo (24 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmSupervisorFijos.resources
+C:\Users\Gorego\Desktop\Aplicativo (24 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmUnidadDeManejo.resources
+C:\Users\Gorego\Desktop\Aplicativo (24 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmVerMaquinaria.resources
+C:\Users\Gorego\Desktop\Aplicativo (24 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.Properties.Resources.resources
+C:\Users\Gorego\Desktop\Aplicativo (24 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.csproj.GenerateResource.Cache
+C:\Users\Gorego\Desktop\Aplicativo (24 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmUsuarios.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (24 de Oct NOCHE)\Aplicativo\bin\Release\Aplicativo.exe.config
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (24 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.csproj.ResolveComReference.cache
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (24 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.exe
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (24 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.pdb
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (24 de Oct NOCHE)\Aplicativo\bin\Release\Aplicativo.exe
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (24 de Oct NOCHE)\Aplicativo\bin\Release\Aplicativo.pdb
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (24 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.csprojResolveAssemblyReference.cache
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (24 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmActividades.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (24 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmAsistenciaFijos.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (24 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmBanco.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (24 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmCargosLaborales.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (24 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmCentro.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (24 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmContratos.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (24 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmCrearOrden.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (24 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmEmpleados.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (24 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmEstudio.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (24 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmFormatos.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (24 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmHistoricoOrdenes.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (24 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmInfoBanco.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (24 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmIngreso.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (24 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmInicio.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (24 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmInsumos.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (24 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmLiquidacion.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (24 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmLotes.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (24 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmMaquinaEstado.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (24 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmMaquinaPropietarios.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (24 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmMaquinaria.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (24 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmMunicipios.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (24 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmOperDepar.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (24 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmPropietarios.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (24 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmSupervisor.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (24 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmSupervisorFijos.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (24 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmUnidadDeManejo.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (24 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmUsuarios.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (24 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmVerMaquinaria.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (24 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.Properties.Resources.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (24 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.csproj.GenerateResource.Cache
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (24 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmLogs.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (24 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmOrdenes.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (24 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmComprarInsumo.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (26 de Oct NOCHE)\Aplicativo\bin\Release\Aplicativo.exe.config
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (26 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.csproj.ResolveComReference.cache
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (26 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.exe
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (26 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.pdb
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (26 de Oct NOCHE)\Aplicativo\bin\Release\Aplicativo.exe.config
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (26 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.csproj.ResolveComReference.cache
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (26 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.exe
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (26 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.pdb
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (26 de Oct NOCHE)\Aplicativo\bin\Release\Aplicativo.exe
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (26 de Oct NOCHE)\Aplicativo\bin\Release\Aplicativo.pdb
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (26 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.csprojResolveAssemblyReference.cache
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (26 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmActividades.resources
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (26 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmAsistenciaFijos.resources
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (26 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmBanco.resources
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (26 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmCargosLaborales.resources
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (26 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmCentro.resources
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (26 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmComprarInsumo.resources
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (26 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmContratos.resources
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (26 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmCrearOrden.resources
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (26 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmEmpleados.resources
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (26 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmEstudio.resources
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (26 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmFormatos.resources
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (26 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmHistoricoOrdenes.resources
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (26 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmInfoBanco.resources
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (26 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmIngreso.resources
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (26 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmInicio.resources
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (26 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmInsumos.resources
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (26 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmLiquidacion.resources
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (26 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmLogs.resources
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (26 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmLotes.resources
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (26 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmMaquinaEstado.resources
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (26 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmMaquinaPropietarios.resources
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (26 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmMaquinaria.resources
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (26 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmMunicipios.resources
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (26 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmOperDepar.resources
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (26 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmOrdenes.resources
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (26 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmPropietarios.resources
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (26 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmSupervisor.resources
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (26 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmSupervisorFijos.resources
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (26 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmUnidadDeManejo.resources
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (26 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmUsuarios.resources
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (26 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmVerMaquinaria.resources
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (26 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.Properties.Resources.resources
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (26 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.csproj.GenerateResource.Cache
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (2 de Oct DIA)\Aplicativo\bin\Release\Aplicativo.exe.config
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (2 de Oct DIA)\Aplicativo\obj\Release\Aplicativo.csproj.ResolveComReference.cache
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (2 de Oct DIA)\Aplicativo\obj\Release\Aplicativo.exe
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (2 de Oct DIA)\Aplicativo\obj\Release\Aplicativo.pdb
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (2 de Oct DIA)\Aplicativo\bin\Release\Aplicativo.exe
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (2 de Oct DIA)\Aplicativo\bin\Release\Aplicativo.pdb
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (2 de Oct DIA)\Aplicativo\obj\Release\Aplicativo.csprojResolveAssemblyReference.cache
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (2 de Oct DIA)\Aplicativo\obj\Release\Aplicativo.frmActividades.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (2 de Oct DIA)\Aplicativo\obj\Release\Aplicativo.frmAsistenciaFijos.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (2 de Oct DIA)\Aplicativo\obj\Release\Aplicativo.frmBanco.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (2 de Oct DIA)\Aplicativo\obj\Release\Aplicativo.frmCargosLaborales.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (2 de Oct DIA)\Aplicativo\obj\Release\Aplicativo.frmCentro.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (2 de Oct DIA)\Aplicativo\obj\Release\Aplicativo.frmComprarInsumo.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (2 de Oct DIA)\Aplicativo\obj\Release\Aplicativo.frmContratos.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (2 de Oct DIA)\Aplicativo\obj\Release\Aplicativo.frmCrearOrden.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (2 de Oct DIA)\Aplicativo\obj\Release\Aplicativo.frmEmpleados.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (2 de Oct DIA)\Aplicativo\obj\Release\Aplicativo.frmEstudio.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (2 de Oct DIA)\Aplicativo\obj\Release\Aplicativo.frmFormatos.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (2 de Oct DIA)\Aplicativo\obj\Release\Aplicativo.frmHistoricoOrdenes.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (2 de Oct DIA)\Aplicativo\obj\Release\Aplicativo.frmInfoBanco.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (2 de Oct DIA)\Aplicativo\obj\Release\Aplicativo.frmIngreso.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (2 de Oct DIA)\Aplicativo\obj\Release\Aplicativo.frmInicio.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (2 de Oct DIA)\Aplicativo\obj\Release\Aplicativo.frmInsumos.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (2 de Oct DIA)\Aplicativo\obj\Release\Aplicativo.frmLiquidacion.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (2 de Oct DIA)\Aplicativo\obj\Release\Aplicativo.frmLogs.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (2 de Oct DIA)\Aplicativo\obj\Release\Aplicativo.frmLotes.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (2 de Oct DIA)\Aplicativo\obj\Release\Aplicativo.frmMaquinaEstado.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (2 de Oct DIA)\Aplicativo\obj\Release\Aplicativo.frmMaquinaPropietarios.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (2 de Oct DIA)\Aplicativo\obj\Release\Aplicativo.frmMaquinaria.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (2 de Oct DIA)\Aplicativo\obj\Release\Aplicativo.frmMunicipios.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (2 de Oct DIA)\Aplicativo\obj\Release\Aplicativo.frmOperDepar.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (2 de Oct DIA)\Aplicativo\obj\Release\Aplicativo.frmOrdenes.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (2 de Oct DIA)\Aplicativo\obj\Release\Aplicativo.frmPropietarios.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (2 de Oct DIA)\Aplicativo\obj\Release\Aplicativo.frmSupervisor.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (2 de Oct DIA)\Aplicativo\obj\Release\Aplicativo.frmSupervisorFijos.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (2 de Oct DIA)\Aplicativo\obj\Release\Aplicativo.frmUnidadDeManejo.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (2 de Oct DIA)\Aplicativo\obj\Release\Aplicativo.frmUsuarios.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (2 de Oct DIA)\Aplicativo\obj\Release\Aplicativo.frmVerMaquinaria.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (2 de Oct DIA)\Aplicativo\obj\Release\Aplicativo.Properties.Resources.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (2 de Oct DIA)\Aplicativo\obj\Release\Aplicativo.csproj.GenerateResource.Cache
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (2 de Oct DIA)\Aplicativo\obj\Release\Aplicativo.frmInfoLote.resources
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (2 de Oct NOCHE)\Aplicativo\bin\Release\Aplicativo.exe.config
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (2 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.csproj.ResolveComReference.cache
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (2 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.exe
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (2 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.pdb
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (2 de Oct NOCHE)\Aplicativo\bin\Release\Aplicativo.exe
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (2 de Oct NOCHE)\Aplicativo\bin\Release\Aplicativo.pdb
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (2 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.csprojResolveAssemblyReference.cache
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (2 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmActividades.resources
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (2 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmAsistenciaFijos.resources
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (2 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmBanco.resources
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (2 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmCargosLaborales.resources
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (2 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmCentro.resources
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (2 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmComprarInsumo.resources
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (2 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmContratos.resources
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (2 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmCrearOrden.resources
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (2 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmEmpleados.resources
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (2 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmEstudio.resources
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (2 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmFormatos.resources
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (2 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmHistoricoOrdenes.resources
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (2 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmInfoBanco.resources
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (2 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmInfoLote.resources
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (2 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmIngreso.resources
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (2 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmInicio.resources
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (2 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmInsumos.resources
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (2 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmLiquidacion.resources
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (2 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmLogs.resources
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (2 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmLotes.resources
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (2 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmMaquinaEstado.resources
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (2 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmMaquinaPropietarios.resources
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (2 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmMaquinaria.resources
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (2 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmMunicipios.resources
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (2 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmOperDepar.resources
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (2 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmOrdenes.resources
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (2 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmPropietarios.resources
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (2 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmSupervisor.resources
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (2 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmSupervisorFijos.resources
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (2 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmUnidadDeManejo.resources
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (2 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmUsuarios.resources
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (2 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmVerMaquinaria.resources
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (2 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.Properties.Resources.resources
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (2 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.csproj.GenerateResource.Cache
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (2 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmBiblioteca.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (28 de Oct NOCHE)\Aplicativo\bin\Release\Aplicativo.exe.config
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (28 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.csproj.ResolveComReference.cache
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (28 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.exe
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (28 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.pdb
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (28 de Oct NOCHE)\Aplicativo\bin\Release\Aplicativo.exe
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (28 de Oct NOCHE)\Aplicativo\bin\Release\Aplicativo.pdb
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (28 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.csprojResolveAssemblyReference.cache
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (28 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmActividades.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (28 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmAsistenciaFijos.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (28 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmBanco.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (28 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmBiblioteca.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (28 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmCargosLaborales.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (28 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmCentro.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (28 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmContratos.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (28 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmCrearOrden.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (28 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmEmpleados.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (28 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmEstudio.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (28 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmFormatos.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (28 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmHistoricoOrdenes.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (28 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmInfoBanco.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (28 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmInfoLote.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (28 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmIngreso.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (28 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmInicio.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (28 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmInsumos.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (28 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmLiquidacion.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (28 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmLogs.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (28 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmLotes.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (28 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmMaquinaEstado.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (28 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmMaquinaPropietarios.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (28 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmMaquinaria.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (28 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmMunicipios.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (28 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmOperDepar.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (28 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmOrdenes.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (28 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmPropietarios.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (28 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmSupervisor.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (28 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmSupervisorFijos.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (28 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmUnidadDeManejo.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (28 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmUsuarios.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (28 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmVerMaquinaria.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (28 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.Properties.Resources.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (28 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.csproj.GenerateResource.Cache
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (28 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmProveedor.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (28 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmProveedorInsumo.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (30 de Oct NOCHE)\Aplicativo\bin\Release\Aplicativo.exe.config
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (30 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.csproj.ResolveComReference.cache
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (30 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.exe
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (30 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.pdb
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (30 de Oct NOCHE)\Aplicativo\bin\Release\Aplicativo.exe
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (30 de Oct NOCHE)\Aplicativo\bin\Release\Aplicativo.pdb
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (30 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.csprojResolveAssemblyReference.cache
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (30 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmActividades.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (30 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmAsistenciaFijos.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (30 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmBanco.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (30 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmBiblioteca.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (30 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmCargosLaborales.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (30 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmCentro.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (30 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmContratos.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (30 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmCrearOrden.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (30 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmEmpleados.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (30 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmEstudio.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (30 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmFormatos.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (30 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmHistoricoOrdenes.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (30 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmInfoBanco.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (30 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmInfoLote.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (30 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmIngreso.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (30 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmInicio.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (30 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmInsumos.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (30 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmLiquidacion.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (30 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmLogs.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (30 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmLotes.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (30 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmMaquinaEstado.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (30 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmMaquinaPropietarios.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (30 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmMaquinaria.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (30 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmMunicipios.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (30 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmOperDepar.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (30 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmOrdenes.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (30 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmPropietarios.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (30 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmProveedor.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (30 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmProveedorInsumo.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (30 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmSupervisor.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (30 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmSupervisorFijos.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (30 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmUnidadDeManejo.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (30 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmUsuarios.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (30 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.frmVerMaquinaria.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (30 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.Properties.Resources.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (30 de Oct NOCHE)\Aplicativo\obj\Release\Aplicativo.csproj.GenerateResource.Cache
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (2 de Nov)\Aplicativo\bin\Release\Aplicativo.exe.config
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (2 de Nov)\Aplicativo\obj\Release\Aplicativo.csproj.ResolveComReference.cache
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (2 de Nov)\Aplicativo\obj\Release\Aplicativo.exe
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (2 de Nov)\Aplicativo\obj\Release\Aplicativo.pdb
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (2 de Nov)\Aplicativo\bin\Release\Aplicativo.exe
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (2 de Nov)\Aplicativo\bin\Release\Aplicativo.pdb
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (2 de Nov)\Aplicativo\obj\Release\Aplicativo.csprojResolveAssemblyReference.cache
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (2 de Nov)\Aplicativo\obj\Release\Aplicativo.frmActividades.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (2 de Nov)\Aplicativo\obj\Release\Aplicativo.frmAsistenciaFijos.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (2 de Nov)\Aplicativo\obj\Release\Aplicativo.frmBanco.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (2 de Nov)\Aplicativo\obj\Release\Aplicativo.frmBiblioteca.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (2 de Nov)\Aplicativo\obj\Release\Aplicativo.frmCargosLaborales.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (2 de Nov)\Aplicativo\obj\Release\Aplicativo.frmCentro.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (2 de Nov)\Aplicativo\obj\Release\Aplicativo.frmContratos.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (2 de Nov)\Aplicativo\obj\Release\Aplicativo.frmCrearOrden.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (2 de Nov)\Aplicativo\obj\Release\Aplicativo.frmEmpleados.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (2 de Nov)\Aplicativo\obj\Release\Aplicativo.frmEstudio.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (2 de Nov)\Aplicativo\obj\Release\Aplicativo.frmFormatos.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (2 de Nov)\Aplicativo\obj\Release\Aplicativo.frmHistoricoOrdenes.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (2 de Nov)\Aplicativo\obj\Release\Aplicativo.frmInfoBanco.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (2 de Nov)\Aplicativo\obj\Release\Aplicativo.frmInfoLote.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (2 de Nov)\Aplicativo\obj\Release\Aplicativo.frmIngreso.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (2 de Nov)\Aplicativo\obj\Release\Aplicativo.frmInicio.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (2 de Nov)\Aplicativo\obj\Release\Aplicativo.frmInsumos.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (2 de Nov)\Aplicativo\obj\Release\Aplicativo.frmLiquidacion.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (2 de Nov)\Aplicativo\obj\Release\Aplicativo.frmLogs.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (2 de Nov)\Aplicativo\obj\Release\Aplicativo.frmLotes.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (2 de Nov)\Aplicativo\obj\Release\Aplicativo.frmMaquinaEstado.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (2 de Nov)\Aplicativo\obj\Release\Aplicativo.frmMaquinaPropietarios.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (2 de Nov)\Aplicativo\obj\Release\Aplicativo.frmMaquinaria.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (2 de Nov)\Aplicativo\obj\Release\Aplicativo.frmMunicipios.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (2 de Nov)\Aplicativo\obj\Release\Aplicativo.frmOperDepar.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (2 de Nov)\Aplicativo\obj\Release\Aplicativo.frmOrdenes.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (2 de Nov)\Aplicativo\obj\Release\Aplicativo.frmPropietarios.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (2 de Nov)\Aplicativo\obj\Release\Aplicativo.frmProveedor.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (2 de Nov)\Aplicativo\obj\Release\Aplicativo.frmProveedorInsumo.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (2 de Nov)\Aplicativo\obj\Release\Aplicativo.frmSupervisor.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (2 de Nov)\Aplicativo\obj\Release\Aplicativo.frmSupervisorFijos.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (2 de Nov)\Aplicativo\obj\Release\Aplicativo.frmUnidadDeManejo.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (2 de Nov)\Aplicativo\obj\Release\Aplicativo.frmUsuarios.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (2 de Nov)\Aplicativo\obj\Release\Aplicativo.frmVerMaquinaria.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (2 de Nov)\Aplicativo\obj\Release\Aplicativo.Properties.Resources.resources
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (2 de Nov)\Aplicativo\obj\Release\Aplicativo.csproj.GenerateResource.Cache
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (3 de Nov)\Aplicativo\bin\Release\Aplicativo.exe.config
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (3 de Nov)\Aplicativo\obj\Release\Aplicativo.csproj.ResolveComReference.cache
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (3 de Nov)\Aplicativo\obj\Release\Aplicativo.exe
+C:\Users\GR1NG0\Desktop\Aplicativo Versiones\Aplicativo (3 de Nov)\Aplicativo\obj\Release\Aplicativo.pdb
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (4 de Nov)\Aplicativo\bin\Release\Aplicativo.exe.config
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (4 de Nov)\Aplicativo\obj\Release\Aplicativo.csproj.ResolveComReference.cache
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (4 de Nov)\Aplicativo\obj\Release\Aplicativo.exe
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (4 de Nov)\Aplicativo\obj\Release\Aplicativo.pdb
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (4 de Nov)\Aplicativo\bin\Release\Aplicativo.exe
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (4 de Nov)\Aplicativo\bin\Release\Aplicativo.pdb
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (4 de Nov)\Aplicativo\obj\Release\Aplicativo.csprojResolveAssemblyReference.cache
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (4 de Nov)\Aplicativo\obj\Release\Aplicativo.frmActividades.resources
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (4 de Nov)\Aplicativo\obj\Release\Aplicativo.frmAsistenciaFijos.resources
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (4 de Nov)\Aplicativo\obj\Release\Aplicativo.frmBanco.resources
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (4 de Nov)\Aplicativo\obj\Release\Aplicativo.frmBiblioteca.resources
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (4 de Nov)\Aplicativo\obj\Release\Aplicativo.frmCargosLaborales.resources
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (4 de Nov)\Aplicativo\obj\Release\Aplicativo.frmCentro.resources
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (4 de Nov)\Aplicativo\obj\Release\Aplicativo.frmContratos.resources
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (4 de Nov)\Aplicativo\obj\Release\Aplicativo.frmCrearOrden.resources
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (4 de Nov)\Aplicativo\obj\Release\Aplicativo.frmEmpleados.resources
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (4 de Nov)\Aplicativo\obj\Release\Aplicativo.frmEstudio.resources
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (4 de Nov)\Aplicativo\obj\Release\Aplicativo.frmFormatos.resources
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (4 de Nov)\Aplicativo\obj\Release\Aplicativo.frmHistoricoOrdenes.resources
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (4 de Nov)\Aplicativo\obj\Release\Aplicativo.frmInfoBanco.resources
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (4 de Nov)\Aplicativo\obj\Release\Aplicativo.frmInfoLote.resources
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (4 de Nov)\Aplicativo\obj\Release\Aplicativo.frmIngreso.resources
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (4 de Nov)\Aplicativo\obj\Release\Aplicativo.frmInicio.resources
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (4 de Nov)\Aplicativo\obj\Release\Aplicativo.frmInsumos.resources
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (4 de Nov)\Aplicativo\obj\Release\Aplicativo.frmLiquidacion.resources
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (4 de Nov)\Aplicativo\obj\Release\Aplicativo.frmLogs.resources
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (4 de Nov)\Aplicativo\obj\Release\Aplicativo.frmLotes.resources
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (4 de Nov)\Aplicativo\obj\Release\Aplicativo.frmMaquinaEstado.resources
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (4 de Nov)\Aplicativo\obj\Release\Aplicativo.frmMaquinaPropietarios.resources
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (4 de Nov)\Aplicativo\obj\Release\Aplicativo.frmMaquinaria.resources
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (4 de Nov)\Aplicativo\obj\Release\Aplicativo.frmMunicipios.resources
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (4 de Nov)\Aplicativo\obj\Release\Aplicativo.frmOperDepar.resources
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (4 de Nov)\Aplicativo\obj\Release\Aplicativo.frmOrdenes.resources
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (4 de Nov)\Aplicativo\obj\Release\Aplicativo.frmPropietarios.resources
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (4 de Nov)\Aplicativo\obj\Release\Aplicativo.frmProveedor.resources
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (4 de Nov)\Aplicativo\obj\Release\Aplicativo.frmProveedorInsumo.resources
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (4 de Nov)\Aplicativo\obj\Release\Aplicativo.frmSupervisor.resources
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (4 de Nov)\Aplicativo\obj\Release\Aplicativo.frmSupervisorFijos.resources
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (4 de Nov)\Aplicativo\obj\Release\Aplicativo.frmUnidadDeManejo.resources
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (4 de Nov)\Aplicativo\obj\Release\Aplicativo.frmUsuarios.resources
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (4 de Nov)\Aplicativo\obj\Release\Aplicativo.frmVerMaquinaria.resources
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (4 de Nov)\Aplicativo\obj\Release\Aplicativo.Properties.Resources.resources
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (4 de Nov)\Aplicativo\obj\Release\Aplicativo.csproj.GenerateResource.Cache
+C:\Users\Gorego\Desktop\Versiones Aplicativo\Aplicativo (4 de Nov)\Aplicativo\obj\Release\Aplicativo.frmOrdenFormatos.resources
+C:\Users\Gorego\Dropbox\Aplicativo (10 de Nov)\Aplicativo\bin\Release\Aplicativo.exe.config
+C:\Users\Gorego\Dropbox\Aplicativo (10 de Nov)\Aplicativo\obj\Release\Aplicativo.csproj.ResolveComReference.cache
+C:\Users\Gorego\Dropbox\Aplicativo (10 de Nov)\Aplicativo\obj\Release\Aplicativo.exe
+C:\Users\Gorego\Dropbox\Aplicativo (10 de Nov)\Aplicativo\obj\Release\Aplicativo.pdb
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (14 de Enero)\Aplicativo\bin\Release\Aplicativo.exe.config
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (14 de Enero)\Aplicativo\obj\Release\Aplicativo.csproj.ResolveComReference.cache
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (14 de Enero)\Aplicativo\obj\Release\Aplicativo.exe
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (14 de Enero)\Aplicativo\obj\Release\Aplicativo.pdb
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (14 de Enero)\Aplicativo\bin\Release\Aplicativo.exe
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (14 de Enero)\Aplicativo\bin\Release\Aplicativo.pdb
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (14 de Enero)\Aplicativo\obj\Release\Aplicativo.csprojResolveAssemblyReference.cache
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (14 de Enero)\Aplicativo\obj\Release\Aplicativo.frmActividades.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (14 de Enero)\Aplicativo\obj\Release\Aplicativo.frmAsistenciaFijos.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (14 de Enero)\Aplicativo\obj\Release\Aplicativo.frmBanco.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (14 de Enero)\Aplicativo\obj\Release\Aplicativo.frmBiblioteca.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (14 de Enero)\Aplicativo\obj\Release\Aplicativo.frmCargosLaborales.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (14 de Enero)\Aplicativo\obj\Release\Aplicativo.frmCentro.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (14 de Enero)\Aplicativo\obj\Release\Aplicativo.frmClientes.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (14 de Enero)\Aplicativo\obj\Release\Aplicativo.frmContratos.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (14 de Enero)\Aplicativo\obj\Release\Aplicativo.frmCrearOrden.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (14 de Enero)\Aplicativo\obj\Release\Aplicativo.frmCrearProduccion.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (14 de Enero)\Aplicativo\obj\Release\Aplicativo.frmCuadrilla.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (14 de Enero)\Aplicativo\obj\Release\Aplicativo.frmCuchillas.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (14 de Enero)\Aplicativo\obj\Release\Aplicativo.frmEmpleados.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (14 de Enero)\Aplicativo\obj\Release\Aplicativo.frmEstudio.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (14 de Enero)\Aplicativo\obj\Release\Aplicativo.frmFormatos.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (14 de Enero)\Aplicativo\obj\Release\Aplicativo.frmHistoricoOrdenes.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (14 de Enero)\Aplicativo\obj\Release\Aplicativo.frmInfoBanco.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (14 de Enero)\Aplicativo\obj\Release\Aplicativo.frmInfoLote.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (14 de Enero)\Aplicativo\obj\Release\Aplicativo.frmHistoricoProduccion.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (14 de Enero)\Aplicativo\obj\Release\Aplicativo.frmIngreso.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (14 de Enero)\Aplicativo\obj\Release\Aplicativo.frmInicio.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (14 de Enero)\Aplicativo\obj\Release\Aplicativo.frmInsumos.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (14 de Enero)\Aplicativo\obj\Release\Aplicativo.frmInsumosOrdenes.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (14 de Enero)\Aplicativo\obj\Release\Aplicativo.frmLiquidacion.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (14 de Enero)\Aplicativo\obj\Release\Aplicativo.frmLogs.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (14 de Enero)\Aplicativo\obj\Release\Aplicativo.frmLotes.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (14 de Enero)\Aplicativo\obj\Release\Aplicativo.frmMaquinaEstado.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (14 de Enero)\Aplicativo\obj\Release\Aplicativo.frmMaquinaPropietarios.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (14 de Enero)\Aplicativo\obj\Release\Aplicativo.frmMaquinaria.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (14 de Enero)\Aplicativo\obj\Release\Aplicativo.frmMateriaUtilizada.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (14 de Enero)\Aplicativo\obj\Release\Aplicativo.frmMunicipios.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (14 de Enero)\Aplicativo\obj\Release\Aplicativo.frmOperDepar.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (14 de Enero)\Aplicativo\obj\Release\Aplicativo.frmOrdenes.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (14 de Enero)\Aplicativo\obj\Release\Aplicativo.frmOrdenesAlamacen.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (14 de Enero)\Aplicativo\obj\Release\Aplicativo.frmOrdenFormatos.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (14 de Enero)\Aplicativo\obj\Release\Aplicativo.frmPluviometria.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (14 de Enero)\Aplicativo\obj\Release\Aplicativo.frmProductos.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (14 de Enero)\Aplicativo\obj\Release\Aplicativo.frmPropietarios.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (14 de Enero)\Aplicativo\obj\Release\Aplicativo.frmProveedor.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (14 de Enero)\Aplicativo\obj\Release\Aplicativo.frmProveedorInsumo.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (14 de Enero)\Aplicativo\obj\Release\Aplicativo.frmReciboMadera.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (14 de Enero)\Aplicativo\obj\Release\Aplicativo.frmResumenOrden.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (14 de Enero)\Aplicativo\obj\Release\Aplicativo.frmSupervisor.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (14 de Enero)\Aplicativo\obj\Release\Aplicativo.frmSupervisorFijos.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (14 de Enero)\Aplicativo\obj\Release\Aplicativo.frmTransportador.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (14 de Enero)\Aplicativo\obj\Release\Aplicativo.frmUnidadDeManejo.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (14 de Enero)\Aplicativo\obj\Release\Aplicativo.frmUsuarios.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (14 de Enero)\Aplicativo\obj\Release\Aplicativo.frmVerMaquinaria.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (14 de Enero)\Aplicativo\obj\Release\Aplicativo.Properties.Resources.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (14 de Enero)\Aplicativo\obj\Release\Aplicativo.csproj.GenerateResource.Cache
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (18 de Enero)\Aplicativo\bin\Release\Aplicativo.exe.config
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (18 de Enero)\Aplicativo\obj\Release\Aplicativo.csproj.ResolveComReference.cache
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (18 de Enero)\Aplicativo\obj\Release\Aplicativo.exe
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (18 de Enero)\Aplicativo\obj\Release\Aplicativo.pdb
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (18 de Enero)\Aplicativo\bin\Release\Aplicativo.exe
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (18 de Enero)\Aplicativo\bin\Release\Aplicativo.pdb
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (18 de Enero)\Aplicativo\obj\Release\Aplicativo.csprojResolveAssemblyReference.cache
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (18 de Enero)\Aplicativo\obj\Release\Aplicativo.frmActividades.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (18 de Enero)\Aplicativo\obj\Release\Aplicativo.frmAsistenciaFijos.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (18 de Enero)\Aplicativo\obj\Release\Aplicativo.frmBanco.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (18 de Enero)\Aplicativo\obj\Release\Aplicativo.frmBiblioteca.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (18 de Enero)\Aplicativo\obj\Release\Aplicativo.frmCargosLaborales.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (18 de Enero)\Aplicativo\obj\Release\Aplicativo.frmCentro.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (18 de Enero)\Aplicativo\obj\Release\Aplicativo.frmClientes.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (18 de Enero)\Aplicativo\obj\Release\Aplicativo.frmContratos.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (18 de Enero)\Aplicativo\obj\Release\Aplicativo.frmCrearOrden.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (18 de Enero)\Aplicativo\obj\Release\Aplicativo.frmCrearProduccion.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (18 de Enero)\Aplicativo\obj\Release\Aplicativo.frmCuadrilla.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (18 de Enero)\Aplicativo\obj\Release\Aplicativo.frmCuchillas.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (18 de Enero)\Aplicativo\obj\Release\Aplicativo.frmEmpleados.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (18 de Enero)\Aplicativo\obj\Release\Aplicativo.frmEstudio.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (18 de Enero)\Aplicativo\obj\Release\Aplicativo.frmFormatos.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (18 de Enero)\Aplicativo\obj\Release\Aplicativo.frmHistoricoOrdenes.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (18 de Enero)\Aplicativo\obj\Release\Aplicativo.frmInfoBanco.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (18 de Enero)\Aplicativo\obj\Release\Aplicativo.frmInfoLote.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (18 de Enero)\Aplicativo\obj\Release\Aplicativo.frmHistoricoProduccion.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (18 de Enero)\Aplicativo\obj\Release\Aplicativo.frmIngreso.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (18 de Enero)\Aplicativo\obj\Release\Aplicativo.frmInicio.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (18 de Enero)\Aplicativo\obj\Release\Aplicativo.frmInsumos.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (18 de Enero)\Aplicativo\obj\Release\Aplicativo.frmInsumosOrdenes.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (18 de Enero)\Aplicativo\obj\Release\Aplicativo.frmLiquidacion.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (18 de Enero)\Aplicativo\obj\Release\Aplicativo.frmLogs.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (18 de Enero)\Aplicativo\obj\Release\Aplicativo.frmLotes.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (18 de Enero)\Aplicativo\obj\Release\Aplicativo.frmMaquinaEstado.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (18 de Enero)\Aplicativo\obj\Release\Aplicativo.frmMaquinaPropietarios.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (18 de Enero)\Aplicativo\obj\Release\Aplicativo.frmMaquinaria.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (18 de Enero)\Aplicativo\obj\Release\Aplicativo.frmMateriaUtilizada.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (18 de Enero)\Aplicativo\obj\Release\Aplicativo.frmMunicipios.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (18 de Enero)\Aplicativo\obj\Release\Aplicativo.frmOperDepar.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (18 de Enero)\Aplicativo\obj\Release\Aplicativo.frmOrdenes.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (18 de Enero)\Aplicativo\obj\Release\Aplicativo.frmOrdenesAlamacen.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (18 de Enero)\Aplicativo\obj\Release\Aplicativo.frmOrdenFormatos.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (18 de Enero)\Aplicativo\obj\Release\Aplicativo.frmPluviometria.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (18 de Enero)\Aplicativo\obj\Release\Aplicativo.frmProductos.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (18 de Enero)\Aplicativo\obj\Release\Aplicativo.frmPropietarios.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (18 de Enero)\Aplicativo\obj\Release\Aplicativo.frmProveedor.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (18 de Enero)\Aplicativo\obj\Release\Aplicativo.frmProveedorInsumo.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (18 de Enero)\Aplicativo\obj\Release\Aplicativo.frmReciboMadera.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (18 de Enero)\Aplicativo\obj\Release\Aplicativo.frmResumenOrden.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (18 de Enero)\Aplicativo\obj\Release\Aplicativo.frmSupervisor.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (18 de Enero)\Aplicativo\obj\Release\Aplicativo.frmSupervisorFijos.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (18 de Enero)\Aplicativo\obj\Release\Aplicativo.frmTransportador.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (18 de Enero)\Aplicativo\obj\Release\Aplicativo.frmUnidadDeManejo.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (18 de Enero)\Aplicativo\obj\Release\Aplicativo.frmUsuarios.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (18 de Enero)\Aplicativo\obj\Release\Aplicativo.frmVerMaquinaria.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (18 de Enero)\Aplicativo\obj\Release\Aplicativo.Properties.Resources.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (18 de Enero)\Aplicativo\obj\Release\Aplicativo.csproj.GenerateResource.Cache
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (26 de Enero)\Aplicativo\bin\Release\Aplicativo.exe.config
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (26 de Enero)\Aplicativo\obj\Release\Aplicativo.csproj.ResolveComReference.cache
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (26 de Enero)\Aplicativo\obj\Release\Aplicativo.exe
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (26 de Enero)\Aplicativo\obj\Release\Aplicativo.pdb
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (26 de Enero)\Aplicativo\bin\Release\Aplicativo.exe
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (26 de Enero)\Aplicativo\bin\Release\Aplicativo.pdb
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (26 de Enero)\Aplicativo\obj\Release\Aplicativo.csprojResolveAssemblyReference.cache
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (26 de Enero)\Aplicativo\obj\Release\Aplicativo.frmActividades.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (26 de Enero)\Aplicativo\obj\Release\Aplicativo.frmAsistenciaFijos.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (26 de Enero)\Aplicativo\obj\Release\Aplicativo.frmBanco.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (26 de Enero)\Aplicativo\obj\Release\Aplicativo.frmBiblioteca.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (26 de Enero)\Aplicativo\obj\Release\Aplicativo.frmCargosLaborales.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (26 de Enero)\Aplicativo\obj\Release\Aplicativo.frmCentro.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (26 de Enero)\Aplicativo\obj\Release\Aplicativo.frmClientes.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (26 de Enero)\Aplicativo\obj\Release\Aplicativo.frmContratos.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (26 de Enero)\Aplicativo\obj\Release\Aplicativo.frmCrearOrden.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (26 de Enero)\Aplicativo\obj\Release\Aplicativo.frmCrearProduccion.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (26 de Enero)\Aplicativo\obj\Release\Aplicativo.frmCuadrilla.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (26 de Enero)\Aplicativo\obj\Release\Aplicativo.frmCuchillas.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (26 de Enero)\Aplicativo\obj\Release\Aplicativo.frmEmpleados.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (26 de Enero)\Aplicativo\obj\Release\Aplicativo.frmEstudio.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (26 de Enero)\Aplicativo\obj\Release\Aplicativo.frmFormatos.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (26 de Enero)\Aplicativo\obj\Release\Aplicativo.frmHistoricoOrdenes.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (26 de Enero)\Aplicativo\obj\Release\Aplicativo.frmInfoBanco.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (26 de Enero)\Aplicativo\obj\Release\Aplicativo.frmInfoLote.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (26 de Enero)\Aplicativo\obj\Release\Aplicativo.frmHistoricoProduccion.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (26 de Enero)\Aplicativo\obj\Release\Aplicativo.frmIngreso.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (26 de Enero)\Aplicativo\obj\Release\Aplicativo.frmInicio.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (26 de Enero)\Aplicativo\obj\Release\Aplicativo.frmInsumos.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (26 de Enero)\Aplicativo\obj\Release\Aplicativo.frmInsumosOrdenes.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (26 de Enero)\Aplicativo\obj\Release\Aplicativo.frmLiquidacion.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (26 de Enero)\Aplicativo\obj\Release\Aplicativo.frmLogs.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (26 de Enero)\Aplicativo\obj\Release\Aplicativo.frmLotes.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (26 de Enero)\Aplicativo\obj\Release\Aplicativo.frmMaquinaEstado.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (26 de Enero)\Aplicativo\obj\Release\Aplicativo.frmMaquinaPropietarios.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (26 de Enero)\Aplicativo\obj\Release\Aplicativo.frmMaquinaria.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (26 de Enero)\Aplicativo\obj\Release\Aplicativo.frmMateriaUtilizada.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (26 de Enero)\Aplicativo\obj\Release\Aplicativo.frmMunicipios.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (26 de Enero)\Aplicativo\obj\Release\Aplicativo.frmOperDepar.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (26 de Enero)\Aplicativo\obj\Release\Aplicativo.frmOrdenes.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (26 de Enero)\Aplicativo\obj\Release\Aplicativo.frmOrdenesAlamacen.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (26 de Enero)\Aplicativo\obj\Release\Aplicativo.frmOrdenFormatos.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (26 de Enero)\Aplicativo\obj\Release\Aplicativo.frmPluviometria.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (26 de Enero)\Aplicativo\obj\Release\Aplicativo.frmProductos.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (26 de Enero)\Aplicativo\obj\Release\Aplicativo.frmPropietarios.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (26 de Enero)\Aplicativo\obj\Release\Aplicativo.frmProveedor.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (26 de Enero)\Aplicativo\obj\Release\Aplicativo.frmProveedorInsumo.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (26 de Enero)\Aplicativo\obj\Release\Aplicativo.frmReciboMadera.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (26 de Enero)\Aplicativo\obj\Release\Aplicativo.frmResumenOrden.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (26 de Enero)\Aplicativo\obj\Release\Aplicativo.frmSupervisor.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (26 de Enero)\Aplicativo\obj\Release\Aplicativo.frmSupervisorFijos.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (26 de Enero)\Aplicativo\obj\Release\Aplicativo.frmTransportador.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (26 de Enero)\Aplicativo\obj\Release\Aplicativo.frmUnidadDeManejo.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (26 de Enero)\Aplicativo\obj\Release\Aplicativo.frmUsuarios.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (26 de Enero)\Aplicativo\obj\Release\Aplicativo.frmVerMaquinaria.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (26 de Enero)\Aplicativo\obj\Release\Aplicativo.Properties.Resources.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (26 de Enero)\Aplicativo\obj\Release\Aplicativo.csproj.GenerateResource.Cache
