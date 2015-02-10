@@ -52,8 +52,8 @@ namespace Aplicativo
                     dataGridView1.Rows[i].Cells[14].Value = myReader.GetString(14);
                     dataGridView1.Rows[i].Cells[15].Value = myReader.GetString(15);
                     dataGridView1.Rows[i].Cells[16].Value = myReader.GetString(16);
-                    dataGridView1.Rows[i].Cells[17].Value = myReader.GetInt32(17);
-                    dataGridView1.Rows[i].Cells[18].Value = myReader.GetInt32(18);
+                    dataGridView1.Rows[i].Cells[17].Value = myReader.GetString(17);
+                    dataGridView1.Rows[i].Cells[18].Value = myReader.GetString(18);
                     dataGridView1.Rows[i].Cells[19].Value = myReader.GetString(19);
                     dataGridView1.Rows[i].Cells[20].Value = myReader.GetString(20);
                     dataGridView1.Rows[i].Cells[21].Value = Math.Round(myReader.GetDouble(21), 4, MidpointRounding.AwayFromZero);
