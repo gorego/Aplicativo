@@ -47,11 +47,12 @@ namespace Aplicativo
                 dataGridView12.Rows[0].Cells[3].Value = getInfoMaquina("Chipeadora");
             cargarFormatoInput(dataGridView13);
             cargarRecibos(getEspecie(op), dataGridView13);
+            cargarRecibosAsignadas(op,dataGridView13);
             cargarFormatoOutput(dataGridView14);
             cargarProductos(op, dataGridView14);
             cargarPaquetesTotales(dataGridView14);
             cargarPaquetesTotalesDiarios(dataGridView14);
-            dataGridView14.Columns[2].DefaultCellStyle.Font = new Font(dataGridView1.DefaultCellStyle.Font, FontStyle.Underline);
+            dataGridView14.Columns[2].DefaultCellStyle.Font = new Font(dataGridView14.DefaultCellStyle.Font, FontStyle.Underline);
 
         }
 
@@ -155,6 +156,40 @@ namespace Aplicativo
                     data.Rows[i].Cells[6].Value = "100%";
                     data.Rows[i].Cells[7].Value = myReader.GetDouble(1);
                     i++;
+                }
+            }
+            finally
+            {
+                // always call Close when done reading.
+                myReader.Close();
+                // always call Close when done reading.
+                conn.Close();
+            }
+        }
+
+        public void cargarRecibosAsignadas(int op, DataGridView data)
+        {
+            string query = "SELECT ID, Recibo,Porcentaje,Volumen,volumenOriginal FROM recibosOrdenes WHERE OP = " + op;
+            //Ejecutar el query y llenar el GridView.
+            conn.ConnectionString = connectionString;
+            OleDbCommand cmd = new OleDbCommand(query, conn);
+            cmd.Connection = conn;
+            conn.Open();
+            OleDbDataReader myReader = cmd.ExecuteReader();
+            try
+            {
+                while (myReader.Read())
+                {
+                    for (int j = 0; j < data.Rows.Count; j++)
+                    {
+                        if (data.Rows[j].Cells[1].Value.ToString().Equals(myReader.GetInt32(1).ToString()))
+                        {
+                            data.Rows[j].Cells[2].Value = true;
+                            data.Rows[j].Cells[5].Value = myReader.GetDouble(4);
+                            data.Rows[j].Cells[6].Value = myReader.GetString(2);
+                            data.Rows[j].Cells[7].Value = myReader.GetDouble(3);
+                        }
+                    }
                 }
             }
             finally
@@ -685,6 +720,260 @@ namespace Aplicativo
                 frmPaqueteOP newFrm = new frmPaqueteOP(orden,Int32.Parse(dataGridView14.Rows[dataGridView14.CurrentCell.RowIndex].Cells[1].Value.ToString()));
                 newFrm.Show();
             }
+        }
+
+        public bool ADFExiste(int semana, string orden, string adf)
+        {
+            string query = "SELECT * FROM ControlOP WHERE Semana = " + semana + " AND Orden = " + orden + " AND adf = '" + adf + "'";
+            //Ejecutar el query y llenar el GridView.
+            conn.ConnectionString = connectionString;
+            OleDbCommand cmd = new OleDbCommand(query, conn);
+            cmd.Connection = conn;
+            conn.Open();
+            OleDbDataReader myReader = cmd.ExecuteReader();
+            try
+            {
+                if (myReader.HasRows)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            finally
+            {
+                // always call Close when done reading.
+                myReader.Close();
+                // always call Close when done reading.
+                conn.Close();
+            }
+        }
+
+        public void crearADF(int semana, string orden, string adf, DataGridView data, string tipo)
+        {
+            for (int i = 0; i < data.Rows.Count; i++)
+            {
+                conn.ConnectionString = connectionString;
+                int j = 0;
+                OleDbCommand cmd;
+                if (data.Rows[i].Cells[3].Value != null)
+                {
+                    cmd = new OleDbCommand("INSERT INTO ControlOP(Semana,Unidad,Orden,Detalle,Modelo,Lunes,Martes,Miercoles,Jueves,Viernes,Sabado,Estado,Editable,ADF) VALUES (@Semana,@Unidad,@Orden,@Detalle,@Modelo,@Lunes,@Martes,@Miercoles,@Jueves,@Viernes,@Sabado,@Estado,@Editable,@ADF)");
+                    j = 0;
+                }
+                else
+                {
+                    cmd = new OleDbCommand("INSERT INTO ControlOP(Semana,Unidad,Orden,Detalle,Lunes,Martes,Miercoles,Jueves,Viernes,Sabado,Estado,Editable,ADF) VALUES (@Semana,@Unidad,@Orden,@Detalle,@Lunes,@Martes,@Miercoles,@Jueves,@Viernes,@Sabado,@Estado,@Editable,@ADF)");
+                    j = 1;
+                }
+                if (adf.Contains("ADF006") && !adf.Equals("ADF006-2"))
+                {
+                    if (i == 0)
+                        adf = "ADF006-1-" + tipo;
+                    else
+                        adf = "ADF006-" + tipo;
+                }
+                cmd.Connection = conn;
+                conn.Open();
+                if (conn.State == ConnectionState.Open)
+                {
+                    cmd.Parameters.Add("@Semana", OleDbType.VarChar).Value = semana;
+                    cmd.Parameters.Add("@Unidad", OleDbType.VarChar).Value = data.Rows[i].Cells[4].Value.ToString();
+                    cmd.Parameters.Add("@Orden", OleDbType.VarChar).Value = orden;
+                    if (data.Rows[i].Cells[2].Value != null)
+                        cmd.Parameters.Add("@Detalle", OleDbType.VarChar).Value = data.Rows[i].Cells[2].Value.ToString();
+                    else
+                        cmd.Parameters.Add("@Detalle", OleDbType.VarChar).Value = "";
+                    if (j == 0)
+                        cmd.Parameters.Add("@Modelo", OleDbType.VarChar).Value = data.Rows[i].Cells[3].Value.ToString();
+                    cmd.Parameters.Add("@Lunes", OleDbType.VarChar).Value = data.Rows[i].Cells[5].Value.ToString();
+                    cmd.Parameters.Add("@Martes", OleDbType.VarChar).Value = data.Rows[i].Cells[7].Value.ToString();
+                    cmd.Parameters.Add("@Miercoles", OleDbType.VarChar).Value = data.Rows[i].Cells[9].Value.ToString();
+                    cmd.Parameters.Add("@Jueves", OleDbType.VarChar).Value = data.Rows[i].Cells[11].Value.ToString();
+                    cmd.Parameters.Add("@Viernes", OleDbType.VarChar).Value = data.Rows[i].Cells[13].Value.ToString();
+                    cmd.Parameters.Add("@Sabado", OleDbType.VarChar).Value = data.Rows[i].Cells[15].Value.ToString();
+                    cmd.Parameters.Add("@Estado", OleDbType.VarChar).Value = 0;
+                    cmd.Parameters.Add("@Editable", OleDbType.VarChar).Value = 0;
+                    cmd.Parameters.Add("@ADF", OleDbType.VarChar).Value = adf;
+                    try
+                    {
+                        cmd.ExecuteNonQuery();
+                        conn.Close();
+                    }
+                    catch (OleDbException ex)
+                    {
+                        MessageBox.Show(ex.Source);
+                        conn.Close();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Connection Failed");
+                }
+            }
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+        }
+
+        public bool existeAsignacion()
+        {
+            string query = "SELECT * FROM recibosOrdenes WHERE OP = " + orden;
+            //Ejecutar el query y llenar el GridView.
+            conn.ConnectionString = connectionString;
+            OleDbCommand cmd = new OleDbCommand(query, conn);
+            cmd.Connection = conn;
+            conn.Open();
+            OleDbDataReader myReader = cmd.ExecuteReader();
+            try
+            {
+                if (myReader.Read())
+                    return true;
+                else
+                    return false;
+            }
+            finally
+            {
+                // always call Close when done reading.
+                myReader.Close();
+                // always call Close when done reading.
+                conn.Close();
+            }
+        }
+
+        public bool existeReciboAsignado(int i)
+        {
+            string query = "SELECT * FROM recibosOrdenes WHERE OP = " + orden + " AND Recibo = " + i;
+            //Ejecutar el query y llenar el GridView.
+            conn.ConnectionString = connectionString;
+            OleDbCommand cmd = new OleDbCommand(query, conn);
+            cmd.Connection = conn;
+            conn.Open();
+            OleDbDataReader myReader = cmd.ExecuteReader();
+            try
+            {
+                if (myReader.Read())
+                    return true;
+                else
+                    return false;
+            }
+            finally
+            {
+                // always call Close when done reading.
+                myReader.Close();
+                // always call Close when done reading.
+                conn.Close();
+            }
+        }
+
+        public void eliminarAsignacion()
+        {
+            conn.ConnectionString = connectionString;
+            OleDbCommand cmd = new OleDbCommand("DELETE FROM recibosOrdenes WHERE OP = " + orden);
+            cmd.Connection = conn;
+            conn.Open();
+
+            if (conn.State == ConnectionState.Open)
+            {
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
+                }
+                catch (OleDbException ex)
+                {
+                    MessageBox.Show(ex.Source);
+                    conn.Close();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Connection Failed");
+            }
+        }
+
+        public void agregarAsignacion(int i, DataGridView data)
+        {
+            conn.ConnectionString = connectionString;
+            OleDbCommand cmd = new OleDbCommand("INSERT INTO recibosOrdenes (Recibo,OP,Porcentaje,volumen,volumenOriginal) VALUES (@Recibo,@OP,@Porcentaje,@volumen,@volumenOriginal)");
+            cmd.Connection = conn;
+            conn.Open();
+            if (conn.State == ConnectionState.Open)
+            {
+                cmd.Parameters.Add("@Recibo", OleDbType.VarChar).Value = data.Rows[i].Cells[1].Value;
+                cmd.Parameters.Add("@OP", OleDbType.VarChar).Value = orden;
+                cmd.Parameters.Add("@Porcentaje", OleDbType.VarChar).Value = data.Rows[i].Cells[6].Value;
+                cmd.Parameters.Add("@volumen", OleDbType.VarChar).Value = data.Rows[i].Cells[7].Value;
+                cmd.Parameters.Add("@volumenOriginal", OleDbType.VarChar).Value = data.Rows[i].Cells[5].Value;
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
+                }
+                catch (OleDbException ex)
+                {
+                    MessageBox.Show(ex.Source);
+                    conn.Close();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Connection Failed");
+            }
+        }
+
+        public void modificarRecibo(DataGridView data, int i, string tipo)
+        {
+            conn.ConnectionString = connectionString;
+            OleDbCommand cmd = new OleDbCommand();
+            cmd = new OleDbCommand("UPDATE recibosOrdenes INNER JOIN Recibo ON recibosOrdenes.Recibo = Recibo.Id SET Recibo.volumenActual = Recibo.volumenActual " + tipo + " [recibosOrdenes].[volumen] WHERE Recibo.ID =  " + data.Rows[i].Cells[1].Value);
+            cmd.Connection = conn;
+            conn.Open();
+            if (conn.State == ConnectionState.Open)
+            {
+                cmd.Parameters.Add("@volumen", OleDbType.VarChar).Value = data.Rows[i].Cells[7].Value;
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
+                }
+                catch (OleDbException ex)
+                {
+                    MessageBox.Show(ex.Source);
+                    conn.Close();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Connection Failed");
+            }
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            if (existeAsignacion())
+            {
+                for (int i = 0; i < dataGridView13.Rows.Count; i++)
+                {
+                    if (existeReciboAsignado(Int32.Parse(dataGridView13.Rows[i].Cells[1].Value.ToString())))
+                        modificarRecibo(dataGridView13, i, "+");
+                }
+                eliminarAsignacion();
+            }                
+            for (int i = 0; i < dataGridView13.Rows.Count; i++)
+            {
+                if(existeReciboAsignado(Int32.Parse(dataGridView13.Rows[i].Cells[1].Value.ToString())))
+                    modificarRecibo(dataGridView13, i, "+");
+                if (Convert.ToBoolean(dataGridView13.Rows[i].Cells[2].Value) == true)
+                {
+                    agregarAsignacion(i, dataGridView13);
+                    modificarRecibo(dataGridView13, i, "-");
+                }
+            }
+            MessageBox.Show("Inputs registrados.");
         }
 
     }

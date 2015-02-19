@@ -236,7 +236,7 @@ namespace Aplicativo
 
         public int getMaxID()
         {
-            string query = "SELECT MAX(num) FROM Paquete";
+            string query = "SELECT MAX(num) FROM Paquete WHERE OP = " + orden;
             //Ejecutar el query y llenar el GridView.
             conn.ConnectionString = connectionString;
             OleDbCommand cmd = new OleDbCommand(query, conn);
@@ -313,7 +313,10 @@ namespace Aplicativo
                     cmd.Parameters.Add("@Bodega", OleDbType.VarChar).Value = comboBox2.Text;
                 else
                     cmd.Parameters.Add("@Bodega", OleDbType.VarChar).Value = 0;
-                cmd.Parameters.Add("@numPiezas", OleDbType.VarChar).Value = textBox1.Text;
+                if(!radioButton1.Checked)
+                    cmd.Parameters.Add("@numPiezas", OleDbType.VarChar).Value = textBox1.Text;
+                else
+                    cmd.Parameters.Add("@numPiezas", OleDbType.VarChar).Value = textBox13.Text;
                 cmd.Parameters.Add("@num", OleDbType.VarChar).Value = id;
                 cmd.Parameters.Add("@dia", OleDbType.VarChar).Value = dia;
                 if (textBox1.ReadOnly == false)

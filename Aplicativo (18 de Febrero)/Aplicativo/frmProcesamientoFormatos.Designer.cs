@@ -215,6 +215,7 @@
             this.label57 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.dataGridView12 = new System.Windows.Forms.DataGridView();
+            this.button9 = new System.Windows.Forms.Button();
             this.tabPage6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView8)).BeginInit();
@@ -1140,6 +1141,7 @@
             this.button6.TabIndex = 40;
             this.button6.Text = "Registrar Control de Cosechador\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // dataGridView4
             // 
@@ -1559,6 +1561,7 @@
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tabPage3.Controls.Add(this.button9);
             this.tabPage3.Controls.Add(this.dataGridView13);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
@@ -2049,6 +2052,17 @@
             this.dataGridView12.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView12_CellValueChanged);
             this.dataGridView12.CurrentCellDirtyStateChanged += new System.EventHandler(this.dataGridView12_CurrentCellDirtyStateChanged);
             // 
+            // button9
+            // 
+            this.button9.Location = new System.Drawing.Point(237, 502);
+            this.button9.Margin = new System.Windows.Forms.Padding(2);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(786, 33);
+            this.button9.TabIndex = 90;
+            this.button9.Text = "Registrar Inputs";
+            this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
+            // 
             // frmProcesamientoFormatos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2286,5 +2300,6 @@
         private System.Windows.Forms.DataGridView dataGridView13;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.DataGridView dataGridView14;
+        private System.Windows.Forms.Button button9;
     }
 }

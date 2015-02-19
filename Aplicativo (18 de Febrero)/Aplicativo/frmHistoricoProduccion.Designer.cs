@@ -238,7 +238,6 @@
             // 
             // button9
             // 
-            this.button9.Enabled = false;
             this.button9.Location = new System.Drawing.Point(708, 642);
             this.button9.Margin = new System.Windows.Forms.Padding(2);
             this.button9.Name = "button9";
