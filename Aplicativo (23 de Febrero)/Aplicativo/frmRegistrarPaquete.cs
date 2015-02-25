@@ -430,7 +430,7 @@ namespace Aplicativo
                         string nombre = getNombreOP(orden);
                         agregarRegistro(id + 1, nombre);
                         int id2 = getMaxPaquete();
-                        agregarAnchoAlto(id2, dataGridView1,0);
+                        agregarAnchoAlto(id2, dataGridView1, 0);
                         MessageBox.Show("Paquete Registrado.");
                         this.Close();
                     }
@@ -444,20 +444,34 @@ namespace Aplicativo
             {
                 if (!sw)
                 {
-                    int id = getMaxID();
-                    string nombre = getNombreOP(orden);
-                    agregarRegistro(id + 1, nombre);
-                    int id2 = getMaxPaquete();
-                    agregarAnchoAlto(id2, dataGridView1,0);
-                    MessageBox.Show("Paquete Registrado.");
-                    this.Close();
+                    if (!comboBox2.Text.Equals(""))
+                    {
+                        int id = getMaxID();
+                        string nombre = getNombreOP(orden);
+                        agregarRegistro(id + 1, nombre);
+                        int id2 = getMaxPaquete();
+                        agregarAnchoAlto(id2, dataGridView1, 0);
+                        MessageBox.Show("Paquete Registrado.");
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Favor seleccionar la bodega");
+                    }
                 }
                 else
                 {
-                    modificarRegistro(paquete);
-                    agregarAnchoAlto(paquete, dataGridView1,entradas);
-                    MessageBox.Show("Paquete terminado.");
-                    this.Close();
+                    if (!comboBox2.Text.Equals(""))
+                    {
+                        modificarRegistro(paquete);
+                        agregarAnchoAlto(paquete, dataGridView1, entradas);
+                        MessageBox.Show("Paquete terminado.");
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Favor seleccionar la bodega");
+                    }
                 }
             }
         }

@@ -291,5 +291,11 @@ namespace Aplicativo
             newFrm.Show();
         }
 
+        private void linkLabel22_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frmRecibos newFrm = new frmRecibos();
+            newFrm.Show();
+        }
+
     }
 }

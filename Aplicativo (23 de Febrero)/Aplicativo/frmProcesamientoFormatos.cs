@@ -183,6 +183,8 @@ namespace Aplicativo
             data.Columns.Add("Column4", "# Paquetes Requeridos");
             data.Columns.Add("Column5", "# Paquetes Producidos");
             data.Columns.Add("Column6", "# Paquetes Producidos Hoy");
+            data.Columns.Add("Column6", "Vol (m3) por Paquete");
+            data.Columns.Add("Column6", "Vol (m3) Producidos Hoy");
             //combo = new DataGridViewComboBoxColumn();
             //data.Columns.Add(combo);
             data.Columns[0].FillWeight = 40;
@@ -190,7 +192,7 @@ namespace Aplicativo
 
         public void cargarRecibos(string especie, DataGridView data)
         {
-            string query = "SELECT r.Id,r.volumenActual, r.Motivo, r.Diametro, r.Largo, r.Cantidad, r.Modulo, r.numRecibo, l.Lote FROM Recibo AS r INNER JOIN Lotes AS l ON r.Lote = l.Codigo WHERE r.Especie = '" + especie + "' AND ((Month(r.Fecha)) = " + (DateTime.Now.Month - 1) + " OR Month(r.Fecha) = " + DateTime.Now.Month + ")";
+            string query = "SELECT r.Id,r.volumenActual, r.Motivo, r.Diametro, r.Largo, r.Cantidad, r.Modulo, r.numRecibo, l.Lote FROM Recibo AS r INNER JOIN Lotes AS l ON r.Lote = l.Codigo WHERE r.Especie = '" + especie + "' AND ((Month(r.Fecha)) = " + (DateTime.Now.Month - 3) + " OR Month(r.Fecha) = " + DateTime.Now.Month + ")";
             //Ejecutar el query y llenar el GridView.
             conn.ConnectionString = connectionString;
             OleDbCommand cmd = new OleDbCommand(query, conn);
@@ -299,10 +301,16 @@ namespace Aplicativo
                 {
                     if (myReader.Read())
                     {
-                        if(!myReader.GetValue(0).ToString().Equals(""))
+                        if (!myReader.GetValue(0).ToString().Equals(""))
+                        {
                             data.Rows[i].Cells[5].Value = myReader.GetValue(0);
+                            data.Rows[i].Cells[7].Value = double.Parse(data.Rows[i].Cells[6].Value.ToString()) * double.Parse(myReader.GetValue(0).ToString());
+                        }
                         else
+                        {
                             data.Rows[i].Cells[5].Value = "0";
+                            data.Rows[i].Cells[7].Value = "0";
+                        }
                     }
                 }
                 finally
@@ -336,6 +344,7 @@ namespace Aplicativo
                     data.Rows[i].Cells[3].Value = myReader.GetDouble(3);
                     data.Rows[i].Cells[4].Value = 0;
                     data.Rows[i].Cells[5].Value = 0;
+                    data.Rows[i].Cells[6].Value = (myReader.GetDouble(4)/myReader.GetDouble(3));
                     i++;
                 }
             }
@@ -1747,6 +1756,23 @@ namespace Aplicativo
                 modificarDaños(semana, orden.ToString(), "ADF006-Chipeadora", dataGridView10, ano);
             }
             MessageBox.Show("Control de Equipo Mini Cargador registrado.");
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            frmCrearProduccion newFrm = new frmCrearProduccion(orden,tipo2);
+            if (!newFrm.IsDisposed)
+            {
+                this.Hide();
+                newFrm.ShowDialog();
+                this.Close();
+            }
+        }
+
+        private void button21_Click(object sender, EventArgs e)
+        {
+            frmResumenProcesamiento newFrm = new frmResumenProcesamiento(orden);
+            newFrm.Show();
         }
 
     }

@@ -39,10 +39,10 @@ namespace Aplicativo
             comboBox5.SelectedItem = null;
             comboBox6.SelectedItem = null;
             Variables.cargar(dataGridView2, "SELECT * FROM Recibo WHERE volumenActual > 0 ORDER BY ID Desc");
-            Variables.cargar(dataGridView1, "SELECT * FROM Recibo ORDER BY ID Desc");
-            Variables.cargar(dataGridView3, "SELECT * FROM Recibo WHERE Especie = 'Melina' ORDER BY ID Desc");
-            Variables.cargar(dataGridView4, "SELECT * FROM Recibo WHERE Especie = 'Teca' ORDER BY ID Desc");
-            Variables.cargar(dataGridView5, "SELECT * FROM Recibo WHERE Especie <> 'Melina' AND Especie <> 'Teca' ORDER BY ID Desc");
+            Variables.cargar(dataGridView1, "SELECT * FROM Recibo WHERE (Month(Fecha) BETWEEN " + (DateTime.Now.Month - 3) + " AND " + (DateTime.Now.Month) + ") ORDER BY ID Desc");
+            Variables.cargar(dataGridView3, "SELECT * FROM Recibo WHERE Especie = 'Melina' AND volumenActual > 0 ORDER BY ID Desc");
+            Variables.cargar(dataGridView4, "SELECT * FROM Recibo WHERE Especie = 'Teca' AND volumenActual > 0 ORDER BY ID Desc");
+            Variables.cargar(dataGridView5, "SELECT * FROM Recibo WHERE Especie <> 'Melina' AND Especie <> 'Teca' AND volumenActual > 0 ORDER BY ID Desc");
             crearFormatoData(dataGridView5);
             crearFormatoData(dataGridView4);
             crearFormatoData(dataGridView3);
@@ -533,10 +533,10 @@ namespace Aplicativo
                 id = 0;   
             agregarRecibo(id+1);
             Variables.cargar(dataGridView2, "SELECT * FROM Recibo WHERE volumenActual > 0 ORDER BY ID Desc");
-            Variables.cargar(dataGridView1, "SELECT * FROM Recibo ORDER BY ID Desc");
-            Variables.cargar(dataGridView3, "SELECT * FROM Recibo WHERE Especie = 'Melina' ORDER BY ID Desc");
-            Variables.cargar(dataGridView4, "SELECT * FROM Recibo WHERE Especie = 'Teca' ORDER BY ID Desc");
-            Variables.cargar(dataGridView5, "SELECT * FROM Recibo WHERE Especie <> 'Melina' AND Especie <> 'Teca' ORDER BY ID Desc");
+            Variables.cargar(dataGridView1, "SELECT * FROM Recibo WHERE (Month(Fecha) BETWEEN " + (DateTime.Now.Month - 3) + " AND " + (DateTime.Now.Month) + ") ORDER BY ID Desc");
+            Variables.cargar(dataGridView3, "SELECT * FROM Recibo WHERE Especie = 'Melina' AND volumenActual > 0 ORDER BY ID Desc");
+            Variables.cargar(dataGridView4, "SELECT * FROM Recibo WHERE Especie = 'Teca' AND volumenActual > 0 ORDER BY ID Desc");
+            Variables.cargar(dataGridView5, "SELECT * FROM Recibo WHERE Especie <> 'Melina' AND Especie <> 'Teca' AND volumenActual > 0 ORDER BY ID Desc");
             dataGridView5.Columns[0].Visible = true;
             dataGridView4.Columns[0].Visible = true;
             dataGridView3.Columns[0].Visible = true;
@@ -603,7 +603,10 @@ namespace Aplicativo
             else
                 modificarRecibo(dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[0].Value.ToString());
             Variables.cargar(dataGridView2, "SELECT * FROM Recibo WHERE volumenActual > 0 ORDER BY ID Desc");
-            Variables.cargar(dataGridView1, "SELECT * FROM Recibo ORDER BY ID Desc");
+            Variables.cargar(dataGridView1, "SELECT * FROM Recibo WHERE (Month(Fecha) BETWEEN " + (DateTime.Now.Month - 3) + " AND " + (DateTime.Now.Month) + ") ORDER BY ID Desc");
+            Variables.cargar(dataGridView3, "SELECT * FROM Recibo WHERE Especie = 'Melina' AND volumenActual > 0 ORDER BY ID Desc");
+            Variables.cargar(dataGridView4, "SELECT * FROM Recibo WHERE Especie = 'Teca' AND volumenActual > 0 ORDER BY ID Desc");
+            Variables.cargar(dataGridView5, "SELECT * FROM Recibo WHERE Especie <> 'Melina' AND Especie <> 'Teca' AND volumenActual > 0 ORDER BY ID Desc");
             dataGridView2.Columns[0].Visible = true;
             dataGridView1.Columns[0].Visible = true;
         }
@@ -646,8 +649,11 @@ namespace Aplicativo
                 {
                     MessageBox.Show("Connection Failed");
                 }
-                Variables.cargar(dataGridView2, "SELECT * FROM Recibo WHERE volumenActual > 0");
-                Variables.cargar(dataGridView1, "SELECT * FROM Recibo");
+                Variables.cargar(dataGridView2, "SELECT * FROM Recibo WHERE volumenActual > 0 ORDER BY ID Desc");
+                Variables.cargar(dataGridView1, "SELECT * FROM Recibo WHERE (Month(Fecha) BETWEEN " + (DateTime.Now.Month - 3) + " AND " + (DateTime.Now.Month) + ") ORDER BY ID Desc");
+                Variables.cargar(dataGridView3, "SELECT * FROM Recibo WHERE Especie = 'Melina' AND volumenActual > 0 ORDER BY ID Desc");
+                Variables.cargar(dataGridView4, "SELECT * FROM Recibo WHERE Especie = 'Teca' AND volumenActual > 0 ORDER BY ID Desc");
+                Variables.cargar(dataGridView5, "SELECT * FROM Recibo WHERE Especie <> 'Melina' AND Especie <> 'Teca' AND volumenActual > 0 ORDER BY ID Desc");
             }
         }
 

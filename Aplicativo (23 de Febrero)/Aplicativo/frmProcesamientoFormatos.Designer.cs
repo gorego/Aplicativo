@@ -130,6 +130,7 @@
             this.button6 = new System.Windows.Forms.Button();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.label63 = new System.Windows.Forms.Label();
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.label1 = new System.Windows.Forms.Label();
@@ -213,7 +214,6 @@
             this.label57 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.dataGridView12 = new System.Windows.Forms.DataGridView();
-            this.label63 = new System.Windows.Forms.Label();
             this.tabPage6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView8)).BeginInit();
@@ -246,6 +246,7 @@
             this.button21.TabIndex = 88;
             this.button21.Text = "Resumen";
             this.button21.UseVisualStyleBackColor = true;
+            this.button21.Click += new System.EventHandler(this.button21_Click);
             // 
             // button1
             // 
@@ -266,6 +267,7 @@
             this.button5.TabIndex = 86;
             this.button5.Text = "Cerrar Ventana";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // tabPage6
             // 
@@ -1233,6 +1235,17 @@
             this.tabPage4.Text = "ADF020";
             this.tabPage4.Enter += new System.EventHandler(this.tabPage4_Enter);
             // 
+            // label63
+            // 
+            this.label63.AutoSize = true;
+            this.label63.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label63.Location = new System.Drawing.Point(168, 12);
+            this.label63.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label63.Name = "label63";
+            this.label63.Size = new System.Drawing.Size(67, 18);
+            this.label63.TabIndex = 114;
+            this.label63.Text = "Semana:";
+            // 
             // linkLabel2
             // 
             this.linkLabel2.AutoSize = true;
@@ -2118,17 +2131,6 @@
             this.dataGridView12.TabIndex = 65;
             this.dataGridView12.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView12_CellValueChanged);
             this.dataGridView12.CurrentCellDirtyStateChanged += new System.EventHandler(this.dataGridView12_CurrentCellDirtyStateChanged);
-            // 
-            // label63
-            // 
-            this.label63.AutoSize = true;
-            this.label63.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label63.Location = new System.Drawing.Point(168, 12);
-            this.label63.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label63.Name = "label63";
-            this.label63.Size = new System.Drawing.Size(67, 18);
-            this.label63.TabIndex = 114;
-            this.label63.Text = "Semana:";
             // 
             // frmProcesamientoFormatos
             // 

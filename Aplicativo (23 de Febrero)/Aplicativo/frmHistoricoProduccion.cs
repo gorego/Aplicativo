@@ -61,7 +61,9 @@ namespace Aplicativo
         private void button1_Click(object sender, EventArgs e)
         {
             frmCrearProduccion newFrm = new frmCrearProduccion(0);
+            this.Hide();
             newFrm.Show();
+            this.Close();
         }
 
         private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -206,6 +208,11 @@ namespace Aplicativo
         {
             frmAsistenciaOrdenes newFrm = new frmAsistenciaOrdenes();
             if (!newFrm.IsDisposed) { newFrm.Show(); }  
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

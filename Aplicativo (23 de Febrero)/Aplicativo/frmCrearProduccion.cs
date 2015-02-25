@@ -661,6 +661,17 @@ namespace Aplicativo
 
         private void button11_Click(object sender, EventArgs e)
         {
+            if (tipousuario == 0)
+            {
+                frmHistoricoProduccion newFrm = new frmHistoricoProduccion(0);
+                this.Hide();
+                newFrm.ShowDialog();
+                this.Close();
+            }
+            else
+            {
+                this.Close();
+            }
         }
 
         public int getMaxID()
@@ -990,6 +1001,12 @@ namespace Aplicativo
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             imprimirOP();
+        }
+
+        private void button4_Click_1(object sender, EventArgs e)
+        {
+            frmResumenProcesamiento newFrm = new frmResumenProcesamiento(OP);
+            newFrm.Show();
         }
     }
 }
