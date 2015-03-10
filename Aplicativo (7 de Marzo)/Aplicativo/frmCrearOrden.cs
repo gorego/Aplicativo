@@ -448,7 +448,7 @@ namespace Aplicativo
                 txtMaquinaria.Enabled = false;
                 txtCodLote.Enabled = false;
                 txtCodLote2.Enabled = false;
-                button10.Visible = false;
+                //button10.Visible = false;
                 txtLote.Enabled = false;
                 txtLote2.Enabled = false;
                 txtPredio.Enabled = false;
@@ -508,6 +508,19 @@ namespace Aplicativo
                 comboBox1.Visible = false;
                 label27.Visible = false;
                 label14.Visible = false;
+            }
+            if (Variables.tipo == 1)
+            {
+                label25.Visible = true;
+                label28.Visible = true;
+                label32.Visible = true;
+                label33.Visible = true;
+                txtCosto.Visible = true;
+                txtCostoJornalFinal.Visible = true;
+                txtCostoFinal.Visible = true;
+                txtCosto.ReadOnly = true;
+                txtCostoJornalFinal.ReadOnly = true;
+                txtCostoFinal.ReadOnly = true;
             }
         }
 

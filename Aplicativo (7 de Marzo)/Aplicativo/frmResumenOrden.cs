@@ -173,6 +173,32 @@ namespace Aplicativo
             }
         }
 
+        public void cargarCostoEquipoADF(DataGridView data)
+        {
+            int i = 0;
+            string query = "SELECT valorHora FROM Maquinarias WHERE ID = " + data.Rows[i].Cells[1].Value.ToString();
+            //Ejecutar el query y llenar el GridView.
+            conn.ConnectionString = connectionString;
+            OleDbCommand cmd = new OleDbCommand(query, conn);
+            cmd.Connection = conn;
+            conn.Open();
+            OleDbDataReader myReader = cmd.ExecuteReader();
+            try
+            {
+                while (myReader.Read())
+                {
+                    data.Rows[i].Cells[6].Value = myReader.GetValue(0);
+                    i++;
+                }
+            }
+            finally
+            {
+                // always call Close when done reading.
+                myReader.Close();
+                // always call Close when done reading.
+                conn.Close();
+            }
+        }
 
         public bool registroExiste(int orden)
         {
@@ -578,6 +604,7 @@ namespace Aplicativo
             int index = 0;
             if (adf.Equals("ADF006"))
             {
+                cargarCostoEquipoADF(data);
                 cargarCantidadEquipoADF(data, orden, "ADF006-1");
                 index++;
             }

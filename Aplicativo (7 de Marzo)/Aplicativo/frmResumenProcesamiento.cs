@@ -20,7 +20,7 @@ namespace Aplicativo
         List<int> idProductos = new List<int>();
         List<double> volProductos = new List<double>();
 
-        public frmResumenProcesamiento(int orden, int dia)
+        public frmResumenProcesamiento(int orden, int dia, int tipo)
         {
             InitializeComponent();
             this.Text = "Resumen de Orden #: " + getNombreOP(orden);
@@ -44,6 +44,19 @@ namespace Aplicativo
             columnasInput(dataGridView14);
             formatoInputs(dataGridView14, dia);
             getTotales(dataGridView14);
+            if (tipo != 1)
+            {
+                tipoUsuario(dataGridView4, label15);
+                tipoUsuario(dataGridView8, label1);
+                tipoUsuario(dataGridView11, label5);
+            }
+        }
+
+        public void tipoUsuario(DataGridView data, Label label)
+        {
+            data.Columns[6].Visible = false;
+            data.Columns[7].Visible = false;
+            label.Visible = false;
         }
 
         public void getTotales(DataGridView data)
@@ -337,10 +350,10 @@ namespace Aplicativo
         public string getTotalADF006(DataGridView data)
         {
             string total = "";
-            int valor = 0;
+            double valor = 0;
             for (int i = 0; i < data.Rows.Count; i++)
             {
-                valor += Int32.Parse(data.Rows[i].Cells[7].Value.ToString());
+                valor += double.Parse(data.Rows[i].Cells[7].Value.ToString());
             }
             total = String.Format("{0:c}", valor);
             return total;
@@ -542,8 +555,9 @@ namespace Aplicativo
             int index = 0;
             if (adf.Equals("ADF006"))
             {
-                    cargarCantidadEquipoADF(data, orden, "ADF006-1", tipo);
-                    index++;
+                cargarCostoEquipoADF(data);
+                cargarCantidadEquipoADF(data, orden, "ADF006-1", tipo);
+                index++;
             }
             for (int i = index; i < data.Rows.Count; i++)
             {
@@ -593,7 +607,7 @@ namespace Aplicativo
                 {
                     data.Rows[i].Cells[5].Value = myReader.GetValue(0).ToString();
                     var cultureInfo = new System.Globalization.CultureInfo("en-US");
-                    int valor = Int32.Parse(data.Rows[i].Cells[6].Value.ToString(), cultureInfo);
+                    double valor = double.Parse(data.Rows[i].Cells[6].Value.ToString(), cultureInfo);
                     data.Rows[i].Cells[7].Value = valor * double.Parse(myReader.GetValue(0).ToString());
                     i++;
                 }
@@ -606,6 +620,34 @@ namespace Aplicativo
                 conn.Close();
             }
         }
+
+        public void cargarCostoEquipoADF(DataGridView data)
+        {
+            int i = 0;
+            string query = "SELECT valorHora FROM Maquinarias WHERE ID = " + data.Rows[i].Cells[1].Value.ToString();
+            //Ejecutar el query y llenar el GridView.
+            conn.ConnectionString = connectionString;
+            OleDbCommand cmd = new OleDbCommand(query, conn);
+            cmd.Connection = conn;
+            conn.Open();
+            OleDbDataReader myReader = cmd.ExecuteReader();
+            try
+            {
+                while (myReader.Read())
+                {
+                    data.Rows[i].Cells[6].Value = myReader.GetValue(0);
+                    i++;
+                }
+            }
+            finally
+            {
+                // always call Close when done reading.
+                myReader.Close();
+                // always call Close when done reading.
+                conn.Close();
+            }
+        }
+
 
         public void cargarADF2(DataGridView data, int orden, string adf, string tipo)
         {

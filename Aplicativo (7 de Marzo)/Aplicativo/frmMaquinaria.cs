@@ -19,7 +19,7 @@ namespace Aplicativo
 
         public void cargarMaquinaria()
         {
-            string query = "SELECT m.ID, m.Placa, m.Tipo, m.Marca, m.Modelo, e.Estado, m.Ano, m.Ano_Fabricacion,m.Tipo_Combustible, m.Descripcion, p.Propietario, m.aceiteMotor, m.aceiteHidraulico, m.aceiteCajaV, m.aceiteDiferencial,m.Ubicacion,m.Horometro,m.numPuestos FROM propietariosMaquina AS p INNER JOIN (Estados AS e INNER JOIN Maquinarias AS m ON e.ID = m.Estado) ON p.ID = m.Propietario;";
+            string query = "SELECT m.ID, m.Placa, m.Tipo, m.Marca, m.Modelo, e.Estado, m.Ano, m.Ano_Fabricacion,m.Tipo_Combustible, m.Descripcion, p.Propietario, m.aceiteMotor, m.aceiteHidraulico, m.aceiteCajaV, m.aceiteDiferencial,m.Ubicacion,m.Horometro,m.numPuestos,m.valorHora FROM propietariosMaquina AS p INNER JOIN (Estados AS e INNER JOIN Maquinarias AS m ON e.ID = m.Estado) ON p.ID = m.Propietario;";
             //Ejecutar el query y llenar el GridView.
             conn.ConnectionString = connectionString;
             OleDbCommand cmd = new OleDbCommand(query, conn);
@@ -37,6 +37,8 @@ namespace Aplicativo
             dataGridView1.Columns[14].HeaderText = "Ref. Aceite de Diferenciales";
             dataGridView1.Columns[15].HeaderText = "Ubicación Fisica";
             dataGridView1.Columns[17].HeaderText = "# Puestos";
+            dataGridView1.Columns[18].HeaderText = "Valor/Hora";
+            dataGridView1.Columns[18].DefaultCellStyle.Format = "c";
             dataGridView1.Columns[11].Visible = false;
             dataGridView1.Columns[12].Visible = false;
             dataGridView1.Columns[13].Visible = false;
@@ -240,7 +242,7 @@ namespace Aplicativo
         public void agregarMaquinaria()
         {
             conn.ConnectionString = connectionString;
-            OleDbCommand cmd = new OleDbCommand("INSERT INTO Maquinarias (Placa,Tipo,Marca,Ano,Modelo,Estado,Ano_Fabricacion,Tipo_Combustible,Descripcion,Propietario,aceiteMotor,aceiteHidraulico,aceiteCajaV,aceiteDiferencial,Ubicacion,Horometro,numPuestos) VALUES (@Placa,@Tipo,@Marca,@Ano,@Modelo,@Estado,@Ano_Fabricacion,@Tipo_Combustible,@Descripcion,@Propietario,@aceiteMotor,@aceiteHidraulico,@aceiteCajaV,@aceiteDiferencial,@Ubicacion,@Horometro,@numPuestos)");
+            OleDbCommand cmd = new OleDbCommand("INSERT INTO Maquinarias (Placa,Tipo,Marca,Ano,Modelo,Estado,Ano_Fabricacion,Tipo_Combustible,Descripcion,Propietario,aceiteMotor,aceiteHidraulico,aceiteCajaV,aceiteDiferencial,Ubicacion,Horometro,numPuestos, valorHora) VALUES (@Placa,@Tipo,@Marca,@Ano,@Modelo,@Estado,@Ano_Fabricacion,@Tipo_Combustible,@Descripcion,@Propietario,@aceiteMotor,@aceiteHidraulico,@aceiteCajaV,@aceiteDiferencial,@Ubicacion,@Horometro,@numPuestos, @valorHora)");
             cmd.Connection = conn;
             conn.Open();
             if (conn.State == ConnectionState.Open)
@@ -265,6 +267,7 @@ namespace Aplicativo
                 else
                     cmd.Parameters.Add("@Horometro", OleDbType.VarChar).Value = textBox2.Text;
                 cmd.Parameters.Add("@numPuestos", OleDbType.VarChar).Value = txtNumPuestos.Text;
+                cmd.Parameters.Add("@valorHora", OleDbType.VarChar).Value = txtValor.Text;
                 //cmd.Parameters.Add("@Encargado", OleDbType.VarChar).Value = txtEncargado.SelectedValue;
 
                 try
@@ -487,12 +490,13 @@ namespace Aplicativo
             textBox1.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[15].Value.ToString();
             textBox2.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[16].Value.ToString();
             txtNumPuestos.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[17].Value.ToString();
+            txtValor.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[18].Value.ToString();
             txtPropietario.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[10].Value.ToString();
         }
 
         public void modificarMaquinaria() {
             conn.ConnectionString = connectionString;
-            OleDbCommand cmd = new OleDbCommand("UPDATE Maquinarias SET Placa=@Placa,Tipo=@Tipo,Marca=@Marca,Modelo=@Modelo,Estado=@Estado,Ano=@Ano,Ano_Fabricacion=@Ano_Fabricacion,Tipo_Combustible=@Tipo_Combustible,Descripcion=@Descripcion,Propietario=@Propietario,aceiteMotor=@aceiteMotor,aceiteHidraulico=@aceiteHidraulico,aceiteCajaV=@aceiteCajaV,aceiteDiferencial=@aceiteDiferencial,Ubicacion=@Ubicacion,Horometro=@Horometro,numPuestos=@numPuestos WHERE ID = " + dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[0].Value.ToString());
+            OleDbCommand cmd = new OleDbCommand("UPDATE Maquinarias SET Placa=@Placa,Tipo=@Tipo,Marca=@Marca,Modelo=@Modelo,Estado=@Estado,Ano=@Ano,Ano_Fabricacion=@Ano_Fabricacion,Tipo_Combustible=@Tipo_Combustible,Descripcion=@Descripcion,Propietario=@Propietario,aceiteMotor=@aceiteMotor,aceiteHidraulico=@aceiteHidraulico,aceiteCajaV=@aceiteCajaV,aceiteDiferencial=@aceiteDiferencial,Ubicacion=@Ubicacion,Horometro=@Horometro,numPuestos=@numPuestos,valorHora=@valorHora WHERE ID = " + dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[0].Value.ToString());
             cmd.Connection = conn;
             conn.Open();
             if (conn.State == ConnectionState.Open)
@@ -516,6 +520,7 @@ namespace Aplicativo
                     cmd.Parameters.Add("@Horometro", OleDbType.VarChar).Value = textBox2.Text;
                 else
                     cmd.Parameters.Add("@Horometro", OleDbType.VarChar).Value = textBox2.Text; cmd.Parameters.Add("@numPuestos", OleDbType.VarChar).Value = txtNumPuestos.Text;
+                cmd.Parameters.Add("@valorHora", OleDbType.VarChar).Value = txtValor.Text;
                 try
                 {
                     cmd.ExecuteNonQuery();

@@ -74,6 +74,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.txtValor = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -100,6 +102,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtValor);
+            this.groupBox1.Controls.Add(this.label19);
             this.groupBox1.Controls.Add(this.txtNumPuestos);
             this.groupBox1.Controls.Add(this.label18);
             this.groupBox1.Controls.Add(this.textBox2);
@@ -544,6 +548,24 @@
             this.linkLabel1.Text = "Exportar a Excel";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
+            // txtValor
+            // 
+            this.txtValor.Location = new System.Drawing.Point(834, 141);
+            this.txtValor.Name = "txtValor";
+            this.txtValor.Size = new System.Drawing.Size(94, 20);
+            this.txtValor.TabIndex = 50;
+            this.txtValor.Text = "0";
+            this.txtValor.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(753, 144);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(75, 13);
+            this.label19.TabIndex = 49;
+            this.label19.Text = "Valor por Hora";
+            // 
             // frmMaquinaria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -615,5 +637,7 @@
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.ComboBox txtNumPuestos;
         private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.TextBox txtValor;
+        private System.Windows.Forms.Label label19;
     }
 }

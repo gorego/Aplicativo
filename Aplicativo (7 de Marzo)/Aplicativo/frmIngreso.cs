@@ -35,6 +35,7 @@ namespace Aplicativo
                         if (myReader.GetInt32(3).Equals(1))
                         {
                             Variables.userName = txtUsuario.Text;
+                            Variables.tipo = myReader.GetInt32(3);
                             Variables.userID = myReader.GetInt32(4);
                             frmInicio newFrm = new frmInicio(myReader.GetInt32(4),txtUsuario.Text);
                             // always call Close when done reading.

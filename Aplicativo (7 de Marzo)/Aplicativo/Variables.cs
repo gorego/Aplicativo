@@ -17,11 +17,18 @@ namespace Aplicativo
         + @" Source=C:\Users\" + Environment.UserName + @"\Dropbox\BaseDeDatos.accdb;Jet OLEDB:Database Password=4545g";
 
         private static string _userName = "";
+        private static int _tipo = 0;
 
         public static string userName
         {
             get { return _userName; }
             set { _userName = value; }
+        }
+
+        public static int tipo
+        {
+            get { return _tipo; }
+            set { _tipo = value; }
         }
 
         private static int _userID = 0;

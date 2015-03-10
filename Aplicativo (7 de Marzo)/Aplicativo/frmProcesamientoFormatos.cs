@@ -2098,7 +2098,7 @@ namespace Aplicativo
 
         private void button21_Click(object sender, EventArgs e)
         {
-            frmResumenProcesamiento newFrm = new frmResumenProcesamiento(orden,diaOrden);
+            frmResumenProcesamiento newFrm = new frmResumenProcesamiento(orden,diaOrden,tipo2);
             newFrm.Show();
         }
 

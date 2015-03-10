@@ -1006,7 +1006,7 @@ namespace Aplicativo
         private void button4_Click_1(object sender, EventArgs e)
         {
             int dias = (DateTime.Now - dateTimePicker1.Value).Days;
-            frmResumenProcesamiento newFrm = new frmResumenProcesamiento(OP, dias);
+            frmResumenProcesamiento newFrm = new frmResumenProcesamiento(OP, dias, tipousuario);
             newFrm.Show();
         }
     }

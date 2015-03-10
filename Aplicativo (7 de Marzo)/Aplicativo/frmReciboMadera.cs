@@ -537,11 +537,11 @@ namespace Aplicativo
             Variables.cargar(dataGridView3, "SELECT * FROM Recibo WHERE Especie = 'Melina' AND volumenActual > 0 ORDER BY ID Desc");
             Variables.cargar(dataGridView4, "SELECT * FROM Recibo WHERE Especie = 'Teca' AND volumenActual > 0 ORDER BY ID Desc");
             Variables.cargar(dataGridView5, "SELECT * FROM Recibo WHERE Especie <> 'Melina' AND Especie <> 'Teca' AND volumenActual > 0 ORDER BY ID Desc");
-            dataGridView5.Columns[0].Visible = true;
-            dataGridView4.Columns[0].Visible = true;
-            dataGridView3.Columns[0].Visible = true;
-            dataGridView2.Columns[0].Visible = true;
-            dataGridView1.Columns[0].Visible = true;
+            //dataGridView5.Columns[0].Visible = true;
+            //dataGridView4.Columns[0].Visible = true;
+            //dataGridView3.Columns[0].Visible = true;
+            //dataGridView2.Columns[0].Visible = true;
+            //dataGridView1.Columns[0].Visible = true;
         }
 
         private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -607,8 +607,8 @@ namespace Aplicativo
             Variables.cargar(dataGridView3, "SELECT * FROM Recibo WHERE Especie = 'Melina' AND volumenActual > 0 ORDER BY ID Desc");
             Variables.cargar(dataGridView4, "SELECT * FROM Recibo WHERE Especie = 'Teca' AND volumenActual > 0 ORDER BY ID Desc");
             Variables.cargar(dataGridView5, "SELECT * FROM Recibo WHERE Especie <> 'Melina' AND Especie <> 'Teca' AND volumenActual > 0 ORDER BY ID Desc");
-            dataGridView2.Columns[0].Visible = true;
-            dataGridView1.Columns[0].Visible = true;
+            //dataGridView2.Columns[0].Visible = true;
+            //dataGridView1.Columns[0].Visible = true;
         }
 
         private void button4_Click(object sender, EventArgs e)
