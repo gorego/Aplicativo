@@ -16,6 +16,7 @@ namespace Aplicativo
         String connectionString = Variables.connectionString;
         OleDbConnection conn = new OleDbConnection();
         int op;
+        double costoTotal = 0;
         List<string> productos = new List<string>();
         List<int> idProductos = new List<int>();
         List<double> volProductos = new List<double>();
@@ -25,6 +26,8 @@ namespace Aplicativo
             InitializeComponent();
             this.Text = "Resumen de Orden #: " + getNombreOP(orden);
             cargarInputs(dataGridView13, orden);
+            cargarInputsPaquetes(dataGridView13, orden);
+            label23.Text = "Volumen total seleccionado: " + getTotalInputs(dataGridView13) +" m3.";
             dataGridView13.Columns[7].DefaultCellStyle.Font = new Font(dataGridView13.DefaultCellStyle.Font, FontStyle.Underline);
             Variables.cargar(dataGridView16, "SELECT c.Cuchilla, Cuchillas.Codigo FROM (cuchillaAsignadas AS c INNER JOIN Maquinarias AS m ON c.Maquina = m.ID) INNER JOIN Cuchillas ON c.Cuchilla = Cuchillas.Id WHERE OP = " + orden);
             op = orden;
@@ -44,12 +47,43 @@ namespace Aplicativo
             columnasInput(dataGridView14);
             formatoInputs(dataGridView14, dia);
             getTotales(dataGridView14);
-            if (tipo != 1)
+            if (Variables.tipo != 1)
             {
                 tipoUsuario(dataGridView4, label15);
                 tipoUsuario(dataGridView8, label1);
                 tipoUsuario(dataGridView11, label5);
             }
+            sumarCosto(dataGridView4, dataGridView8, dataGridView11, lblCosto1, 0);
+            sumarCosto(dataGridView4, dataGridView8, dataGridView11, lblCosto2, 1);
+            sumarCosto(dataGridView4, dataGridView8, dataGridView11, lblCosto3, 2);
+            sumarCosto(dataGridView4, dataGridView8, dataGridView11, lblCosto4, 3);
+            lblCosto5.Text += String.Format("{0:c}", costoTotal);
+            label25.Text += label23.Text.Replace("Volumen total seleccionado:", "");
+            label26.Text += Math.Round(double.Parse(dataGridView14.Rows[dataGridView14.Rows.Count - 1].Cells[dataGridView14.Columns.Count - 1].Value.ToString()), 3, MidpointRounding.AwayFromZero) + " m3.";                                       
+            label30.Text = (Math.Round(double.Parse(dataGridView14.Rows[dataGridView14.Rows.Count - 1].Cells[dataGridView14.Columns.Count - 1].Value.ToString()),3,MidpointRounding.AwayFromZero) / double.Parse(label23.Text.Replace("Volumen total seleccionado:", "").Replace(" m3.","")) * 100) + "%";
+        }
+
+        public double getTotalInputs(DataGridView data)
+        {
+            double total = 0;
+            for (int i = 0; i < data.Rows.Count; i++)
+            {
+                total += double.Parse(data.Rows[i].Cells[5].Value.ToString());
+            }
+            return total;
+        }
+
+        public void sumarCosto(DataGridView data1, DataGridView data2, DataGridView data3,Label label, int posicion)
+        {
+            double costo = 0;
+            if (data1.Rows.Count > posicion)
+                costo += double.Parse(data1.Rows[posicion].Cells[7].Value.ToString());
+            if (data2.Rows.Count > posicion)
+                costo += double.Parse(data2.Rows[posicion].Cells[7].Value.ToString());
+            if (data3.Rows.Count > posicion)
+                costo += double.Parse(data3.Rows[posicion].Cells[7].Value.ToString());
+            label.Text += String.Format("{0:c}", costo);
+            costoTotal += costo;
         }
 
         public void tipoUsuario(DataGridView data, Label label)
@@ -424,6 +458,46 @@ namespace Aplicativo
             }
             label23.Text = "Volumen total seleccionado: " + total + " m3.";
         }
+
+        public void cargarInputsPaquetes(DataGridView data, int orden)
+        {
+            double total = 0;
+            string query = "SELECT paqueteOrdenes.Dia, Paquete.numPaquete, paqueteOrdenes.Porcentaje, paqueteOrdenes.volumen, Paquete.Bodega, h.OP, h.Id FROM (historicoProduccion AS h INNER JOIN Paquete ON h.Id = Paquete.OP) INNER JOIN paqueteOrdenes ON Paquete.Id = paqueteOrdenes.Paquete WHERE paqueteOrdenes.OP = " + orden + " ORDER BY paqueteOrdenes.Dia;";
+            //Ejecutar el query y llenar el GridView.
+            conn.ConnectionString = connectionString;
+            OleDbCommand cmd = new OleDbCommand(query, conn);
+            cmd.Connection = conn;
+            conn.Open();
+            OleDbDataReader myReader = cmd.ExecuteReader();
+            int i = data.Rows.Count; 
+            try
+            {
+                while (myReader.Read())
+                {
+                    data.Rows.Add();
+                    data.Rows[i].Cells[0].Value = i + 1;
+                    data.Rows[i].Cells[1].Value = myReader.GetInt32(0) + 1;
+                    data.Rows[i].Cells[2].Value = myReader.GetString(1);
+                    data.Rows[i].Cells[3].Value = "";
+                    data.Rows[i].Cells[4].Value = myReader.GetString(2);
+                    data.Rows[i].Cells[5].Value = myReader.GetDouble(3);
+                    data.Rows[i].Cells[6].Value = myReader.GetInt32(4);
+                    data.Rows[i].Cells[7].Value = myReader.GetString(5);
+                    data.Rows[i].Cells[8].Value = myReader.GetInt32(6);
+                    total += myReader.GetDouble(3);
+                    i++;
+                }
+            }
+            finally
+            {
+                // always call Close when done reading.
+                myReader.Close();
+                // always call Close when done reading.
+                conn.Close();
+            }
+            label23.Text = "Volumen total seleccionado: " + total + " m3.";
+        }
+
 
         private void dataGridView16_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -863,9 +937,22 @@ namespace Aplicativo
         {
             if (dataGridView13.CurrentCell.ColumnIndex == 7)
             {
-                frmCrearOrden newFrm = new frmCrearOrden(dataGridView13.Rows[dataGridView13.CurrentCell.RowIndex].Cells[8].Value.ToString(), 1);
-                newFrm.Show();
+                if (dataGridView13.Rows[dataGridView13.CurrentCell.RowIndex].Cells[7].Value.ToString().Contains("OT"))
+                {
+                    frmCrearOrden newFrm = new frmCrearOrden(dataGridView13.Rows[dataGridView13.CurrentCell.RowIndex].Cells[8].Value.ToString(), 1);
+                    newFrm.Show();
+                }
+                else
+                {
+                    frmCrearProduccion newFrm = new frmCrearProduccion(Int32.Parse(dataGridView13.Rows[dataGridView13.CurrentCell.RowIndex].Cells[8].Value.ToString()), 1);
+                    newFrm.Show();
+                }
             }
+        }
+
+        private void label25_Click(object sender, EventArgs e)
+        {
+
         }
 
     }

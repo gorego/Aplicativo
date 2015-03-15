@@ -1549,5 +1549,8 @@ C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (7 de Marzo)\Aplicativo
 C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (7 de Marzo)\Aplicativo\obj\x64\Debug\Aplicativo.frmUsuarios.resources
 C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (7 de Marzo)\Aplicativo\obj\x64\Debug\Aplicativo.frmVerMaquinaria.resources
 C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (7 de Marzo)\Aplicativo\obj\x64\Debug\Aplicativo.Properties.Resources.resources
-C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (7 de Marzo)\Aplicativo\obj\x64\Debug\Aplicativo.reciboModulo.resources
 C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (7 de Marzo)\Aplicativo\obj\x64\Debug\Aplicativo.csproj.GenerateResource.Cache
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (7 de Marzo)\Aplicativo\obj\x64\Debug\Aplicativo.frmReciboMaderCliente.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (7 de Marzo)\Aplicativo\obj\x64\Debug\Aplicativo.frmDespacho.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (7 de Marzo)\Aplicativo\obj\x64\Debug\Aplicativo.frmDespachoOpcion.resources
+C:\Users\Gonzalo\Desktop\Aplicativo\Versiones\Aplicativo (7 de Marzo)\Aplicativo\obj\x64\Debug\Aplicativo.frmCrearDespacho.resources

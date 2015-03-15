@@ -214,6 +214,8 @@
             this.label57 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.dataGridView12 = new System.Windows.Forms.DataGridView();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label64 = new System.Windows.Forms.Label();
             this.tabPage6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView8)).BeginInit();
@@ -1513,6 +1515,8 @@
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tabPage3.Controls.Add(this.label64);
+            this.tabPage3.Controls.Add(this.comboBox1);
             this.tabPage3.Controls.Add(this.label58);
             this.tabPage3.Controls.Add(this.linkLabel3);
             this.tabPage3.Controls.Add(this.linkLabel4);
@@ -1584,7 +1588,7 @@
             this.dataGridView13.Location = new System.Drawing.Point(238, 39);
             this.dataGridView13.Name = "dataGridView13";
             this.dataGridView13.RowHeadersVisible = false;
-            this.dataGridView13.Size = new System.Drawing.Size(786, 510);
+            this.dataGridView13.Size = new System.Drawing.Size(786, 481);
             this.dataGridView13.TabIndex = 28;
             this.dataGridView13.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView13_CellValueChanged);
             this.dataGridView13.CurrentCellDirtyStateChanged += new System.EventHandler(this.dataGridView13_CurrentCellDirtyStateChanged);
@@ -2133,6 +2137,33 @@
             this.dataGridView12.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView12_CellValueChanged);
             this.dataGridView12.CurrentCellDirtyStateChanged += new System.EventHandler(this.dataGridView12_CurrentCellDirtyStateChanged);
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Madera Rolliza",
+            "Dimensionado",
+            "Dimensionado para Secar",
+            "Seco Dimensionado",
+            "Seco Cepillado",
+            "Slats o Lamelas"});
+            this.comboBox1.Location = new System.Drawing.Point(624, 528);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(199, 21);
+            this.comboBox1.TabIndex = 91;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // label64
+            // 
+            this.label64.AutoSize = true;
+            this.label64.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label64.Location = new System.Drawing.Point(516, 529);
+            this.label64.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label64.Name = "label64";
+            this.label64.Size = new System.Drawing.Size(103, 18);
+            this.label64.TabIndex = 92;
+            this.label64.Text = "Caracteristica:";
+            // 
             // frmProcesamientoFormatos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2365,5 +2396,7 @@
         private System.Windows.Forms.Label label60;
         private System.Windows.Forms.Label label62;
         private System.Windows.Forms.Label label63;
+        private System.Windows.Forms.Label label64;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

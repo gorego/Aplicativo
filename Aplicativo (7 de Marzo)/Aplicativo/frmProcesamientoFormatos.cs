@@ -61,6 +61,7 @@ namespace Aplicativo
             cargarProductos(op, dataGridView14);
             cargarPaquetesTotales(dataGridView14);
             cargarPaquetesTotalesDiarios(dataGridView14,dia);
+            consecutivosInputs(dataGridView13);
             //DateTimeFormatInfo dfi = DateTimeFormatInfo.CurrentInfo;
             //DateTime date1 = DateTime.ParseExact(DateTime.Now.ToString("dd") + "/" + DateTime.Now.ToString("MM") + "/" + DateTime.Now.Year, "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
             //Calendar cal = dfi.Calendar;
@@ -220,6 +221,43 @@ namespace Aplicativo
             data.Columns[2].FillWeight = 40;            
         }
 
+        public void cargarFormatoInput2(DataGridView data)
+        {
+            DataGridViewCheckBoxColumn check = new DataGridViewCheckBoxColumn();
+            check.HeaderText = "";
+            DataGridViewComboBoxColumn combo = new DataGridViewComboBoxColumn();
+            //combo.HeaderText = "Cuchilla";
+            data.Columns.Add("Column1", "#");
+            data.Columns.Add("Column2", "ID");
+            data.Columns[1].Visible = false;
+            data.Columns.Add(check);
+            data.Columns.Add("Column3", "Paquete");
+            data.Columns.Add("Column6", "Lote");
+            data.Columns.Add("Column4", "Volumen (m3)");
+            //cargarDetalle(combo, "SELECT * FROM Cuchillas", "Codigo", data);
+            //data.Columns.Add(combo);
+            combo = new DataGridViewComboBoxColumn();
+            combo.HeaderText = "%";
+            combo.Items.Add("100%");
+            combo.Items.Add("75%");
+            combo.Items.Add("50%");
+            combo.Items.Add("25%");
+            combo.Items.Add("0%");
+            data.Columns.Add(combo);
+            data.Columns.Add("Column5", "Volumen Seleccionado (m3)");
+            data.Columns.Add("Column6", "Bodega");
+            data.Columns[0].ReadOnly = true;
+            data.Columns[3].ReadOnly = true;
+            data.Columns[4].ReadOnly = true;
+            data.Columns[5].ReadOnly = true;
+            data.Columns[7].ReadOnly = true;
+            //combo = new DataGridViewComboBoxColumn();
+            //data.Columns.Add(combo);
+            data.Columns[0].FillWeight = 40;
+            data.Columns[2].FillWeight = 40;
+        }
+
+
         public void cargarFormatoOutput(DataGridView data)
         {
             //combo.HeaderText = "Cuchilla";
@@ -272,9 +310,79 @@ namespace Aplicativo
             }
         }
 
+        public void cargarPaquetes(string especie, DataGridView data)
+        {
+            string query = "SELECT Paquete.Id, Paquete.numPaquete, Paquete.volumenActual, Paquete.Bodega FROM Paquete INNER JOIN Productos ON Paquete.Producto = Productos.ID WHERE Productos.Caracteristica = '" + especie + "'";
+            //Ejecutar el query y llenar el GridView.
+            conn.ConnectionString = connectionString;
+            OleDbCommand cmd = new OleDbCommand(query, conn);
+            cmd.Connection = conn;
+            conn.Open();
+            OleDbDataReader myReader = cmd.ExecuteReader();
+            int i = 0;
+            try
+            {
+                while (myReader.Read())
+                {
+                    data.Rows.Add();
+                    data.Rows[i].Cells[0].Value = i + 1;
+                    data.Rows[i].Cells[1].Value = myReader.GetInt32(0);
+                    data.Rows[i].Cells[3].Value = myReader.GetString(1);
+                    data.Rows[i].Cells[4].Value = "";
+                    data.Rows[i].Cells[5].Value = myReader.GetDouble(2);
+                    data.Rows[i].Cells[6].Value = "100%";
+                    data.Rows[i].Cells[7].Value = myReader.GetDouble(2);
+                    data.Rows[i].Cells[8].Value = myReader.GetInt32(3);
+                    i++;
+                }
+            }
+            finally
+            {
+                // always call Close when done reading.
+                myReader.Close();
+                // always call Close when done reading.
+                conn.Close();
+            }
+        }
+
+
         public void cargarRecibosAsignadas(int op, DataGridView data, int dia)
         {
             string query = "SELECT ID, Recibo,Porcentaje,Volumen,volumenOriginal FROM recibosOrdenes WHERE OP = " + op + " AND Dia = " + dia;
+            //Ejecutar el query y llenar el GridView.
+            conn.ConnectionString = connectionString;
+            OleDbCommand cmd = new OleDbCommand(query, conn);
+            cmd.Connection = conn;
+            conn.Open();
+            OleDbDataReader myReader = cmd.ExecuteReader();
+            try
+            {
+                while (myReader.Read())
+                {
+                    for (int j = 0; j < data.Rows.Count; j++)
+                    {
+                        if (data.Rows[j].Cells[1].Value.ToString().Equals(myReader.GetInt32(1).ToString()))
+                        {
+                            data.Rows[j].Cells[2].Value = true;
+                            data.Rows[j].Cells[5].Value = myReader.GetDouble(4);
+                            data.Rows[j].Cells[6].Value = myReader.GetString(2);
+                            data.Rows[j].Cells[7].Value = myReader.GetDouble(3);
+                        }
+                    }
+                }
+            }
+            finally
+            {
+                // always call Close when done reading.
+                myReader.Close();
+                // always call Close when done reading.
+                conn.Close();
+            }
+        }
+
+        public void cargarPaquetesAsignadas(int op, DataGridView data, int dia)
+        {
+            string query = "SELECT ID, Paquete,Porcentaje,Volumen,volumenOriginal FROM paqueteOrdenes WHERE OP = " + op + " AND Dia = " + dia;
             //Ejecutar el query y llenar el GridView.
             conn.ConnectionString = connectionString;
             OleDbCommand cmd = new OleDbCommand(query, conn);
@@ -310,7 +418,7 @@ namespace Aplicativo
         {
             for (int i = 0; i < data.Rows.Count; i++)
             {
-                string query = "SELECT SUM(porcentaje) FROM Paquete WHERE OP = " + orden + " AND Producto = " + data.Rows[i].Cells[1].Value + " AND Parcial = 0";
+                string query = "SELECT COUNT(porcentaje) FROM Paquete WHERE OP = " + orden + " AND Producto = " + data.Rows[i].Cells[1].Value + " AND Parcial = 0";
                 //Ejecutar el query y llenar el GridView.
                 conn.ConnectionString = connectionString;
                 OleDbCommand cmd = new OleDbCommand(query, conn);
@@ -1531,9 +1639,60 @@ namespace Aplicativo
             }
         }
 
+        public bool existeAsignacionPaquete(int dia)
+        {
+            string query = "SELECT * FROM paqueteOrdenes WHERE OP = " + orden + " AND Dia = " + dia;
+            //Ejecutar el query y llenar el GridView.
+            conn.ConnectionString = connectionString;
+            OleDbCommand cmd = new OleDbCommand(query, conn);
+            cmd.Connection = conn;
+            conn.Open();
+            OleDbDataReader myReader = cmd.ExecuteReader();
+            try
+            {
+                if (myReader.Read())
+                    return true;
+                else
+                    return false;
+            }
+            finally
+            {
+                // always call Close when done reading.
+                myReader.Close();
+                // always call Close when done reading.
+                conn.Close();
+            }
+        }
+
+
         public bool existeReciboAsignado(int i, int dia)
         {
             string query = "SELECT * FROM recibosOrdenes WHERE OP = " + orden + " AND Recibo = " + i + " AND Dia = " + dia;
+            //Ejecutar el query y llenar el GridView.
+            conn.ConnectionString = connectionString;
+            OleDbCommand cmd = new OleDbCommand(query, conn);
+            cmd.Connection = conn;
+            conn.Open();
+            OleDbDataReader myReader = cmd.ExecuteReader();
+            try
+            {
+                if (myReader.Read())
+                    return true;
+                else
+                    return false;
+            }
+            finally
+            {
+                // always call Close when done reading.
+                myReader.Close();
+                // always call Close when done reading.
+                conn.Close();
+            }
+        }
+
+        public bool existePaquetesAsignado(int i, int dia)
+        {
+            string query = "SELECT * FROM paqueteOrdenes WHERE OP = " + orden + " AND Paquete = " + i + " AND Dia = " + dia;
             //Ejecutar el query y llenar el GridView.
             conn.ConnectionString = connectionString;
             OleDbCommand cmd = new OleDbCommand(query, conn);
@@ -1582,6 +1741,33 @@ namespace Aplicativo
             }
         }
 
+        public void eliminarAsignacionPaquete(int dia)
+        {
+            conn.ConnectionString = connectionString;
+            OleDbCommand cmd = new OleDbCommand("DELETE FROM paqueteOrdenes WHERE OP = " + orden + " AND Dia = " + dia);
+            cmd.Connection = conn;
+            conn.Open();
+
+            if (conn.State == ConnectionState.Open)
+            {
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
+                }
+                catch (OleDbException ex)
+                {
+                    MessageBox.Show(ex.Source);
+                    conn.Close();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Connection Failed");
+            }
+        }
+
+
         public void agregarAsignacion(int i, DataGridView data, int dia)
         {
             conn.ConnectionString = connectionString;
@@ -1612,6 +1798,38 @@ namespace Aplicativo
                 MessageBox.Show("Connection Failed");
             }
         }
+
+        public void agregarAsignacionPaquete(int i, DataGridView data, int dia)
+        {
+            conn.ConnectionString = connectionString;
+            OleDbCommand cmd = new OleDbCommand("INSERT INTO paqueteOrdenes (Paquete,OP,Porcentaje,Dia,volumen,volumenOriginal) VALUES (@Paquete,@OP,@Porcentaje,@Dia,@volumen,@volumenOriginal)");
+            cmd.Connection = conn;
+            conn.Open();
+            if (conn.State == ConnectionState.Open)
+            {
+                cmd.Parameters.Add("@Paquete", OleDbType.VarChar).Value = data.Rows[i].Cells[1].Value;
+                cmd.Parameters.Add("@OP", OleDbType.VarChar).Value = orden;
+                cmd.Parameters.Add("@Porcentaje", OleDbType.VarChar).Value = data.Rows[i].Cells[6].Value;
+                cmd.Parameters.Add("@Dia", OleDbType.VarChar).Value = dia;
+                cmd.Parameters.Add("@volumen", OleDbType.VarChar).Value = data.Rows[i].Cells[7].Value;
+                cmd.Parameters.Add("@volumenOriginal", OleDbType.VarChar).Value = data.Rows[i].Cells[5].Value;
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
+                }
+                catch (OleDbException ex)
+                {
+                    MessageBox.Show(ex.Source);
+                    conn.Close();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Connection Failed");
+            }
+        }
+
         public void modificarRecibo(DataGridView data, int i, string tipo)
         {
             conn.ConnectionString = connectionString;
@@ -1642,6 +1860,37 @@ namespace Aplicativo
             }
         }
 
+        public void modificarPaquete(DataGridView data, int i, string tipo)
+        {
+            conn.ConnectionString = connectionString;
+            OleDbCommand cmd = new OleDbCommand();
+            cmd = new OleDbCommand("UPDATE Paquete SET volumenActual = volumenActual " + tipo + " @volumen WHERE ID =  " + data.Rows[i].Cells[1].Value);
+            cmd.Connection = conn;
+            conn.Open();
+            if (conn.State == ConnectionState.Open)
+            {
+                if (tipo.Equals("+"))
+                    cmd.Parameters.Add("@volumen", OleDbType.VarChar).Value = data.Rows[i].Cells[5].Value;
+                else
+                    cmd.Parameters.Add("@volumen", OleDbType.VarChar).Value = data.Rows[i].Cells[7].Value;
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
+                }
+                catch (OleDbException ex)
+                {
+                    MessageBox.Show(ex.Source);
+                    conn.Close();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Connection Failed");
+            }
+        }
+
+
         //public void modificarRecibo(DataGridView data, int i, string tipo)
         //{
         //    conn.ConnectionString = connectionString;
@@ -1671,23 +1920,48 @@ namespace Aplicativo
 
         private void button9_Click(object sender, EventArgs e)
         {
-            if (existeAsignacion(diaRecibos))
+            if (comboBox1.Text.Equals("Madera Rolliza"))
             {
+                if (existeAsignacion(diaRecibos))
+                {
+                    for (int i = 0; i < dataGridView13.Rows.Count; i++)
+                    {
+                        if (existeReciboAsignado(Int32.Parse(dataGridView13.Rows[i].Cells[1].Value.ToString()), diaRecibos))
+                            modificarRecibo(dataGridView13, i, "+");
+                    }
+                    eliminarAsignacion(diaRecibos);
+                }
                 for (int i = 0; i < dataGridView13.Rows.Count; i++)
                 {
-                    if (existeReciboAsignado(Int32.Parse(dataGridView13.Rows[i].Cells[1].Value.ToString()),diaRecibos))
+                    if (existeReciboAsignado(Int32.Parse(dataGridView13.Rows[i].Cells[1].Value.ToString()), diaRecibos))
                         modificarRecibo(dataGridView13, i, "+");
+                    if (Convert.ToBoolean(dataGridView13.Rows[i].Cells[2].Value) == true)
+                    {
+                        agregarAsignacion(i, dataGridView13, diaRecibos);
+                        modificarRecibo(dataGridView13, i, "-");
+                    }
                 }
-                eliminarAsignacion(diaRecibos);
-            }                
-            for (int i = 0; i < dataGridView13.Rows.Count; i++)
+            }
+            else
             {
-                if(existeReciboAsignado(Int32.Parse(dataGridView13.Rows[i].Cells[1].Value.ToString()),diaRecibos))
-                    modificarRecibo(dataGridView13, i, "+");
-                if (Convert.ToBoolean(dataGridView13.Rows[i].Cells[2].Value) == true)
+                if (existeAsignacionPaquete(diaRecibos))
                 {
-                    agregarAsignacion(i, dataGridView13,diaRecibos);
-                    modificarRecibo(dataGridView13, i, "-");
+                    for (int i = 0; i < dataGridView13.Rows.Count; i++)
+                    {
+                        if (existePaquetesAsignado(Int32.Parse(dataGridView13.Rows[i].Cells[1].Value.ToString()), diaRecibos))
+                            modificarPaquete(dataGridView13, i, "+");
+                    }
+                    eliminarAsignacionPaquete(diaRecibos);
+                }
+                for (int i = 0; i < dataGridView13.Rows.Count; i++)
+                {
+                    if (existePaquetesAsignado(Int32.Parse(dataGridView13.Rows[i].Cells[1].Value.ToString()), diaRecibos))
+                        modificarPaquete(dataGridView13, i, "+");
+                    if (Convert.ToBoolean(dataGridView13.Rows[i].Cells[2].Value) == true)
+                    {
+                        agregarAsignacionPaquete(i, dataGridView13, diaRecibos);
+                        modificarPaquete(dataGridView13, i, "-");
+                    }
                 }
             }
             MessageBox.Show("Inputs registrados.");
@@ -1753,10 +2027,23 @@ namespace Aplicativo
             DateTime date = today.AddDays(diaRecibos2);
             label58.Text = "Día #: " + (diaRecibos + 1) + "                     Fecha: " + date.ToString("dd") + "/" + date.ToString("MM") + "/" + date.Year;
             clearDataGrid(dataGridView13);
-            cargarFormatoInput(dataGridView13);
-            cargarRecibos(getEspecie(orden), dataGridView13);
-            cargarRecibosAsignadas(orden, dataGridView13, diaRecibos);
-            clearRecibos(dataGridView13);
+
+            if (comboBox1.Text.Equals("Madera Rolliza"))
+            {
+                cargarFormatoInput(dataGridView13);
+                cargarRecibos(getEspecie(orden), dataGridView13);
+                cargarRecibosAsignadas(orden, dataGridView13, diaRecibos);
+                clearRecibos(dataGridView13);
+            }
+            else
+            {
+                cargarFormatoInput2(dataGridView13);
+                dataGridView13.Columns[4].Visible = false;
+                cargarPaquetes(comboBox1.Text, dataGridView13);
+                cargarPaquetesAsignadas(orden, dataGridView13, diaRecibos);
+                clearRecibos(dataGridView13);
+            }
+            consecutivosInputs(dataGridView13);
         }
 
         private void linkLabel4_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -1765,12 +2052,25 @@ namespace Aplicativo
             diaRecibos2--;
             DateTime today = DateTime.Now;
             DateTime date = today.AddDays(diaRecibos2);
-            label58.Text = "Día #: " + (diaRecibos + 1) + "                     Fecha: " + date.ToString("dd") + "/" + date.ToString("MM") + "/" + date.Year; 
+            label58.Text = "Día #: " + (diaRecibos + 1) + "                     Fecha: " + date.ToString("dd") + "/" + date.ToString("MM") + "/" + date.Year;
             clearDataGrid(dataGridView13);
-            cargarFormatoInput(dataGridView13);
-            cargarRecibos(getEspecie(orden), dataGridView13);
-            cargarRecibosAsignadas(orden, dataGridView13, diaRecibos);
-            clearRecibos(dataGridView13);
+
+            if (comboBox1.Text.Equals("Madera Rolliza"))
+            {
+                cargarFormatoInput(dataGridView13);
+                cargarRecibos(getEspecie(orden), dataGridView13);
+                cargarRecibosAsignadas(orden, dataGridView13, diaRecibos);
+                clearRecibos(dataGridView13);
+            }
+            else
+            {
+                cargarFormatoInput2(dataGridView13);
+                dataGridView13.Columns[4].Visible = false;
+                cargarPaquetes(comboBox1.Text, dataGridView13);
+                cargarPaquetesAsignadas(orden, dataGridView13, diaRecibos);
+                clearRecibos(dataGridView13);
+            }
+            consecutivosInputs(dataGridView13);
         }
 
         private void tabPage3_Enter(object sender, EventArgs e)
@@ -2118,6 +2418,46 @@ namespace Aplicativo
                 
             }
             MessageBox.Show("Control General de Equipos registrado.");
+        }
+
+        public void consecutivosInputs(DataGridView data)
+        {
+            for (int i = 0; i < data.Rows.Count; i++)
+            {
+                data.Rows[i].Cells[0].Value = i + 1;
+            }
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox1.Text.Equals("Madera Rolliza"))
+            {
+                diaRecibos = diaOrden;
+                diaRecibos2 = 0;
+                DateTime date = DateTime.Now;
+                date.AddDays(diaRecibos2);
+                label58.Text = "Día #: " + (diaRecibos + 1) + "                     Fecha Actual: " + date.ToString("dd") + "/" + date.ToString("MM") + "/" + date.Year;
+                clearDataGrid(dataGridView13);
+                cargarFormatoInput(dataGridView13);
+                cargarRecibos(getEspecie(orden), dataGridView13);
+                cargarRecibosAsignadas(orden, dataGridView13, diaRecibos);
+                clearRecibos(dataGridView13);
+            }
+            else
+            {
+                diaRecibos = diaOrden;
+                diaRecibos2 = 0;
+                DateTime date = DateTime.Now;
+                date.AddDays(diaRecibos2);
+                label58.Text = "Día #: " + (diaRecibos + 1) + "                     Fecha Actual: " + date.ToString("dd") + "/" + date.ToString("MM") + "/" + date.Year;
+                clearDataGrid(dataGridView13);
+                cargarFormatoInput2(dataGridView13);
+                dataGridView13.Columns[4].Visible = false;
+                cargarPaquetes(comboBox1.Text, dataGridView13);
+                cargarPaquetesAsignadas(orden, dataGridView13, diaRecibos);
+                clearRecibos(dataGridView13);
+            }
+            consecutivosInputs(dataGridView13);
         }
 
     }

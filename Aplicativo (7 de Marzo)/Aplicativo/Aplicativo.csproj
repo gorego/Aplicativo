@@ -125,6 +125,12 @@
     <Compile Include="frmContratos.Designer.cs">
       <DependentUpon>frmContratos.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmCrearDespacho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCrearDespacho.Designer.cs">
+      <DependentUpon>frmCrearDespacho.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCrearOrden.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -154,6 +160,12 @@
     </Compile>
     <Compile Include="frmCuchillasOrden.Designer.cs">
       <DependentUpon>frmCuchillasOrden.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDespacho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDespacho.Designer.cs">
+      <DependentUpon>frmDespacho.cs</DependentUpon>
     </Compile>
     <Compile Include="frmEmpleados.cs">
       <SubType>Form</SubType>
@@ -353,6 +365,12 @@
     <Compile Include="frmReciboMadera.Designer.cs">
       <DependentUpon>frmReciboMadera.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmReciboMaderCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReciboMaderCliente.Designer.cs">
+      <DependentUpon>frmReciboMaderCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmRecibos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -421,11 +439,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="reciboModulo.cs">
+    <Compile Include="frmDespachoOpcion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="reciboModulo.Designer.cs">
-      <DependentUpon>reciboModulo.cs</DependentUpon>
+    <Compile Include="frmDespachoOpcion.Designer.cs">
+      <DependentUpon>frmDespachoOpcion.cs</DependentUpon>
     </Compile>
     <Compile Include="Variables.cs" />
     <EmbeddedResource Include="frmActividades.resx">
@@ -459,6 +477,9 @@
     <EmbeddedResource Include="frmContratos.resx">
       <DependentUpon>frmContratos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmCrearDespacho.resx">
+      <DependentUpon>frmCrearDespacho.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCrearOrden.resx">
       <DependentUpon>frmCrearOrden.cs</DependentUpon>
     </EmbeddedResource>
@@ -473,6 +494,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmCuchillasOrden.resx">
       <DependentUpon>frmCuchillasOrden.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDespacho.resx">
+      <DependentUpon>frmDespacho.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmEmpleados.resx">
       <DependentUpon>frmEmpleados.cs</DependentUpon>
@@ -573,6 +597,9 @@
     <EmbeddedResource Include="frmReciboMadera.resx">
       <DependentUpon>frmReciboMadera.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmReciboMaderCliente.resx">
+      <DependentUpon>frmReciboMaderCliente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmRecibos.resx">
       <DependentUpon>frmRecibos.cs</DependentUpon>
     </EmbeddedResource>
@@ -615,8 +642,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="reciboModulo.resx">
-      <DependentUpon>reciboModulo.cs</DependentUpon>
+    <EmbeddedResource Include="frmDespachoOpcion.resx">
+      <DependentUpon>frmDespachoOpcion.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -172,6 +172,7 @@
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Items.AddRange(new object[] {
             "Dimensionado",
+            "Dimensionado para Secar",
             "Seco Dimensionado",
             "Seco Cepillado",
             "Slats o Lamelas"});

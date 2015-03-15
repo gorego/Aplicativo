@@ -334,10 +334,10 @@ namespace Aplicativo
             }
         }
 
-        public void agregarRegistro(int id, string nombre)
+        public void agregarRegistro(int id, string nombre, double volumen)
         {
             conn.ConnectionString = connectionString;
-            OleDbCommand cmd = new OleDbCommand("INSERT INTO Paquete (numPaquete,Producto,OP,Bodega,numPiezas,num,dia,porcentaje,Fecha,Hora,Parcial) VALUES (@numPaquete,@Producto,@OP,@Bodega,@numPiezas,@num,@dia,@porcentaje,@Fecha,@Hora,@Parcial)");
+            OleDbCommand cmd = new OleDbCommand("INSERT INTO Paquete (numPaquete,Producto,OP,Bodega,numPiezas,num,dia,porcentaje,Fecha,Hora,Parcial,volumenIngreso,volumenActual) VALUES (@numPaquete,@Producto,@OP,@Bodega,@numPiezas,@num,@dia,@porcentaje,@Fecha,@Hora,@Parcial,@volumenIngreso,@volumenActual)");
             cmd.Connection = conn;
             conn.Open();
             if (conn.State == ConnectionState.Open)
@@ -365,6 +365,8 @@ namespace Aplicativo
                     cmd.Parameters.Add("@Parcial", OleDbType.VarChar).Value = "1";
                 else
                     cmd.Parameters.Add("@Parcial", OleDbType.VarChar).Value = "0";
+                cmd.Parameters.Add("@volumenIngreso", OleDbType.VarChar).Value = volumen;
+                cmd.Parameters.Add("@volumenActual", OleDbType.VarChar).Value = volumen;
                 try
                 {
                     cmd.ExecuteNonQuery();
@@ -452,6 +454,33 @@ namespace Aplicativo
             }
         }
 
+        public double getVolumen(int id)
+        {
+            double volumen = 0;
+            string query = "SELECT anchoProd,altoProd,largoProd,numAnchoEmp,numAltoEmp FROM Productos WHERE ID = " + id;
+            //Ejecutar el query y llenar el GridView.
+            conn.ConnectionString = connectionString;
+            OleDbCommand cmd = new OleDbCommand(query, conn);
+            cmd.Connection = conn;
+            conn.Open();
+            OleDbDataReader myReader = cmd.ExecuteReader();
+            try
+            {
+                if (myReader.Read())
+                {
+                    volumen = (((Double.Parse(myReader.GetValue(0).ToString())) * (Double.Parse(myReader.GetValue(1).ToString())) * (Double.Parse(myReader.GetValue(2).ToString()))) / 1000000000) * (Double.Parse(myReader.GetValue(3).ToString()) * Double.Parse(myReader.GetValue(4).ToString()));
+                }
+            }
+            finally
+            {
+                // always call Close when done reading.
+                myReader.Close();
+                // always call Close when done reading.
+                conn.Close();
+            }
+            return volumen;
+        }
+
         private void button2_Click(object sender, EventArgs e)
         {
             if (numEntradas < 5)
@@ -462,7 +491,7 @@ namespace Aplicativo
                     {
                         int id = getMaxID();
                         string nombre = getNombreOP(orden);
-                        agregarRegistro(id + 1, nombre);
+                        agregarRegistro(id + 1, nombre, getVolumen(Int32.Parse(comboBox1.SelectedValue.ToString())));
                         int id2 = getMaxPaquete();
                         agregarAnchoAlto(id2, dataGridView1, 0);
                         agregarPaqueteParcial(id + 1);
@@ -483,7 +512,7 @@ namespace Aplicativo
                     {
                         int id = getMaxID();
                         string nombre = getNombreOP(orden);
-                        agregarRegistro(id + 1, nombre);
+                        agregarRegistro(id + 1, nombre, getVolumen(Int32.Parse(comboBox1.SelectedValue.ToString())));
                         int id2 = getMaxPaquete();
                         agregarAnchoAlto(id2, dataGridView1, 0);
                         MessageBox.Show("Paquete Registrado.");
@@ -495,7 +524,7 @@ namespace Aplicativo
                         {
                             int id = getMaxID();
                             string nombre = getNombreOP(orden);
-                            agregarRegistro(id + 1, nombre);
+                            agregarRegistro(id + 1, nombre, getVolumen(Int32.Parse(comboBox1.SelectedValue.ToString())));
                             int id2 = getMaxPaquete();
                             agregarAnchoAlto(id2, dataGridView1, 0);
                             agregarPaqueteParcial(id + 1);

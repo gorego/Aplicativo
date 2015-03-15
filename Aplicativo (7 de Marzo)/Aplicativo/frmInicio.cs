@@ -303,5 +303,17 @@ namespace Aplicativo
             newFrm.Show();
         }
 
+        private void linkLabel23_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frmReciboMaderCliente newFrm = new frmReciboMaderCliente();
+            newFrm.Show();
+        }
+
+        private void linkLabel24_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frmDespacho newFrm = new frmDespacho();
+            newFrm.Show();
+        }
+
     }
 }

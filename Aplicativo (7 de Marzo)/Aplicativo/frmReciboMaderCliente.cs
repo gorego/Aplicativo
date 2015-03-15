@@ -12,13 +12,13 @@ using System.IO;
 
 namespace Aplicativo
 {
-    public partial class frmReciboMadera : Form
+    public partial class frmReciboMaderCliente : Form
     {
         String connectionString = Variables.connectionString;
         OleDbConnection conn = new OleDbConnection();
         string lote, area, ano, registro, propietario, proveedor, transportador, placa, cliente, FSC;
 
-        public frmReciboMadera()
+        public frmReciboMaderCliente()
         {
             InitializeComponent();
             cargarLotes();
@@ -38,16 +38,62 @@ namespace Aplicativo
             comboBox4.SelectedItem = null;
             comboBox5.SelectedItem = null;
             comboBox6.SelectedItem = null;
-            Variables.cargar(dataGridView2, "SELECT * FROM Recibo WHERE volumenActual > 0 ORDER BY ID Desc");
-            Variables.cargar(dataGridView1, "SELECT * FROM Recibo WHERE (Month(Fecha) BETWEEN " + (DateTime.Now.Month - 3) + " AND " + (DateTime.Now.Month) + ") ORDER BY ID Desc");
-            Variables.cargar(dataGridView3, "SELECT * FROM Recibo WHERE Especie = 'Melina' AND volumenActual > 0 ORDER BY ID Desc");
-            Variables.cargar(dataGridView4, "SELECT * FROM Recibo WHERE Especie = 'Teca' AND volumenActual > 0 ORDER BY ID Desc");
-            Variables.cargar(dataGridView5, "SELECT * FROM Recibo WHERE Especie <> 'Melina' AND Especie <> 'Teca' AND volumenActual > 0 ORDER BY ID Desc");
+            Variables.cargar(dataGridView2, "SELECT * FROM reciboCliente WHERE volumenActual > 0 ORDER BY ID Desc");
+            Variables.cargar(dataGridView1, "SELECT * FROM reciboCliente WHERE (Month(Fecha) BETWEEN " + (DateTime.Now.Month - 3) + " AND " + (DateTime.Now.Month) + ") ORDER BY ID Desc");
+            Variables.cargar(dataGridView3, "SELECT * FROM reciboCliente WHERE Especie = 'Melina' AND volumenActual > 0 ORDER BY ID Desc");
+            Variables.cargar(dataGridView4, "SELECT * FROM reciboCliente WHERE Especie = 'Teca' AND volumenActual > 0 ORDER BY ID Desc");
+            Variables.cargar(dataGridView5, "SELECT * FROM reciboCliente WHERE Especie <> 'Melina' AND Especie <> 'Teca' AND volumenActual > 0 ORDER BY ID Desc");
             crearFormatoData(dataGridView5);
             crearFormatoData(dataGridView4);
             crearFormatoData(dataGridView3);
             crearFormatoData(dataGridView2);
             crearFormatoData(dataGridView1);
+            txtModulo.Text = getMaxPila().ToString();
+        }
+
+        public int getMaxPila()
+        {
+            string query = "SELECT MAX(Pila) From reciboCliente";
+            //Ejecutar el query y llenar el GridView.
+            conn.ConnectionString = connectionString;
+            OleDbCommand cmd = new OleDbCommand(query, conn);
+            cmd.Connection = conn;
+            conn.Open();
+            int pila = 0;
+            OleDbDataReader myReader = cmd.ExecuteReader();
+            try
+            {
+                if (myReader.Read())
+                {                    
+                    if(!myReader.GetValue(0).ToString().Equals(""))
+                        pila = Int32.Parse(myReader.GetValue(0).ToString());
+                }
+            }
+            finally
+            {
+                // always call Close when done reading.
+                myReader.Close();
+                // always call Close when done reading.
+                conn.Close();
+            }
+            return pila;
+        }
+
+        public void cargarLotes()
+        {
+            string query = "SELECT Codigo, Lote FROM Lotes Group By Codigo,Lote UNION ALL SELECT Codigo, Lote FROM Areas Group By Codigo,Lote UNION ALL SELECT Codigo, Lote FROM LoteGanadero Group By Codigo,Lote";
+            //Ejecutar el query y llenar el ComboBox.
+            conn.ConnectionString = connectionString;
+            OleDbCommand cmd = new OleDbCommand(query, conn);
+            DataTable maquinaria = new DataTable();
+            OleDbDataAdapter da = new OleDbDataAdapter(cmd);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            comboBox1.DataSource = ds.Tables[0];
+            comboBox1.DisplayMember = "Lote";
+            comboBox1.ValueMember = "Codigo";
+            comboBox1.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            comboBox1.AutoCompleteSource = AutoCompleteSource.ListItems;
         }
 
         public void crearFormatoData(DataGridView dataGridView2)
@@ -75,28 +121,12 @@ namespace Aplicativo
             dataGridView2.Columns[20].Visible = false;
             dataGridView2.Columns[21].Visible = false;
             dataGridView2.Columns[22].Visible = false;
+            dataGridView2.Columns[25].Visible = false;
             dataGridView2.Columns[24].HeaderText = "# Recibo";
             dataGridView2.Columns[24].DisplayIndex = 0;
         }
 
-        public void cargarLotes()
-        {
-            string query = "SELECT Codigo, Lote FROM Lotes Group By Codigo,Lote UNION ALL SELECT Codigo, Lote FROM Areas Group By Codigo,Lote UNION ALL SELECT Codigo, Lote FROM LoteGanadero Group By Codigo,Lote";
-            //Ejecutar el query y llenar el ComboBox.
-            conn.ConnectionString = connectionString;
-            OleDbCommand cmd = new OleDbCommand(query, conn);
-            DataTable maquinaria = new DataTable();
-            OleDbDataAdapter da = new OleDbDataAdapter(cmd);
-            DataSet ds = new DataSet();
-            da.Fill(ds);
-            comboBox1.DataSource = ds.Tables[0];
-            comboBox1.DisplayMember = "Lote";
-            comboBox1.ValueMember = "Codigo";
-            comboBox1.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-            comboBox1.AutoCompleteSource = AutoCompleteSource.ListItems;
-        }
-
-        private void textBox1_Leave(object sender, EventArgs e)
+        private void txtOT_Leave(object sender, EventArgs e)
         {
             int prueba = 0;
             bool isNum = Int32.TryParse(txtOT.Text.Trim(), out prueba);
@@ -120,19 +150,19 @@ namespace Aplicativo
                     else
                         textBox4.Text = registro;
                     textBox1.Text = placa;
-                    if(getEquipo(Int32.Parse(txtOT.Text.Trim())) != 0)
-                        comboBox5.SelectedValue = getEquipo(Int32.Parse(txtOT.Text.Trim()));    
+                    if (getEquipo(Int32.Parse(txtOT.Text.Trim())) != 0)
+                        comboBox5.SelectedValue = getEquipo(Int32.Parse(txtOT.Text.Trim()));
                     if (FSC.Equals("0"))
                         radioButton14.Checked = true;
                     else
                     {
                         radioButton13.Checked = true;
                         textBox6.Text = FSC;
-                    }                                               
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Orden de Trabajo no existe.","Error");
+                    MessageBox.Show("Orden de Trabajo no existe.", "Error");
                 }
             }
             else
@@ -202,6 +232,14 @@ namespace Aplicativo
             }
         }
 
+        private void radioButton28_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton28.Checked)
+                textBox36.Visible = true;
+            else
+                textBox36.Visible = false;
+        }
+
         private void radioButton13_CheckedChanged(object sender, EventArgs e)
         {
             if (radioButton13.Checked)
@@ -216,34 +254,46 @@ namespace Aplicativo
             }
         }
 
-        private void radioButton14_CheckedChanged(object sender, EventArgs e)
+        private void button5_Click(object sender, EventArgs e)
         {
+            txtModulo.Text = (Int32.Parse(txtModulo.Text) + 1) + "";
         }
 
-        private void radioButton28_CheckedChanged(object sender, EventArgs e)
+        public int getMaxID()
         {
-            if (radioButton28.Checked)
-                textBox36.Visible = true;
-            else
-                textBox36.Visible = false;
+            string query = "SELECT MAX(numPila) FROM reciboCliente WHERE pila = " + txtModulo.Text;
+            //Ejecutar el query y llenar el GridView.
+            conn.ConnectionString = connectionString;
+            OleDbCommand cmd = new OleDbCommand(query, conn);
+            cmd.Connection = conn;
+            conn.Open();
+            OleDbDataReader myReader = cmd.ExecuteReader();
+            int id = 0;
+            string value = "";
+            try
+            {
+                if (myReader.Read())
+                {
+                    value = myReader.GetValue(0).ToString();
+                    if (value.Equals(""))
+                        id = 0;
+                    else
+                        id = Int32.Parse(value);
+                }
+            }
+            finally
+            {
+                // always call Close when done reading.
+                myReader.Close();
+                // always call Close when done reading.
+                conn.Close();
+            }
+            return id;
         }
 
-        public string getEspecie(RadioButton r1, RadioButton r2, RadioButton r3, TextBox otro)
+        public bool existeAñoActual()
         {
-            string especie = "";
-            if (r1.Checked)
-                especie = "Melina";
-            else if (r2.Checked)
-                especie = "Teca";
-            else
-                especie = otro.Text;
-            return especie;
-        }
-
-        public double getVolumen(double diametro, double largo, int cantidad, string especie, string trailer, string raleo, string adf)
-        {
-            double volumen = 0;
-            string query = "SELECT Volumen FROM volumenCalculado WHERE Diametro = " + diametro.ToString().Replace(",", ".") + " AND Largo = " + largo.ToString().Replace(",", ".") + " AND Especie = '" + especie + "' AND Raleo = '" + raleo + "' AND Trailer = '" + trailer + "'";
+            string query = "SELECT * FROM reciboCliente WHERE numRecibo like '%" + DateTime.Now.Year + "%'";
             //Ejecutar el query y llenar el GridView.
             conn.ConnectionString = connectionString;
             OleDbCommand cmd = new OleDbCommand(query, conn);
@@ -254,11 +304,11 @@ namespace Aplicativo
             {
                 if (myReader.Read())
                 {
-                    volumen = double.Parse(myReader.GetValue(0).ToString()) * cantidad;
+                    return true;
                 }
                 else
                 {
-                    volumen = 0;
+                    return false;
                 }
             }
             finally
@@ -268,14 +318,13 @@ namespace Aplicativo
                 // always call Close when done reading.
                 conn.Close();
             }
-            return volumen;
         }
 
         public void agregarRecibo(int id)
         {
             conn.ConnectionString = connectionString;
             OleDbCommand cmd;
-            cmd = new OleDbCommand("INSERT INTO Recibo (Orden,Clasificacion,Motivo,Especie,volumenIngreso,volumenActual,Diametro,Largo,Cantidad,Lote,Ano,Area,Registro,Propietario,Proveedor,Conductor,Placa,Cliente,FSC,Fecha,Hora,Maquinaria,Modulo,numRecibo) VALUES (@Orden,@Clasificacion,@Motivo,@Especie,@volumenIngreso,@volumenActual,@Diametro,@Largo,@Cantidad,@Lote,@Ano,@Area,@Registro,@Propietario,@Proveedor,@Conductor,@Placa,@Cliente,@FSC,@Fecha,@Hora,@Maquinaria,@Modulo,@numRecibo)");
+            cmd = new OleDbCommand("INSERT INTO reciboCliente (Orden,Clasificacion,Motivo,Especie,volumenIngreso,volumenActual,Diametro,Largo,Cantidad,Lote,Ano,Area,Registro,Propietario,Proveedor,Conductor,Placa,Cliente,FSC,Fecha,Hora,Maquinaria,Pila,numRecibo,numPila) VALUES (@Orden,@Clasificacion,@Motivo,@Especie,@volumenIngreso,@volumenActual,@Diametro,@Largo,@Cantidad,@Lote,@Ano,@Area,@Registro,@Propietario,@Proveedor,@Conductor,@Placa,@Cliente,@FSC,@Fecha,@Hora,@Maquinaria,@Pila,@numRecibo,@numPila)");
             cmd.Connection = conn;
             conn.Open();
             if (conn.State == ConnectionState.Open)
@@ -317,8 +366,9 @@ namespace Aplicativo
                 cmd.Parameters.Add("@Fecha", OleDbType.VarChar).Value = dateTimePicker1.Value.ToString("dd") + "/" + dateTimePicker1.Value.ToString("MM") + "/" + dateTimePicker1.Value.Year;
                 cmd.Parameters.Add("@Hora", OleDbType.VarChar).Value = dateTimePicker2.Value.Hour + ":" + dateTimePicker2.Value.Minute;
                 cmd.Parameters.Add("@Maquinaria", OleDbType.VarChar).Value = comboBox5.SelectedValue;
-                cmd.Parameters.Add("@Modulo", OleDbType.VarChar).Value = txtModulo.Text;
-                cmd.Parameters.Add("@numRecibo", OleDbType.VarChar).Value = "R-" + id.ToString().PadLeft(4, '0') + "-" + DateTime.Now.Year;
+                cmd.Parameters.Add("@Pila", OleDbType.VarChar).Value = txtModulo.Text;
+                cmd.Parameters.Add("@numRecibo", OleDbType.VarChar).Value = "PILA-" + txtModulo.Text + "-" + id.ToString().PadLeft(4, '0') + "-" + DateTime.Now.Year;
+                cmd.Parameters.Add("@numPila", OleDbType.VarChar).Value = id;
                 try
                 {
                     cmd.ExecuteNonQuery();
@@ -337,11 +387,185 @@ namespace Aplicativo
             }
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int id = getMaxID();
+            if (!existeAñoActual())
+                id = 0;
+            agregarRecibo(id + 1);
+            Variables.cargar(dataGridView2, "SELECT * FROM reciboCliente WHERE volumenActual > 0 ORDER BY ID Desc");
+            Variables.cargar(dataGridView1, "SELECT * FROM reciboCliente WHERE (Month(Fecha) BETWEEN " + (DateTime.Now.Month - 3) + " AND " + (DateTime.Now.Month) + ") ORDER BY ID Desc");
+            Variables.cargar(dataGridView3, "SELECT * FROM reciboCliente WHERE Especie = 'Melina' AND volumenActual > 0 ORDER BY ID Desc");
+            Variables.cargar(dataGridView4, "SELECT * FROM reciboCliente WHERE Especie = 'Teca' AND volumenActual > 0 ORDER BY ID Desc");
+            Variables.cargar(dataGridView5, "SELECT * FROM reciboCliente WHERE Especie <> 'Melina' AND Especie <> 'Teca' AND volumenActual > 0 ORDER BY ID Desc");
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtOT.Text = dataGridView2.Rows[dataGridView2.CurrentCell.RowIndex].Cells[1].Value.ToString();
+            if (dataGridView2.Rows[dataGridView2.CurrentCell.RowIndex].Cells[2].Value.ToString().Equals("Transferencia de Material"))
+                radioButton1.Checked = true;
+            else if (dataGridView2.Rows[dataGridView2.CurrentCell.RowIndex].Cells[2].Value.ToString().Equals("Compra de Material"))
+                radioButton2.Checked = true;
+            else
+                radioButton3.Checked = true;
+            if (dataGridView2.Rows[dataGridView2.CurrentCell.RowIndex].Cells[3].Value.ToString().Equals("Entresaca"))
+                radioButton6.Checked = true;
+            else if (dataGridView2.Rows[dataGridView2.CurrentCell.RowIndex].Cells[3].Value.ToString().Equals("Tala Raza"))
+                radioButton5.Checked = true;
+            else
+                radioButton7.Checked = true;
+            if (dataGridView2.Rows[dataGridView2.CurrentCell.RowIndex].Cells[4].Value.ToString().Equals("Melina"))
+                radioButton18.Checked = true;
+            else if (dataGridView2.Rows[dataGridView2.CurrentCell.RowIndex].Cells[4].Value.ToString().Equals("Teca"))
+                radioButton17.Checked = true;
+            else
+            {
+                radioButton28.Checked = true;
+                textBox36.Text = dataGridView2.Rows[dataGridView2.CurrentCell.RowIndex].Cells[4].Value.ToString();
+            }
+            textBox38.Text = dataGridView2.Rows[dataGridView2.CurrentCell.RowIndex].Cells[5].Value.ToString();
+            textBox5.Text = dataGridView2.Rows[dataGridView2.CurrentCell.RowIndex].Cells[6].Value.ToString();
+            textBox41.Text = dataGridView2.Rows[dataGridView2.CurrentCell.RowIndex].Cells[7].Value.ToString();
+            textBox40.Text = dataGridView2.Rows[dataGridView2.CurrentCell.RowIndex].Cells[8].Value.ToString();
+            textBox39.Text = dataGridView2.Rows[dataGridView2.CurrentCell.RowIndex].Cells[9].Value.ToString();
+            comboBox1.SelectedValue = dataGridView2.Rows[dataGridView2.CurrentCell.RowIndex].Cells[10].Value.ToString();
+            textBox3.Text = dataGridView2.Rows[dataGridView2.CurrentCell.RowIndex].Cells[11].Value.ToString();
+            textBox2.Text = dataGridView2.Rows[dataGridView2.CurrentCell.RowIndex].Cells[12].Value.ToString();
+            textBox4.Text = dataGridView2.Rows[dataGridView2.CurrentCell.RowIndex].Cells[13].Value.ToString();
+            comboBox2.SelectedValue = dataGridView2.Rows[dataGridView2.CurrentCell.RowIndex].Cells[14].Value.ToString();
+            comboBox3.SelectedValue = dataGridView2.Rows[dataGridView2.CurrentCell.RowIndex].Cells[15].Value.ToString();
+            comboBox6.SelectedValue = dataGridView2.Rows[dataGridView2.CurrentCell.RowIndex].Cells[16].Value.ToString();
+            textBox1.Text = dataGridView2.Rows[dataGridView2.CurrentCell.RowIndex].Cells[17].Value.ToString();
+            comboBox4.SelectedValue = dataGridView2.Rows[dataGridView2.CurrentCell.RowIndex].Cells[18].Value.ToString();
+            textBox6.Text = dataGridView2.Rows[dataGridView2.CurrentCell.RowIndex].Cells[19].Value.ToString();
+            if (textBox6.Equals("0"))
+                radioButton14.Checked = true;
+            dateTimePicker1.Value = DateTime.Parse(dataGridView2.Rows[dataGridView2.CurrentCell.RowIndex].Cells[20].Value.ToString());
+            dateTimePicker2.Value = DateTime.Parse(dataGridView2.Rows[dataGridView2.CurrentCell.RowIndex].Cells[21].Value.ToString());
+            comboBox5.SelectedValue = dataGridView2.Rows[dataGridView2.CurrentCell.RowIndex].Cells[22].Value.ToString();
+            txtModulo.Text = dataGridView2.Rows[dataGridView2.CurrentCell.RowIndex].Cells[23].Value.ToString();
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtOT.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[1].Value.ToString();
+            if (dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[2].Value.ToString().Equals("Transferencia de Material"))
+                radioButton1.Checked = true;
+            else if (dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[2].Value.ToString().Equals("Compra de Material"))
+                radioButton2.Checked = true;
+            else
+                radioButton3.Checked = true;
+            if (dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[3].Value.ToString().Equals("Entresaca"))
+                radioButton6.Checked = true;
+            else if (dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[3].Value.ToString().Equals("Tala Raza"))
+                radioButton5.Checked = true;
+            else
+                radioButton7.Checked = true;
+            if (dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[4].Value.ToString().Equals("Melina"))
+                radioButton18.Checked = true;
+            else if (dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[4].Value.ToString().Equals("Teca"))
+                radioButton17.Checked = true;
+            else
+            {
+                radioButton28.Checked = true;
+                textBox36.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[4].Value.ToString();
+            }
+            textBox38.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[5].Value.ToString();
+            textBox5.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[6].Value.ToString();
+            textBox41.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[7].Value.ToString();
+            textBox40.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[8].Value.ToString();
+            textBox39.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[9].Value.ToString();
+            comboBox1.SelectedValue = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[10].Value.ToString();
+            textBox3.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[11].Value.ToString();
+            textBox2.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[12].Value.ToString();
+            textBox4.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[13].Value.ToString();
+            comboBox2.SelectedValue = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[14].Value.ToString();
+            comboBox3.SelectedValue = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[15].Value.ToString();
+            comboBox6.SelectedValue = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[16].Value.ToString();
+            textBox1.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[17].Value.ToString();
+            comboBox4.SelectedValue = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[18].Value.ToString();
+            textBox6.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[19].Value.ToString();
+            if (textBox6.Equals("0"))
+                radioButton14.Checked = true;
+            dateTimePicker1.Value = DateTime.Parse(dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[20].Value.ToString());
+            dateTimePicker2.Value = DateTime.Parse(dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[21].Value.ToString());
+            comboBox5.SelectedValue = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[22].Value.ToString();
+            txtModulo.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[23].Value.ToString();
+        }
+
+        public void clickDataGridView(DataGridView dataGridView1)
+        {
+            txtOT.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[1].Value.ToString();
+            if (dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[2].Value.ToString().Equals("Transferencia de Material"))
+                radioButton1.Checked = true;
+            else if (dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[2].Value.ToString().Equals("Compra de Material"))
+                radioButton2.Checked = true;
+            else
+                radioButton3.Checked = true;
+            if (dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[3].Value.ToString().Equals("Entresaca"))
+                radioButton6.Checked = true;
+            else if (dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[3].Value.ToString().Equals("Tala Raza"))
+                radioButton5.Checked = true;
+            else
+                radioButton7.Checked = true;
+            if (dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[4].Value.ToString().Equals("Melina"))
+                radioButton18.Checked = true;
+            else if (dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[4].Value.ToString().Equals("Teca"))
+                radioButton17.Checked = true;
+            else
+            {
+                radioButton28.Checked = true;
+                textBox36.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[4].Value.ToString();
+            }
+            textBox38.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[5].Value.ToString();
+            textBox5.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[6].Value.ToString();
+            textBox41.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[7].Value.ToString();
+            textBox40.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[8].Value.ToString();
+            textBox39.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[9].Value.ToString();
+            comboBox1.SelectedValue = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[10].Value.ToString();
+            textBox3.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[11].Value.ToString();
+            textBox2.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[12].Value.ToString();
+            textBox4.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[13].Value.ToString();
+            comboBox2.SelectedValue = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[14].Value.ToString();
+            comboBox3.SelectedValue = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[15].Value.ToString();
+            comboBox6.SelectedValue = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[16].Value.ToString();
+            textBox1.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[17].Value.ToString();
+            comboBox4.SelectedValue = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[18].Value.ToString();
+            textBox6.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[19].Value.ToString();
+            if (textBox6.Equals("0"))
+                radioButton14.Checked = true;
+            dateTimePicker1.Value = DateTime.Parse(dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[20].Value.ToString());
+            dateTimePicker2.Value = DateTime.Parse(dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[21].Value.ToString());
+            comboBox5.SelectedValue = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[22].Value.ToString();
+            txtModulo.Text = dataGridView3.Rows[dataGridView3.CurrentCell.RowIndex].Cells[23].Value.ToString();
+        }
+
+        private void dataGridView3_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            clickDataGridView(dataGridView3);
+        }
+
+        private void dataGridView4_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            clickDataGridView(dataGridView4);
+        }
+
+        private void dataGridView5_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            clickDataGridView(dataGridView5);
+        }
+
         public void modificarRecibo(string recibo)
         {
             conn.ConnectionString = connectionString;
             OleDbCommand cmd;
-            cmd = new OleDbCommand("UPDATE Recibo SET Orden=@Orden,Clasificacion=@Clasificacion,Motivo=@Motivo,Especie=@Especie,volumenIngreso=@volumenIngreso,volumenActual=@volumenActual,Diametro=@Diametro,Largo=@Largo,Cantidad=@Cantidad,Lote=@Lote,Ano=@Ano,Area=@Area,Registro=@Registro,Propietario=@Propietario,Proveedor=@Proveedor,Conductor=@Conductor,Placa=@Placa,Cliente=@Cliente,FSC=@FSC,Fecha=@Fecha,Hora=@Hora,Maquinaria=@Maquinaria,Modulo=@Modulo WHERE ID = " + recibo);
+            cmd = new OleDbCommand("UPDATE reciboCliente SET Orden=@Orden,Clasificacion=@Clasificacion,Motivo=@Motivo,Especie=@Especie,volumenIngreso=@volumenIngreso,volumenActual=@volumenActual,Diametro=@Diametro,Largo=@Largo,Cantidad=@Cantidad,Lote=@Lote,Ano=@Ano,Area=@Area,Registro=@Registro,Propietario=@Propietario,Proveedor=@Proveedor,Conductor=@Conductor,Placa=@Placa,Cliente=@Cliente,FSC=@FSC,Fecha=@Fecha,Hora=@Hora,Maquinaria=@Maquinaria,Pila=@Pila WHERE ID = " + recibo);
             cmd.Connection = conn;
             conn.Open();
             if (conn.State == ConnectionState.Open)
@@ -402,233 +626,47 @@ namespace Aplicativo
             }
         }
 
-        public string getRaleo(RadioButton r1, RadioButton r2, RadioButton r3)
-        {
-            string raleo = "";
-            if (r1.Checked)
-                raleo = "Entresaca";
-            else if (r2.Checked)
-                raleo = "Tala Raza";
-            else
-                raleo = "Recuperacion de Material";
-            return raleo;
-        }
-
-        public string getTrailer(RadioButton r1, RadioButton r2, RadioButton r3, RadioButton r4, RadioButton r5)
-        {
-            string trailer = "";
-            if(r1.Checked)
-                trailer = "Farmi Primero 9000";
-            else if (r2.Checked)
-                trailer = "Pfanzelt 15100";
-            else if (r3.Checked)
-                trailer = "Camion 600";
-            else if (r4.Checked)
-                trailer = "Camion Doble Torque";
-            else
-                trailer = "Tractomula";
-            return trailer;
-        }
-
-        private void textBox38_Enter(object sender, EventArgs e)
-        {
-            if (!textBox41.Text.Equals("") && !textBox40.Text.Equals("") && !textBox39.Text.Equals(""))
-            {
-                string raleo = "", especie = "", trailer = "";
-                raleo = getRaleo(radioButton6, radioButton5, radioButton7);
-                especie = getEspecie(radioButton18, radioButton17, radioButton28, textBox36);
-                trailer = getTrailer(radioButton9, radioButton8, radioButton4, radioButton11, radioButton10);
-                textBox38.Text = getVolumen(double.Parse(textBox41.Text), double.Parse(textBox40.Text), Int32.Parse(textBox39.Text), especie, trailer, raleo, "ADF012").ToString();
-            }
-        }
-
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            if (!comboBox1.Text.Equals(""))
-            {
-                Directory.CreateDirectory("C:\\Users\\" + Environment.UserName + "\\Dropbox\\Lotes\\" + comboBox1.Text + "\\Registro");
-                string[] prueba = Directory.GetFiles("C:\\Users\\" + Environment.UserName + "\\Dropbox\\Lotes\\" + comboBox1.Text + "\\Registro", "Registro*");
-                if (prueba.Length > 0)
-                {
-                    if (File.Exists(prueba[0]))
-                    {
-                        System.Diagnostics.Process.Start(prueba[0]);
-                    }
-                    else
-                    {
-                        MessageBox.Show("No se encuentra el archivo.", "Error");
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("No se encuentra el archivo.", "Error");
-                }
-            }
-        }
-
-        public bool existeAñoActual()
-        {
-            string query = "SELECT * FROM Recibo WHERE numRecibo like '%" + DateTime.Now.Year + "%'";
-            //Ejecutar el query y llenar el GridView.
-            conn.ConnectionString = connectionString;
-            OleDbCommand cmd = new OleDbCommand(query, conn);
-            cmd.Connection = conn;
-            conn.Open();
-            OleDbDataReader myReader = cmd.ExecuteReader();
-            try
-            {
-                if (myReader.Read())
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-            finally
-            {
-                // always call Close when done reading.
-                myReader.Close();
-                // always call Close when done reading.
-                conn.Close();
-            }
-        }
-
-        public int getMaxID()
-        {
-            string query = "SELECT MAX(ID) FROM Recibo";
-            //Ejecutar el query y llenar el GridView.
-            conn.ConnectionString = connectionString;
-            OleDbCommand cmd = new OleDbCommand(query, conn);
-            cmd.Connection = conn;
-            conn.Open();
-            OleDbDataReader myReader = cmd.ExecuteReader();
-            int id = 0;
-            string value = "";
-            try
-            {
-                if (myReader.Read())
-                {
-                    value = myReader.GetValue(0).ToString();
-                    if (value.Equals(""))
-                        id = 0;
-                    else
-                        id = Int32.Parse(value);
-                }
-            }
-            finally
-            {
-                // always call Close when done reading.
-                myReader.Close();
-                // always call Close when done reading.
-                conn.Close();
-            }
-            return id;
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            int id = getMaxID();
-            if (!existeAñoActual())
-                id = 0;   
-            agregarRecibo(id+1);
-            Variables.cargar(dataGridView2, "SELECT * FROM Recibo WHERE volumenActual > 0 ORDER BY ID Desc");
-            Variables.cargar(dataGridView1, "SELECT * FROM Recibo WHERE (Month(Fecha) BETWEEN " + (DateTime.Now.Month - 3) + " AND " + (DateTime.Now.Month) + ") ORDER BY ID Desc");
-            Variables.cargar(dataGridView3, "SELECT * FROM Recibo WHERE Especie = 'Melina' AND volumenActual > 0 ORDER BY ID Desc");
-            Variables.cargar(dataGridView4, "SELECT * FROM Recibo WHERE Especie = 'Teca' AND volumenActual > 0 ORDER BY ID Desc");
-            Variables.cargar(dataGridView5, "SELECT * FROM Recibo WHERE Especie <> 'Melina' AND Especie <> 'Teca' AND volumenActual > 0 ORDER BY ID Desc");
-            //dataGridView5.Columns[0].Visible = true;
-            //dataGridView4.Columns[0].Visible = true;
-            //dataGridView3.Columns[0].Visible = true;
-            //dataGridView2.Columns[0].Visible = true;
-            //dataGridView1.Columns[0].Visible = true;
-        }
-
-        private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            txtOT.Text = dataGridView2.Rows[dataGridView2.CurrentCell.RowIndex].Cells[1].Value.ToString();
-            if (dataGridView2.Rows[dataGridView2.CurrentCell.RowIndex].Cells[2].Value.ToString().Equals("Transferencia de Material"))
-                radioButton1.Checked = true;
-            else if (dataGridView2.Rows[dataGridView2.CurrentCell.RowIndex].Cells[2].Value.ToString().Equals("Compra de Material"))
-                radioButton2.Checked = true;
-            else
-                radioButton3.Checked = true;
-            if (dataGridView2.Rows[dataGridView2.CurrentCell.RowIndex].Cells[3].Value.ToString().Equals("Entresaca"))
-                radioButton6.Checked = true;
-            else if (dataGridView2.Rows[dataGridView2.CurrentCell.RowIndex].Cells[3].Value.ToString().Equals("Tala Raza"))
-                radioButton5.Checked = true;
-            else
-                radioButton7.Checked = true;
-            if (dataGridView2.Rows[dataGridView2.CurrentCell.RowIndex].Cells[4].Value.ToString().Equals("Melina"))
-                radioButton18.Checked = true;
-            else if (dataGridView2.Rows[dataGridView2.CurrentCell.RowIndex].Cells[4].Value.ToString().Equals("Teca"))
-                radioButton17.Checked = true;
-            else
-            {
-                radioButton28.Checked = true;
-                textBox36.Text = dataGridView2.Rows[dataGridView2.CurrentCell.RowIndex].Cells[4].Value.ToString();
-            }
-            textBox38.Text = dataGridView2.Rows[dataGridView2.CurrentCell.RowIndex].Cells[5].Value.ToString();
-            textBox5.Text = dataGridView2.Rows[dataGridView2.CurrentCell.RowIndex].Cells[6].Value.ToString();
-            textBox41.Text = dataGridView2.Rows[dataGridView2.CurrentCell.RowIndex].Cells[7].Value.ToString();
-            textBox40.Text = dataGridView2.Rows[dataGridView2.CurrentCell.RowIndex].Cells[8].Value.ToString();
-            textBox39.Text = dataGridView2.Rows[dataGridView2.CurrentCell.RowIndex].Cells[9].Value.ToString(); 
-            comboBox1.SelectedValue = dataGridView2.Rows[dataGridView2.CurrentCell.RowIndex].Cells[10].Value.ToString(); 
-            textBox3.Text = dataGridView2.Rows[dataGridView2.CurrentCell.RowIndex].Cells[11].Value.ToString(); 
-            textBox2.Text = dataGridView2.Rows[dataGridView2.CurrentCell.RowIndex].Cells[12].Value.ToString();
-            textBox4.Text = dataGridView2.Rows[dataGridView2.CurrentCell.RowIndex].Cells[13].Value.ToString();
-            comboBox2.SelectedValue = dataGridView2.Rows[dataGridView2.CurrentCell.RowIndex].Cells[14].Value.ToString(); 
-            comboBox3.SelectedValue = dataGridView2.Rows[dataGridView2.CurrentCell.RowIndex].Cells[15].Value.ToString(); 
-            comboBox6.SelectedValue = dataGridView2.Rows[dataGridView2.CurrentCell.RowIndex].Cells[16].Value.ToString(); 
-            textBox1.Text = dataGridView2.Rows[dataGridView2.CurrentCell.RowIndex].Cells[17].Value.ToString(); 
-            comboBox4.SelectedValue = dataGridView2.Rows[dataGridView2.CurrentCell.RowIndex].Cells[18].Value.ToString(); 
-            textBox6.Text = dataGridView2.Rows[dataGridView2.CurrentCell.RowIndex].Cells[19].Value.ToString();
-            if (textBox6.Equals("0"))
-                radioButton14.Checked = true;
-            dateTimePicker1.Value = DateTime.Parse(dataGridView2.Rows[dataGridView2.CurrentCell.RowIndex].Cells[20].Value.ToString());
-            dateTimePicker2.Value = DateTime.Parse(dataGridView2.Rows[dataGridView2.CurrentCell.RowIndex].Cells[21].Value.ToString());
-            comboBox5.SelectedValue = dataGridView2.Rows[dataGridView2.CurrentCell.RowIndex].Cells[22].Value.ToString();
-            txtModulo.Text = dataGridView2.Rows[dataGridView2.CurrentCell.RowIndex].Cells[23].Value.ToString();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void button3_Click(object sender, EventArgs e)
         {
             if (tabControl1.SelectedIndex == 0)
                 modificarRecibo(dataGridView2.Rows[dataGridView2.CurrentCell.RowIndex].Cells[0].Value.ToString());
-            else
+            else if (tabControl1.SelectedIndex == 1)
                 modificarRecibo(dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[0].Value.ToString());
-            Variables.cargar(dataGridView2, "SELECT * FROM Recibo WHERE volumenActual > 0 ORDER BY ID Desc");
-            Variables.cargar(dataGridView1, "SELECT * FROM Recibo WHERE (Month(Fecha) BETWEEN " + (DateTime.Now.Month - 3) + " AND " + (DateTime.Now.Month) + ") ORDER BY ID Desc");
-            Variables.cargar(dataGridView3, "SELECT * FROM Recibo WHERE Especie = 'Melina' AND volumenActual > 0 ORDER BY ID Desc");
-            Variables.cargar(dataGridView4, "SELECT * FROM Recibo WHERE Especie = 'Teca' AND volumenActual > 0 ORDER BY ID Desc");
-            Variables.cargar(dataGridView5, "SELECT * FROM Recibo WHERE Especie <> 'Melina' AND Especie <> 'Teca' AND volumenActual > 0 ORDER BY ID Desc");
-            //dataGridView2.Columns[0].Visible = true;
-            //dataGridView1.Columns[0].Visible = true;
+            else if (tabControl1.SelectedIndex == 2)
+                modificarRecibo(dataGridView3.Rows[dataGridView3.CurrentCell.RowIndex].Cells[0].Value.ToString());
+            else if (tabControl1.SelectedIndex == 3)
+                modificarRecibo(dataGridView4.Rows[dataGridView4.CurrentCell.RowIndex].Cells[0].Value.ToString());
+            else
+                modificarRecibo(dataGridView5.Rows[dataGridView5.CurrentCell.RowIndex].Cells[0].Value.ToString());
+            Variables.cargar(dataGridView2, "SELECT * FROM reciboCliente WHERE volumenActual > 0 ORDER BY ID Desc");
+            Variables.cargar(dataGridView1, "SELECT * FROM reciboCliente WHERE (Month(Fecha) BETWEEN " + (DateTime.Now.Month - 3) + " AND " + (DateTime.Now.Month) + ") ORDER BY ID Desc");
+            Variables.cargar(dataGridView3, "SELECT * FROM reciboCliente WHERE Especie = 'Melina' AND volumenActual > 0 ORDER BY ID Desc");
+            Variables.cargar(dataGridView4, "SELECT * FROM reciboCliente WHERE Especie = 'Teca' AND volumenActual > 0 ORDER BY ID Desc");
+            Variables.cargar(dataGridView5, "SELECT * FROM reciboCliente WHERE Especie <> 'Melina' AND Especie <> 'Teca' AND volumenActual > 0 ORDER BY ID Desc");
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             DialogResult dialogResult = new DialogResult();
-            if(tabControl1.SelectedIndex == 0)
+            if (tabControl1.SelectedIndex == 0)
                 dialogResult = System.Windows.Forms.MessageBox.Show("Seguro de eliminar el recibo # " + dataGridView2.Rows[dataGridView2.CurrentCell.RowIndex].Cells[1].Value.ToString() + "?", "Confirmar", MessageBoxButtons.YesNo);
-            else
+            else if (tabControl1.SelectedIndex == 1)
                 dialogResult = System.Windows.Forms.MessageBox.Show("Seguro de eliminar el recibo # " + dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[1].Value.ToString() + "?", "Confirmar", MessageBoxButtons.YesNo);
-
+            else if (tabControl1.SelectedIndex == 2)
+                dialogResult = System.Windows.Forms.MessageBox.Show("Seguro de eliminar el recibo # " + dataGridView3.Rows[dataGridView3.CurrentCell.RowIndex].Cells[1].Value.ToString() + "?", "Confirmar", MessageBoxButtons.YesNo);
+            else if (tabControl1.SelectedIndex == 3)
+                dialogResult = System.Windows.Forms.MessageBox.Show("Seguro de eliminar el recibo # " + dataGridView4.Rows[dataGridView4.CurrentCell.RowIndex].Cells[1].Value.ToString() + "?", "Confirmar", MessageBoxButtons.YesNo);
+            else
+                dialogResult = System.Windows.Forms.MessageBox.Show("Seguro de eliminar el recibo # " + dataGridView5.Rows[dataGridView5.CurrentCell.RowIndex].Cells[1].Value.ToString() + "?", "Confirmar", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
                 string id = "";
-                if(tabControl1.SelectedIndex == 0)
+                if (tabControl1.SelectedIndex == 0)
                     id = dataGridView2.Rows[dataGridView2.CurrentCell.RowIndex].Cells[0].Value.ToString();
                 else
                     id = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[0].Value.ToString();
                 conn.ConnectionString = connectionString;
-                OleDbCommand cmd = new OleDbCommand("DELETE FROM Recibo WHERE id = " + id);
+                OleDbCommand cmd = new OleDbCommand("DELETE FROM reciboCliente WHERE id = " + id);
                 cmd.Connection = conn;
                 conn.Open();
 
@@ -650,126 +688,13 @@ namespace Aplicativo
                 {
                     MessageBox.Show("Connection Failed");
                 }
-                Variables.cargar(dataGridView2, "SELECT * FROM Recibo WHERE volumenActual > 0 ORDER BY ID Desc");
-                Variables.cargar(dataGridView1, "SELECT * FROM Recibo WHERE (Month(Fecha) BETWEEN " + (DateTime.Now.Month - 3) + " AND " + (DateTime.Now.Month) + ") ORDER BY ID Desc");
-                Variables.cargar(dataGridView3, "SELECT * FROM Recibo WHERE Especie = 'Melina' AND volumenActual > 0 ORDER BY ID Desc");
-                Variables.cargar(dataGridView4, "SELECT * FROM Recibo WHERE Especie = 'Teca' AND volumenActual > 0 ORDER BY ID Desc");
-                Variables.cargar(dataGridView5, "SELECT * FROM Recibo WHERE Especie <> 'Melina' AND Especie <> 'Teca' AND volumenActual > 0 ORDER BY ID Desc");
+                Variables.cargar(dataGridView2, "SELECT * FROM reciboCliente WHERE volumenActual > 0 ORDER BY ID Desc");
+                Variables.cargar(dataGridView1, "SELECT * FROM reciboCliente WHERE (Month(Fecha) BETWEEN " + (DateTime.Now.Month - 3) + " AND " + (DateTime.Now.Month) + ") ORDER BY ID Desc");
+                Variables.cargar(dataGridView3, "SELECT * FROM reciboCliente WHERE Especie = 'Melina' AND volumenActual > 0 ORDER BY ID Desc");
+                Variables.cargar(dataGridView4, "SELECT * FROM reciboCliente WHERE Especie = 'Teca' AND volumenActual > 0 ORDER BY ID Desc");
+                Variables.cargar(dataGridView5, "SELECT * FROM reciboCliente WHERE Especie <> 'Melina' AND Especie <> 'Teca' AND volumenActual > 0 ORDER BY ID Desc");
             }
         }
 
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            txtOT.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[1].Value.ToString();
-            if (dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[2].Value.ToString().Equals("Transferencia de Material"))
-                radioButton1.Checked = true;
-            else if (dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[2].Value.ToString().Equals("Compra de Material"))
-                radioButton2.Checked = true;
-            else
-                radioButton3.Checked = true;
-            if (dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[3].Value.ToString().Equals("Entresaca"))
-                radioButton6.Checked = true;
-            else if (dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[3].Value.ToString().Equals("Tala Raza"))
-                radioButton5.Checked = true;
-            else
-                radioButton7.Checked = true;
-            if (dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[4].Value.ToString().Equals("Melina"))
-                radioButton18.Checked = true;
-            else if (dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[4].Value.ToString().Equals("Teca"))
-                radioButton17.Checked = true;
-            else
-            {
-                radioButton28.Checked = true;
-                textBox36.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[4].Value.ToString();
-            }
-            textBox38.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[5].Value.ToString();
-            textBox5.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[6].Value.ToString();
-            textBox41.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[7].Value.ToString();
-            textBox40.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[8].Value.ToString();
-            textBox39.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[9].Value.ToString();
-            comboBox1.SelectedValue = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[10].Value.ToString();
-            textBox3.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[11].Value.ToString();
-            textBox2.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[12].Value.ToString();
-            textBox4.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[13].Value.ToString();
-            comboBox2.SelectedValue = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[14].Value.ToString();
-            comboBox3.SelectedValue = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[15].Value.ToString();
-            comboBox6.SelectedValue = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[16].Value.ToString();
-            textBox1.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[17].Value.ToString();
-            comboBox4.SelectedValue = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[18].Value.ToString();
-            textBox6.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[19].Value.ToString();
-            if (textBox6.Equals("0"))
-                radioButton14.Checked = true;
-            dateTimePicker1.Value = DateTime.Parse(dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[20].Value.ToString());
-            dateTimePicker2.Value = DateTime.Parse(dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[21].Value.ToString());
-            comboBox5.SelectedValue = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[22].Value.ToString();
-            txtModulo.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[23].Value.ToString();
-        }
-
-        private void dataGridView3_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            clickDataGridView(dataGridView3);
-        }
-
-        public void clickDataGridView(DataGridView dataGridView1)
-        {
-                        txtOT.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[1].Value.ToString();
-            if (dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[2].Value.ToString().Equals("Transferencia de Material"))
-                radioButton1.Checked = true;
-            else if (dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[2].Value.ToString().Equals("Compra de Material"))
-                radioButton2.Checked = true;
-            else
-                radioButton3.Checked = true;
-            if (dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[3].Value.ToString().Equals("Entresaca"))
-                radioButton6.Checked = true;
-            else if (dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[3].Value.ToString().Equals("Tala Raza"))
-                radioButton5.Checked = true;
-            else
-                radioButton7.Checked = true;
-            if (dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[4].Value.ToString().Equals("Melina"))
-                radioButton18.Checked = true;
-            else if (dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[4].Value.ToString().Equals("Teca"))
-                radioButton17.Checked = true;
-            else
-            {
-                radioButton28.Checked = true;
-                textBox36.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[4].Value.ToString();
-            }
-            textBox38.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[5].Value.ToString();
-            textBox5.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[6].Value.ToString();
-            textBox41.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[7].Value.ToString();
-            textBox40.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[8].Value.ToString();
-            textBox39.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[9].Value.ToString();
-            comboBox1.SelectedValue = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[10].Value.ToString();
-            textBox3.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[11].Value.ToString();
-            textBox2.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[12].Value.ToString();
-            textBox4.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[13].Value.ToString();
-            comboBox2.SelectedValue = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[14].Value.ToString();
-            comboBox3.SelectedValue = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[15].Value.ToString();
-            comboBox6.SelectedValue = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[16].Value.ToString();
-            textBox1.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[17].Value.ToString();
-            comboBox4.SelectedValue = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[18].Value.ToString();
-            textBox6.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[19].Value.ToString();
-            if (textBox6.Equals("0"))
-                radioButton14.Checked = true;
-            dateTimePicker1.Value = DateTime.Parse(dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[20].Value.ToString());
-            dateTimePicker2.Value = DateTime.Parse(dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[21].Value.ToString());
-            comboBox5.SelectedValue = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[22].Value.ToString();
-            txtModulo.Text = dataGridView3.Rows[dataGridView3.CurrentCell.RowIndex].Cells[23].Value.ToString();
-        }
-
-        private void dataGridView4_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            clickDataGridView(dataGridView4);
-        }
-
-        private void dataGridView5_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            clickDataGridView(dataGridView5);
-        }
-
-        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

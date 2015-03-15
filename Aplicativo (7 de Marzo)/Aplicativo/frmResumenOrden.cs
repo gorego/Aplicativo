@@ -49,7 +49,10 @@ namespace Aplicativo
                         cargarADFJornal(dataGridView3, orden);
                         cargarCostosDiarios(dataGridView3);
                         dataGridView3.Columns[dataGridView3.Columns.Count - 1].DefaultCellStyle.Format = "c";
-                        label2.Text ="Dias totales : " + diasTotales.ToString() + " dias    Costo: " + String.Format("{0:c}", (getCostoData(dataGridView3)));
+                        if(Variables.tipo == 1)
+                            label2.Text ="Dias totales : " + diasTotales.ToString() + " dias    Costo: " + String.Format("{0:c}", (getCostoData(dataGridView3)));
+                        else
+                            label2.Text = "Dias totales : " + diasTotales.ToString();
                     }
                     else if (tabControl1.TabPages[i].Text.Equals("ADF003"))
                     {
@@ -169,8 +172,29 @@ namespace Aplicativo
                     else if (tabControl1.TabPages[i].Text.Equals("ADF019"))
                     {
                     }
+                    if (Variables.tipo != 1)
+                    {
+                        dataGridView3.Columns[dataGridView3.Columns.Count - 1].Visible = false;
+                        groupBox3.Visible = false;
+                        groupBox4.Visible = false;
+                        ocultarPrecio(dataGridView1, label4);
+                        ocultarPrecio(dataGridView2, label5);
+                        ocultarPrecio(dataGridView4, label3);
+                        ocultarPrecio(dataGridView9, label9);
+                        ocultarPrecio(dataGridView13, label12);
+                        ocultarPrecio(dataGridView15, label10);
+                        ocultarPrecio(dataGridView16, label13);
+                        ocultarPrecio(dataGridView17, label14);
+                        linkLabel1.Enabled = false;
+                    }
                 }
             }
+        }
+
+        public void ocultarPrecio(DataGridView data, Label label){
+            data.Columns[data.Columns.Count - 1].Visible = false;
+            data.Columns[data.Columns.Count - 2].Visible = false;
+            label.Visible = false;
         }
 
         public void cargarCostoEquipoADF(DataGridView data)
