@@ -25,14 +25,14 @@ namespace Aplicativo
         {
             if (radioButton1.Checked)
             {
-                frmCrearDespacho newFrm = new frmCrearDespacho(0);
+                frmCrearDespacho newFrm = new frmCrearDespacho(0,-1);
                 this.Hide();
                 newFrm.ShowDialog();
                 this.Close();
             }
             else
             {
-                frmCrearDespacho newFrm = new frmCrearDespacho(1);
+                frmCrearDespacho newFrm = new frmCrearDespacho(1,-1);
                 this.Hide();
                 newFrm.ShowDialog();
                 this.Close();

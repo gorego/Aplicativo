@@ -1009,5 +1009,20 @@ namespace Aplicativo
             frmResumenProcesamiento newFrm = new frmResumenProcesamiento(OP, dias, tipousuario);
             newFrm.Show();
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
     }
 }

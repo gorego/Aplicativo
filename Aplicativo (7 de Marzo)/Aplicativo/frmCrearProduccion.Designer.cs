@@ -498,6 +498,7 @@
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Certificado #:";
             this.linkLabel1.Visible = false;
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // button6
             // 
@@ -508,6 +509,7 @@
             this.button6.Text = "Examinar";
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Visible = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // textBox4
             // 
@@ -517,6 +519,7 @@
             this.textBox4.Size = new System.Drawing.Size(200, 20);
             this.textBox4.TabIndex = 84;
             this.textBox4.Visible = false;
+            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // groupBox3
             // 
