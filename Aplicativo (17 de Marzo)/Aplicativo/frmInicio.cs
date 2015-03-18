@@ -293,7 +293,7 @@ namespace Aplicativo
 
         private void linkLabel22_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            frmRecibos newFrm = new frmRecibos();
+            frmRecibos newFrm = new frmRecibos(0);
             newFrm.Show();
         }
 
@@ -312,6 +312,12 @@ namespace Aplicativo
         private void linkLabel24_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             frmDespacho newFrm = new frmDespacho();
+            newFrm.Show();
+        }
+
+        private void linkLabel25_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frmRecibos newFrm = new frmRecibos(1);
             newFrm.Show();
         }
 

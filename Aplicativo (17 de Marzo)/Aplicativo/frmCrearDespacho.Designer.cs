@@ -366,6 +366,7 @@
             this.button2.TabIndex = 30;
             this.button2.Text = "Registrar Recibos de Pila";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // dataGridView1
             // 
@@ -1468,6 +1469,7 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Crear Despacho";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmCrearDespacho_FormClosing);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();

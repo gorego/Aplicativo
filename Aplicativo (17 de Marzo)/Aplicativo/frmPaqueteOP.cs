@@ -37,7 +37,7 @@ namespace Aplicativo
         public frmPaqueteOP(string producto)
         {
             InitializeComponent();
-            Variables.cargar(dataGridView14, "SELECT paq.ID, paq.Id, paq.numPaquete, prod.Codigo, paq.Bodega, paq.numPiezas, paq.dia, (Avg(info.ancho1)+Avg(info.ancho2))/2 AS Expr1, (Avg(info.alto1)+Avg(info.alto2))/2 AS Expr2, paq.Fecha, paq.Hora, h.OP, paq.OP FROM ((Paquete AS paq INNER JOIN Productos AS prod ON paq.Producto = prod.ID) INNER JOIN infoPaquete AS info ON paq.Id = info.Paquete) INNER JOIN historicoProduccion AS h ON paq.OP = h.ID WHERE (((paq.Producto)= " + producto + ")) AND paq.Parcial = 0 GROUP BY paq.Id, paq.numPaquete, prod.Codigo, paq.Bodega, paq.numPiezas, paq.dia, paq.Fecha, paq.Hora, paq.porcentaje, h.OP, paq.OP;");
+            Variables.cargar(dataGridView14, "SELECT paq.ID, paq.Id, paq.numPaquete, prod.Codigo, paq.Bodega, paq.numPiezas, paq.dia, (Avg(info.ancho1)+Avg(info.ancho2))/2 AS Expr1, (Avg(info.alto1)+Avg(info.alto2))/2 AS Expr2, paq.Fecha, paq.Hora, h.OP, paq.OP FROM ((Paquete AS paq INNER JOIN Productos AS prod ON paq.Producto = prod.ID) INNER JOIN infoPaquete AS info ON paq.Id = info.Paquete) INNER JOIN historicoProduccion AS h ON paq.OP = h.ID WHERE (((paq.Producto)= " + producto + ")) AND (paq.volumenActual > 0) AND paq.Parcial = 0 GROUP BY paq.Id, paq.numPaquete, prod.Codigo, paq.Bodega, paq.numPiezas, paq.dia, paq.Fecha, paq.Hora, paq.porcentaje, h.OP, paq.OP;");
             dataGridView14.Columns[2].FillWeight = 200;
             dataGridView14.Columns[3].FillWeight = 200;
             dataGridView14.Columns[2].HeaderText = "# de Paquete";

@@ -22,7 +22,9 @@ namespace Aplicativo
         int index = 0;
         int desp = 0;
         int tipo2 = 0;
+        int count = 0;
         bool sw = true;
+        bool sw2 = false;
 
         public frmCrearDespacho(int tipo, int despacho)
         {
@@ -50,7 +52,8 @@ namespace Aplicativo
             }
             if (tipo == 1)
             {
-                Variables.cargar(dataGridView1, "SELECT historicoProduccion.ID, historicoProduccion.OP, Sum(Paquete.volumenActual) FROM historicoProduccion INNER JOIN Paquete ON historicoProduccion.Id = Paquete.OP GROUP BY historicoProduccion.ID, historicoProduccion.OP HAVING SUM(Paquete.volumenActual) > 0 ORDER BY historicoProduccion.ID DESC");
+                Variables.cargar(dataGridView1, "SELECT Productos.ID, Productos.Codigo, ((((Productos.anchoProd * Productos.altoProd * Productos.largoProd)/1000000000) * (Productos.numAnchoEmp* Productos.numAltoEmp)) * COUNT(Paquete.ID)) FROM Productos INNER JOIN Paquete ON Productos.ID = Paquete.Producto WHERE Paquete.volumenActual > 0 AND Paquete.Parcial = 0 GROUP BY Productos.ID, Productos.Codigo, (((Productos.anchoProd * Productos.altoProd * Productos.largoProd)/1000000000) * (Productos.numAnchoEmp* Productos.numAltoEmp))");
+                //Variables.cargar(dataGridView1, "SELECT historicoProduccion.ID, historicoProduccion.OP, Sum(Paquete.volumenActual) FROM historicoProduccion INNER JOIN Paquete ON historicoProduccion.Id = Paquete.OP GROUP BY historicoProduccion.ID, historicoProduccion.OP HAVING SUM(Paquete.volumenActual) > 0 ORDER BY historicoProduccion.ID DESC");
                 dataGridView1.Columns[2].HeaderText = "Vol. Producido";
                 dataGridView1.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 dataGridView1.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -79,12 +82,24 @@ namespace Aplicativo
                 cargarADF006(desp.ToString(), "ADF006-2-Tractor", dataGridView8);
                 cargarDaños(desp.ToString(), dataGridView7, "ADF006-Tractor");
             }
+            else
+            {
+                tabControl1.TabPages.RemoveAt(1);
+            }
 
             dateTimePicker1.Format = DateTimePickerFormat.Custom;
             dateTimePicker1.CustomFormat = "dd/MM/yyyy";
             dateTimePicker2.Format = DateTimePickerFormat.Custom;
             dateTimePicker2.CustomFormat = "HH:mm"; // Only use hours and minutes
             dateTimePicker2.ShowUpDown = true;
+        }
+
+        public void formatoIndex(DataGridView data)
+        {
+            for (int i = 0; i < data.Rows.Count; i++)
+            {
+                data.Rows[i].Cells[0].Value = i + 1;
+            }
         }
 
         public void cargarDespacho(int despacho)
@@ -567,7 +582,8 @@ namespace Aplicativo
         public void cargarPaquetes(string op, DataGridView data)
         {
             data.Rows.Clear();
-            string query = "SELECT Paquete.Id, Paquete.volumenActual, Productos.Especie, Paquete.numPaquete FROM Paquete INNER JOIN Productos ON Paquete.Producto = Productos.ID WHERE Paquete.OP = " + op;
+            //string query = "SELECT Paquete.Id, Paquete.volumenActual, Productos.Especie, Paquete.numPaquete FROM Paquete INNER JOIN Productos ON Paquete.Producto = Productos.ID WHERE Paquete.OP = " + op;
+            string query = "SELECT Paquete.Id, Paquete.volumenActual, Productos.Especie, Paquete.numPaquete FROM Paquete INNER JOIN Productos ON Paquete.Producto = Productos.ID WHERE Paquete.Producto = " + op;
             //Ejecutar el query y llenar el GridView.
             conn.ConnectionString = connectionString;
             OleDbCommand cmd = new OleDbCommand(query, conn);
@@ -600,13 +616,89 @@ namespace Aplicativo
             }
         }
 
+        public void cargarPaquetesAsignadas(int op, DataGridView data)
+        {
+            string query = "SELECT ID, Paquete,Porcentaje,Volumen,volumenOriginal FROM despachoPaqueteOrdenes WHERE Despacho = " + op;
+            //Ejecutar el query y llenar el GridView.
+            conn.ConnectionString = connectionString;
+            OleDbCommand cmd = new OleDbCommand(query, conn);
+            cmd.Connection = conn;
+            conn.Open();
+            OleDbDataReader myReader = cmd.ExecuteReader();
+            try
+            {
+                while (myReader.Read())
+                {
+                    for (int j = 0; j < data.Rows.Count; j++)
+                    {
+                        if (data.Rows[j].Cells[1].Value.ToString().Equals(myReader.GetInt32(1).ToString()))
+                        {
+                            data.Rows[j].Cells[2].Value = true;
+                            data.Rows[j].Cells[5].Value = myReader.GetDouble(4);
+                            data.Rows[j].Cells[6].Value = myReader.GetString(2);
+                            data.Rows[j].Cells[7].Value = myReader.GetDouble(3);
+                        }
+                    }
+                }
+            }
+            finally
+            {
+                // always call Close when done reading.
+                myReader.Close();
+                // always call Close when done reading.
+                conn.Close();
+            }
+        }
+
+        public void cargarPilaAsignadas(int op, DataGridView data)
+        {
+            string query = "SELECT ID, Pila,Porcentaje,Volumen,volumenOriginal FROM despachoPilaOrdenes WHERE Despacho = " + op;
+            //Ejecutar el query y llenar el GridView.
+            conn.ConnectionString = connectionString;
+            OleDbCommand cmd = new OleDbCommand(query, conn);
+            cmd.Connection = conn;
+            conn.Open();
+            OleDbDataReader myReader = cmd.ExecuteReader();
+            try
+            {
+                while (myReader.Read())
+                {
+                    for (int j = 0; j < data.Rows.Count; j++)
+                    {
+                        if (data.Rows[j].Cells[1].Value.ToString().Equals(myReader.GetInt32(1).ToString()))
+                        {
+                            data.Rows[j].Cells[2].Value = true;
+                            data.Rows[j].Cells[5].Value = myReader.GetDouble(4);
+                            data.Rows[j].Cells[6].Value = myReader.GetString(2);
+                            data.Rows[j].Cells[7].Value = myReader.GetDouble(3);
+                        }
+                    }
+                }
+            }
+            finally
+            {
+                // always call Close when done reading.
+                myReader.Close();
+                // always call Close when done reading.
+                conn.Close();
+            }
+        }
+
+
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(tipo2 ==0)
-                cargarRecibos(dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[0].Value.ToString(), dataGridView13);          
+            if (tipo2 == 0)
+            {
+                cargarRecibos(dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[0].Value.ToString(), dataGridView13);
+                cargarPilaAsignadas(desp, dataGridView13);
+            }
             else
+            {
                 cargarPaquetes(dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[0].Value.ToString(), dataGridView13);
+                cargarPaquetesAsignadas(desp, dataGridView13);
+            }
             clearRecibos(dataGridView13);
+            formatoIndex(dataGridView13);
         }
 
         public void cargarFormatoInput(DataGridView data)
@@ -1032,6 +1124,8 @@ namespace Aplicativo
                     crearADF((id2 + 1).ToString(), "ADF006-2", dataGridView8, "Tractor");
                     crearDaños((id2 + 1).ToString(), "ADF006-Tractor", dataGridView7);
                 }
+                MessageBox.Show("Despacho generado.\nFavor llenar los materiales para despachar.");
+                tabControl1.TabPages.Add(tabPage3);        
             }
             else
             {
@@ -1043,12 +1137,12 @@ namespace Aplicativo
                 modificarADF(desp.ToString(), "ADF006", dataGridView9, "Tractor");
                 modificarADF2(desp.ToString(), "ADF006-2-Tractor", dataGridView8);
                 modificarDaños(desp.ToString(), "ADF006-Tractor", dataGridView7);
+                MessageBox.Show("Despacho modificado.");
+                frmDespacho newFrm = new frmDespacho();
+                this.Hide();
+                newFrm.Show();
+                this.Close();
             }
-            MessageBox.Show("Despacho generado.");
-            frmDespacho newFrm = new frmDespacho();
-            this.Hide();
-            newFrm.Show();
-            this.Close();
         }
 
         public void modificarADF(string despacho, string adf, DataGridView data, string tipo)
@@ -1569,6 +1663,306 @@ namespace Aplicativo
             //if (comboBox2.SelectedItem != null && !comboBox2.SelectedValue.ToString().Equals("System.Data.DataRowView"))
             //{
             //    comboBox4.SelectedValue = getProveedor(comboBox2.SelectedValue.ToString());
+            //}
+        }
+
+        public void modificarPaquete(DataGridView data, int i, string tipo)
+        {
+            conn.ConnectionString = connectionString;
+            OleDbCommand cmd = new OleDbCommand();
+            cmd = new OleDbCommand("UPDATE Paquete SET volumenActual = volumenActual " + tipo + " @volumen WHERE ID =  " + data.Rows[i].Cells[1].Value);
+            cmd.Connection = conn;
+            conn.Open();
+            if (conn.State == ConnectionState.Open)
+            {
+                if (tipo.Equals("+"))
+                    cmd.Parameters.Add("@volumen", OleDbType.VarChar).Value = data.Rows[i].Cells[5].Value;
+                else
+                    cmd.Parameters.Add("@volumen", OleDbType.VarChar).Value = data.Rows[i].Cells[7].Value;
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
+                }
+                catch (OleDbException ex)
+                {
+                    MessageBox.Show(ex.Source);
+                    conn.Close();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Connection Failed");
+            }
+        }
+
+        public void eliminarAsignacionPaquete(string producto)
+        {
+            conn.ConnectionString = connectionString;
+            OleDbCommand cmd = new OleDbCommand("DELETE FROM despachoPaqueteOrdenes WHERE Despacho = " + desp + " AND Producto = " + producto);
+            cmd.Connection = conn;
+            conn.Open();
+
+            if (conn.State == ConnectionState.Open)
+            {
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
+                }
+                catch (OleDbException ex)
+                {
+                    MessageBox.Show(ex.Source);
+                    conn.Close();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Connection Failed");
+            }
+        }
+
+        public void eliminarAsignacionPaquete()
+        {
+            conn.ConnectionString = connectionString;
+            OleDbCommand cmd = new OleDbCommand("DELETE FROM despachoPaqueteOrdenes WHERE Despacho = " + desp);
+            cmd.Connection = conn;
+            conn.Open();
+
+            if (conn.State == ConnectionState.Open)
+            {
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
+                }
+                catch (OleDbException ex)
+                {
+                    MessageBox.Show(ex.Source);
+                    conn.Close();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Connection Failed");
+            }
+        }
+
+
+        public void agregarAsignacionPaquete(int i, DataGridView data, string producto)
+        {
+            conn.ConnectionString = connectionString;
+            OleDbCommand cmd = new OleDbCommand("INSERT INTO despachoPaqueteOrdenes (Paquete,Despacho,Porcentaje,Producto,volumen,volumenOriginal) VALUES (@Paquete,@Despacho,@Porcentaje,@Producto,@volumen,@volumenOriginal)");
+            cmd.Connection = conn;
+            conn.Open();
+            if (conn.State == ConnectionState.Open)
+            {
+                cmd.Parameters.Add("@Paquete", OleDbType.VarChar).Value = data.Rows[i].Cells[1].Value;
+                cmd.Parameters.Add("@Despacho", OleDbType.VarChar).Value = desp;
+                cmd.Parameters.Add("@Porcentaje", OleDbType.VarChar).Value = data.Rows[i].Cells[6].Value;
+                cmd.Parameters.Add("@Producto", OleDbType.VarChar).Value = producto;
+                cmd.Parameters.Add("@volumen", OleDbType.VarChar).Value = data.Rows[i].Cells[7].Value;
+                cmd.Parameters.Add("@volumenOriginal", OleDbType.VarChar).Value = data.Rows[i].Cells[5].Value;
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
+                }
+                catch (OleDbException ex)
+                {
+                    MessageBox.Show(ex.Source);
+                    conn.Close();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Connection Failed");
+            }
+        }
+
+        public void modificarPila(DataGridView data, int i, string tipo)
+        {
+            conn.ConnectionString = connectionString;
+            OleDbCommand cmd = new OleDbCommand();
+            cmd = new OleDbCommand("UPDATE reciboCliente SET volumenActual = volumenActual " + tipo + " @volumen WHERE ID =  " + data.Rows[i].Cells[1].Value);
+            cmd.Connection = conn;
+            conn.Open();
+            if (conn.State == ConnectionState.Open)
+            {
+                if (tipo.Equals("+"))
+                    cmd.Parameters.Add("@volumen", OleDbType.VarChar).Value = data.Rows[i].Cells[5].Value;
+                else
+                    cmd.Parameters.Add("@volumen", OleDbType.VarChar).Value = data.Rows[i].Cells[7].Value;
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
+                }
+                catch (OleDbException ex)
+                {
+                    MessageBox.Show(ex.Source);
+                    conn.Close();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Connection Failed");
+            }
+        }
+
+        public void eliminarAsignacionPila(string pila)
+        {
+            conn.ConnectionString = connectionString;
+            OleDbCommand cmd = new OleDbCommand("DELETE FROM despachoPilaOrdenes WHERE Despacho = " + desp + " AND numPila = " + pila);
+            cmd.Connection = conn;
+            conn.Open();
+
+            if (conn.State == ConnectionState.Open)
+            {
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
+                }
+                catch (OleDbException ex)
+                {
+                    MessageBox.Show(ex.Source);
+                    conn.Close();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Connection Failed");
+            }
+        }
+
+        public void eliminarAsignacionPila()
+        {
+            conn.ConnectionString = connectionString;
+            OleDbCommand cmd = new OleDbCommand("DELETE FROM despachoPilaOrdenes WHERE Despacho = " + desp);
+            cmd.Connection = conn;
+            conn.Open();
+
+            if (conn.State == ConnectionState.Open)
+            {
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
+                }
+                catch (OleDbException ex)
+                {
+                    MessageBox.Show(ex.Source);
+                    conn.Close();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Connection Failed");
+            }
+        }
+
+        public void agregarAsignacionPila(int i, DataGridView data, string pila)
+        {
+            conn.ConnectionString = connectionString;
+            OleDbCommand cmd = new OleDbCommand("INSERT INTO despachoPilaOrdenes (Pila,Despacho,Porcentaje,numPila,volumen,volumenOriginal) VALUES (@Pila,@Despacho,@Porcentaje,@numPila,@volumen,@volumenOriginal)");
+            cmd.Connection = conn;
+            conn.Open();
+            if (conn.State == ConnectionState.Open)
+            {
+                cmd.Parameters.Add("@Pila", OleDbType.VarChar).Value = data.Rows[i].Cells[1].Value;
+                cmd.Parameters.Add("@Despacho", OleDbType.VarChar).Value = desp;
+                cmd.Parameters.Add("@Porcentaje", OleDbType.VarChar).Value = data.Rows[i].Cells[6].Value;
+                cmd.Parameters.Add("@numPila", OleDbType.VarChar).Value = pila;
+                cmd.Parameters.Add("@volumen", OleDbType.VarChar).Value = data.Rows[i].Cells[7].Value;
+                cmd.Parameters.Add("@volumenOriginal", OleDbType.VarChar).Value = data.Rows[i].Cells[5].Value;
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
+                }
+                catch (OleDbException ex)
+                {
+                    MessageBox.Show(ex.Source);
+                    conn.Close();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Connection Failed");
+            }
+        }
+
+
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (desp == -1)
+            {
+                desp = getMaxDespacho();
+                sw2 = true;
+            }
+
+            if (tipo2 == 1)
+            {
+                if (Variables.existe("SELECT * FROM despachoPaqueteOrdenes WHERE Despacho = " + desp))
+                {
+                    for (int i = 0; i < dataGridView13.Rows.Count; i++)
+                    {
+                        if (Variables.existe("SELECT * FROM despachoPaqueteOrdenes WHERE Despacho = " + desp + " AND Paquete = " + Int32.Parse(dataGridView13.Rows[i].Cells[1].Value.ToString())))
+                            modificarPaquete(dataGridView13, i, "+");
+                    }
+                    eliminarAsignacionPaquete(dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[0].Value.ToString());
+                }
+                for (int i = 0; i < dataGridView13.Rows.Count; i++)
+                {
+                    if (Variables.existe("SELECT * FROM despachoPaqueteOrdenes WHERE Despacho = " + desp + " AND Paquete = " + Int32.Parse(dataGridView13.Rows[i].Cells[1].Value.ToString())))
+                        modificarPaquete(dataGridView13, i, "+");
+                    if (Convert.ToBoolean(dataGridView13.Rows[i].Cells[2].Value) == true)
+                    {
+                        agregarAsignacionPaquete(i, dataGridView13, dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[0].Value.ToString());
+                        modificarPaquete(dataGridView13, i, "-");
+                    }
+                }
+                MessageBox.Show("Pilas asignadas.");
+            }
+            else
+            {
+                if (Variables.existe("SELECT * FROM despachoPilaOrdenes WHERE Despacho = " + desp))
+                {
+                    for (int i = 0; i < dataGridView13.Rows.Count; i++)
+                    {
+                        if (Variables.existe("SELECT * FROM despachoPilaOrdenes WHERE Despacho = " + desp + " AND Pila = " + Int32.Parse(dataGridView13.Rows[i].Cells[1].Value.ToString())))
+                            modificarPila(dataGridView13, i, "+");
+                    }
+                    eliminarAsignacionPila(dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[0].Value.ToString());
+                }
+                for (int i = 0; i < dataGridView13.Rows.Count; i++)
+                {
+                    if (Variables.existe("SELECT * FROM despachoPilaOrdenes WHERE Despacho = " + desp + " AND Pila = " + Int32.Parse(dataGridView13.Rows[i].Cells[1].Value.ToString())))
+                        modificarPila(dataGridView13, i, "+");
+                    if (Convert.ToBoolean(dataGridView13.Rows[i].Cells[2].Value) == true)
+                    {
+                        agregarAsignacionPila(i, dataGridView13, dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[0].Value.ToString());
+                        modificarPila(dataGridView13, i, "-");
+                    }
+                }
+                MessageBox.Show("Paquetes asignados.");
+            }
+        }
+
+        private void frmCrearDespacho_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            //if (sw2)
+            //{
+            //    if (tipo2 == 1)
+            //    {
+            //        eliminarAsignacionPaquete();
+            //    }
+            //    else
+            //    {
+            //        eliminarAsignacionPila();
+            //    }
             //}
         }
 

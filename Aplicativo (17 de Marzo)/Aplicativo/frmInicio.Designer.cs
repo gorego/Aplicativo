@@ -67,11 +67,12 @@
             this.button8 = new System.Windows.Forms.Button();
             this.linkLabel23 = new System.Windows.Forms.LinkLabel();
             this.linkLabel24 = new System.Windows.Forms.LinkLabel();
+            this.linkLabel25 = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // btnOperador
             // 
-            this.btnOperador.Location = new System.Drawing.Point(12, 445);
+            this.btnOperador.Location = new System.Drawing.Point(12, 455);
             this.btnOperador.Name = "btnOperador";
             this.btnOperador.Size = new System.Drawing.Size(185, 29);
             this.btnOperador.TabIndex = 0;
@@ -81,7 +82,7 @@
             // 
             // btnDepartamentos
             // 
-            this.btnDepartamentos.Location = new System.Drawing.Point(203, 445);
+            this.btnDepartamentos.Location = new System.Drawing.Point(203, 455);
             this.btnDepartamentos.Name = "btnDepartamentos";
             this.btnDepartamentos.Size = new System.Drawing.Size(185, 29);
             this.btnDepartamentos.TabIndex = 1;
@@ -91,7 +92,7 @@
             // 
             // btnActividad
             // 
-            this.btnActividad.Location = new System.Drawing.Point(12, 233);
+            this.btnActividad.Location = new System.Drawing.Point(12, 243);
             this.btnActividad.Name = "btnActividad";
             this.btnActividad.Size = new System.Drawing.Size(185, 29);
             this.btnActividad.TabIndex = 3;
@@ -101,7 +102,7 @@
             // 
             // btnMaquinaria
             // 
-            this.btnMaquinaria.Location = new System.Drawing.Point(203, 326);
+            this.btnMaquinaria.Location = new System.Drawing.Point(203, 336);
             this.btnMaquinaria.Name = "btnMaquinaria";
             this.btnMaquinaria.Size = new System.Drawing.Size(185, 29);
             this.btnMaquinaria.TabIndex = 4;
@@ -131,7 +132,7 @@
             // 
             // btnCentro
             // 
-            this.btnCentro.Location = new System.Drawing.Point(203, 410);
+            this.btnCentro.Location = new System.Drawing.Point(203, 420);
             this.btnCentro.Name = "btnCentro";
             this.btnCentro.Size = new System.Drawing.Size(185, 29);
             this.btnCentro.TabIndex = 7;
@@ -141,7 +142,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(203, 239);
+            this.button1.Location = new System.Drawing.Point(203, 249);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(185, 29);
             this.button1.TabIndex = 8;
@@ -161,7 +162,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(12, 339);
+            this.button3.Location = new System.Drawing.Point(12, 349);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(185, 29);
             this.button3.TabIndex = 10;
@@ -171,7 +172,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(12, 282);
+            this.button4.Location = new System.Drawing.Point(12, 292);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(185, 29);
             this.button4.TabIndex = 11;
@@ -230,7 +231,7 @@
             // linkLabel5
             // 
             this.linkLabel5.AutoSize = true;
-            this.linkLabel5.Location = new System.Drawing.Point(10, 266);
+            this.linkLabel5.Location = new System.Drawing.Point(10, 276);
             this.linkLabel5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.linkLabel5.Name = "linkLabel5";
             this.linkLabel5.Size = new System.Drawing.Size(56, 13);
@@ -254,7 +255,7 @@
             // linkLabel7
             // 
             this.linkLabel7.AutoSize = true;
-            this.linkLabel7.Location = new System.Drawing.Point(10, 315);
+            this.linkLabel7.Location = new System.Drawing.Point(10, 325);
             this.linkLabel7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.linkLabel7.Name = "linkLabel7";
             this.linkLabel7.Size = new System.Drawing.Size(109, 13);
@@ -278,7 +279,7 @@
             // linkLabel10
             // 
             this.linkLabel10.AutoSize = true;
-            this.linkLabel10.Location = new System.Drawing.Point(206, 287);
+            this.linkLabel10.Location = new System.Drawing.Point(206, 297);
             this.linkLabel10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.linkLabel10.Name = "linkLabel10";
             this.linkLabel10.Size = new System.Drawing.Size(73, 13);
@@ -302,7 +303,7 @@
             // linkLabel12
             // 
             this.linkLabel12.AutoSize = true;
-            this.linkLabel12.Location = new System.Drawing.Point(202, 374);
+            this.linkLabel12.Location = new System.Drawing.Point(202, 384);
             this.linkLabel12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.linkLabel12.Name = "linkLabel12";
             this.linkLabel12.Size = new System.Drawing.Size(68, 13);
@@ -314,7 +315,7 @@
             // linkLabel13
             // 
             this.linkLabel13.AutoSize = true;
-            this.linkLabel13.Location = new System.Drawing.Point(202, 388);
+            this.linkLabel13.Location = new System.Drawing.Point(202, 398);
             this.linkLabel13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.linkLabel13.Name = "linkLabel13";
             this.linkLabel13.Size = new System.Drawing.Size(51, 13);
@@ -325,7 +326,7 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(12, 410);
+            this.button5.Location = new System.Drawing.Point(12, 420);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(185, 29);
             this.button5.TabIndex = 26;
@@ -336,7 +337,7 @@
             // linkLabel9
             // 
             this.linkLabel9.AutoSize = true;
-            this.linkLabel9.Location = new System.Drawing.Point(207, 304);
+            this.linkLabel9.Location = new System.Drawing.Point(207, 314);
             this.linkLabel9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.linkLabel9.Name = "linkLabel9";
             this.linkLabel9.Size = new System.Drawing.Size(50, 13);
@@ -347,7 +348,7 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(12, 375);
+            this.button6.Location = new System.Drawing.Point(12, 385);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(185, 29);
             this.button6.TabIndex = 29;
@@ -358,7 +359,7 @@
             // linkLabel14
             // 
             this.linkLabel14.AutoSize = true;
-            this.linkLabel14.Location = new System.Drawing.Point(202, 358);
+            this.linkLabel14.Location = new System.Drawing.Point(202, 368);
             this.linkLabel14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.linkLabel14.Name = "linkLabel14";
             this.linkLabel14.Size = new System.Drawing.Size(55, 13);
@@ -404,7 +405,7 @@
             // linkLabel17
             // 
             this.linkLabel17.AutoSize = true;
-            this.linkLabel17.Location = new System.Drawing.Point(206, 271);
+            this.linkLabel17.Location = new System.Drawing.Point(206, 281);
             this.linkLabel17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.linkLabel17.Name = "linkLabel17";
             this.linkLabel17.Size = new System.Drawing.Size(112, 13);
@@ -507,11 +508,24 @@
             this.linkLabel24.Text = "- Despacho de Material";
             this.linkLabel24.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel24_LinkClicked);
             // 
+            // linkLabel25
+            // 
+            this.linkLabel25.AutoSize = true;
+            this.linkLabel25.Location = new System.Drawing.Point(200, 233);
+            this.linkLabel25.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.linkLabel25.Name = "linkLabel25";
+            this.linkLabel25.Size = new System.Drawing.Size(85, 13);
+            this.linkLabel25.TabIndex = 44;
+            this.linkLabel25.TabStop = true;
+            this.linkLabel25.Text = "- Historial de Pila";
+            this.linkLabel25.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel25_LinkClicked);
+            // 
             // frmInicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(400, 482);
+            this.ClientSize = new System.Drawing.Size(400, 495);
+            this.Controls.Add(this.linkLabel25);
             this.Controls.Add(this.linkLabel24);
             this.Controls.Add(this.linkLabel23);
             this.Controls.Add(this.button8);
@@ -604,5 +618,6 @@
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.LinkLabel linkLabel23;
         private System.Windows.Forms.LinkLabel linkLabel24;
+        private System.Windows.Forms.LinkLabel linkLabel25;
     }
 }

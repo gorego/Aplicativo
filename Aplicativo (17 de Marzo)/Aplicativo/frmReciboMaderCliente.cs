@@ -79,6 +79,35 @@ namespace Aplicativo
             return pila;
         }
 
+        public int getOrdenID()
+        {
+            string orden = "OT-" + txtOT.Text.Trim().PadLeft(4, '0') + "-" + textBox7.Text.Trim();                    
+            string query = "SELECT ID From historicoOrdenes WHERE OT = '" + orden + "'";
+            //Ejecutar el query y llenar el GridView.
+            conn.ConnectionString = connectionString;
+            OleDbCommand cmd = new OleDbCommand(query, conn);
+            cmd.Connection = conn;
+            conn.Open();
+            int pila = 0;
+            OleDbDataReader myReader = cmd.ExecuteReader();
+            try
+            {
+                if (myReader.Read())
+                {
+                    if (!myReader.GetValue(0).ToString().Equals(""))
+                        pila = Int32.Parse(myReader.GetValue(0).ToString());
+                }
+            }
+            finally
+            {
+                // always call Close when done reading.
+                myReader.Close();
+                // always call Close when done reading.
+                conn.Close();
+            }
+            return pila;
+        }
+
         public void cargarLotes()
         {
             string query = "SELECT Codigo, Lote FROM Lotes Group By Codigo,Lote UNION ALL SELECT Codigo, Lote FROM Areas Group By Codigo,Lote UNION ALL SELECT Codigo, Lote FROM LoteGanadero Group By Codigo,Lote";
@@ -128,46 +157,54 @@ namespace Aplicativo
 
         private void txtOT_Leave(object sender, EventArgs e)
         {
-            int prueba = 0;
-            bool isNum = Int32.TryParse(txtOT.Text.Trim(), out prueba);
-            if (isNum)
+            if (textBox7.Text.Equals(""))
             {
-                if (Variables.existe("SELECT * FROM historicoOrdenes WHERE ID = " + txtOT.Text.Trim()))
+                MessageBox.Show("Favor seleccionar el año de la OT.");
+            }
+            else
+            {
+                int prueba = 0;
+                bool isNum = Int32.TryParse(txtOT.Text.Trim(), out prueba);
+                if (isNum)
                 {
-                    getOrden(Int32.Parse(txtOT.Text.Trim()));
-                    comboBox1.SelectedValue = lote;
-                    textBox2.Text = area;
-                    if (ano.Equals(""))
-                        textBox3.Text = "0";
-                    else
-                        textBox3.Text = ano;
-                    comboBox6.SelectedValue = transportador;
-                    comboBox4.SelectedValue = cliente;
-                    comboBox2.SelectedValue = propietario;
-                    comboBox3.SelectedValue = proveedor;
-                    if (registro.Equals(""))
-                        textBox4.Text = "0";
-                    else
-                        textBox4.Text = registro;
-                    textBox1.Text = placa;
-                    if (getEquipo(Int32.Parse(txtOT.Text.Trim())) != 0)
-                        comboBox5.SelectedValue = getEquipo(Int32.Parse(txtOT.Text.Trim()));
-                    if (FSC.Equals("0"))
-                        radioButton14.Checked = true;
+                    string orden = "OT-" + txtOT.Text.Trim().PadLeft(4, '0') + "-" + textBox7.Text.Trim();                    
+                    if (Variables.existe("SELECT * FROM historicoOrdenes WHERE OT = '" + orden + "'"))
+                    {
+                        getOrden(Int32.Parse(txtOT.Text.Trim()));
+                        comboBox1.SelectedValue = lote;
+                        textBox2.Text = area;
+                        if (ano.Equals(""))
+                            textBox3.Text = "0";
+                        else
+                            textBox3.Text = ano;
+                        comboBox6.SelectedValue = transportador;
+                        comboBox4.SelectedValue = cliente;
+                        comboBox2.SelectedValue = propietario;
+                        comboBox3.SelectedValue = proveedor;
+                        if (registro.Equals(""))
+                            textBox4.Text = "0";
+                        else
+                            textBox4.Text = registro;
+                        textBox1.Text = placa;
+                        if (getEquipo(Int32.Parse(txtOT.Text.Trim())) != 0)
+                            comboBox5.SelectedValue = getEquipo(Int32.Parse(txtOT.Text.Trim()));
+                        if (FSC.Equals("0"))
+                            radioButton14.Checked = true;
+                        else
+                        {
+                            radioButton13.Checked = true;
+                            textBox6.Text = FSC;
+                        }
+                    }
                     else
                     {
-                        radioButton13.Checked = true;
-                        textBox6.Text = FSC;
+                        MessageBox.Show("Orden de Trabajo no existe.", "Error");
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Orden de Trabajo no existe.", "Error");
+                    MessageBox.Show("Favor digitar un numero valido.", "Error");
                 }
-            }
-            else
-            {
-                MessageBox.Show("Favor digitar un numero valido.", "Error");
             }
         }
 
@@ -293,7 +330,7 @@ namespace Aplicativo
 
         public bool existeAñoActual()
         {
-            string query = "SELECT * FROM reciboCliente WHERE numRecibo like '%" + DateTime.Now.Year + "%'";
+            string query = "SELECT * FROM reciboCliente WHERE numRecibo like '%" + textBox7.Text + "%'";
             //Ejecutar el query y llenar el GridView.
             conn.ConnectionString = connectionString;
             OleDbCommand cmd = new OleDbCommand(query, conn);
@@ -320,7 +357,7 @@ namespace Aplicativo
             }
         }
 
-        public void agregarRecibo(int id)
+        public void agregarRecibo(int id,int ot)
         {
             conn.ConnectionString = connectionString;
             OleDbCommand cmd;
@@ -329,7 +366,7 @@ namespace Aplicativo
             conn.Open();
             if (conn.State == ConnectionState.Open)
             {
-                cmd.Parameters.Add("@Orden", OleDbType.VarChar).Value = txtOT.Text;
+                cmd.Parameters.Add("@Orden", OleDbType.VarChar).Value = ot;
                 if (radioButton1.Checked)
                     cmd.Parameters.Add("@Clasificacion", OleDbType.VarChar).Value = "Transferencia de Material";
                 else if (radioButton2.Checked)
@@ -367,7 +404,7 @@ namespace Aplicativo
                 cmd.Parameters.Add("@Hora", OleDbType.VarChar).Value = dateTimePicker2.Value.Hour + ":" + dateTimePicker2.Value.Minute;
                 cmd.Parameters.Add("@Maquinaria", OleDbType.VarChar).Value = comboBox5.SelectedValue;
                 cmd.Parameters.Add("@Pila", OleDbType.VarChar).Value = txtModulo.Text;
-                cmd.Parameters.Add("@numRecibo", OleDbType.VarChar).Value = "PILA-" + txtModulo.Text + "-" + id.ToString().PadLeft(4, '0') + "-" + DateTime.Now.Year;
+                cmd.Parameters.Add("@numRecibo", OleDbType.VarChar).Value = "PILA-" + txtModulo.Text + "-" + id.ToString().PadLeft(4, '0') + "-OT-" + txtOT.Text.Trim().PadLeft(4,'0')+ "-" + textBox7.Text;
                 cmd.Parameters.Add("@numPila", OleDbType.VarChar).Value = id;
                 try
                 {
@@ -392,13 +429,14 @@ namespace Aplicativo
             int id = getMaxID();
             if (!existeAñoActual())
                 id = 0;
-            agregarRecibo(id + 1);
+            agregarRecibo(id + 1,getOrdenID());
             Variables.cargar(dataGridView2, "SELECT * FROM reciboCliente WHERE volumenActual > 0 ORDER BY ID Desc");
             Variables.cargar(dataGridView1, "SELECT * FROM reciboCliente WHERE (Month(Fecha) BETWEEN " + (DateTime.Now.Month - 3) + " AND " + (DateTime.Now.Month) + ") ORDER BY ID Desc");
             Variables.cargar(dataGridView3, "SELECT * FROM reciboCliente WHERE Especie = 'Melina' AND volumenActual > 0 ORDER BY ID Desc");
             Variables.cargar(dataGridView4, "SELECT * FROM reciboCliente WHERE Especie = 'Teca' AND volumenActual > 0 ORDER BY ID Desc");
             Variables.cargar(dataGridView5, "SELECT * FROM reciboCliente WHERE Especie <> 'Melina' AND Especie <> 'Teca' AND volumenActual > 0 ORDER BY ID Desc");
         }
+
 
         private void button2_Click(object sender, EventArgs e)
         {

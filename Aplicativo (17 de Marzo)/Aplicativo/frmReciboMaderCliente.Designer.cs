@@ -48,6 +48,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.button5 = new System.Windows.Forms.Button();
+            this.txtModulo = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -110,8 +112,8 @@
             this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.txtModulo = new System.Windows.Forms.TextBox();
-            this.button5 = new System.Windows.Forms.Button();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
             this.groupBox7.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -390,6 +392,26 @@
             this.groupBox9.TabIndex = 17;
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "Modulo";
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(135, 28);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(76, 25);
+            this.button5.TabIndex = 36;
+            this.button5.Text = "Cambiar Pila";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // txtModulo
+            // 
+            this.txtModulo.Location = new System.Drawing.Point(72, 31);
+            this.txtModulo.Margin = new System.Windows.Forms.Padding(2);
+            this.txtModulo.Name = "txtModulo";
+            this.txtModulo.Size = new System.Drawing.Size(58, 20);
+            this.txtModulo.TabIndex = 9;
+            this.txtModulo.Text = "0";
+            this.txtModulo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label14
             // 
@@ -988,6 +1010,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label15);
+            this.groupBox2.Controls.Add(this.textBox7);
             this.groupBox2.Controls.Add(this.txtOT);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Location = new System.Drawing.Point(772, 10);
@@ -998,9 +1022,9 @@
             // 
             // txtOT
             // 
-            this.txtOT.Location = new System.Drawing.Point(96, 18);
+            this.txtOT.Location = new System.Drawing.Point(60, 18);
             this.txtOT.Name = "txtOT";
-            this.txtOT.Size = new System.Drawing.Size(88, 20);
+            this.txtOT.Size = new System.Drawing.Size(57, 20);
             this.txtOT.TabIndex = 4;
             this.txtOT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtOT.Leave += new System.EventHandler(this.txtOT_Leave);
@@ -1008,7 +1032,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(55, 21);
+            this.label1.Location = new System.Drawing.Point(19, 21);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 3;
@@ -1059,25 +1083,22 @@
             this.radioButton1.Text = "Transferencia de Material";
             this.radioButton1.UseVisualStyleBackColor = true;
             // 
-            // txtModulo
+            // textBox7
             // 
-            this.txtModulo.Location = new System.Drawing.Point(72, 31);
-            this.txtModulo.Margin = new System.Windows.Forms.Padding(2);
-            this.txtModulo.Name = "txtModulo";
-            this.txtModulo.Size = new System.Drawing.Size(58, 20);
-            this.txtModulo.TabIndex = 9;
-            this.txtModulo.Text = "0";
-            this.txtModulo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox7.Location = new System.Drawing.Point(143, 18);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(57, 20);
+            this.textBox7.TabIndex = 5;
+            this.textBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // button5
+            // label15
             // 
-            this.button5.Location = new System.Drawing.Point(135, 28);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(76, 25);
-            this.button5.TabIndex = 36;
-            this.button5.Text = "Cambiar Pila";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(125, 21);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(10, 13);
+            this.label15.TabIndex = 6;
+            this.label15.Text = "-";
             // 
             // frmReciboMaderCliente
             // 
@@ -1217,5 +1238,7 @@
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.TextBox txtModulo;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox textBox7;
     }
 }
