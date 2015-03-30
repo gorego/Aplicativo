@@ -23,6 +23,7 @@ namespace Aplicativo
             cargarProveedores();
             dataGridView1.Columns[1].DefaultCellStyle.Font = new Font(dataGridView1.DefaultCellStyle.Font, FontStyle.Underline);
             dataGridView1.Columns[10].DefaultCellStyle.Font = new Font(dataGridView1.DefaultCellStyle.Font, FontStyle.Underline);
+            dataGridView1.Columns[1].FillWeight = 200;
             linkLabel1.Visible = false;
             linkLabel2.Visible = false;
             linkLabel3.Visible = false;

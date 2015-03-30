@@ -115,7 +115,7 @@ namespace Aplicativo
             int total = 0;
             for (int i = 0; i < dataGridView3.Rows.Count; i++)
             {
-                total += Int32.Parse(dataGridView3.Rows[i].Cells[6].Value.ToString());
+                total += Int32.Parse(dataGridView3.Rows[i].Cells[7].Value.ToString());
             }
             label3.Text = "Total: " + String.Format("{0:c}", total);
         }
@@ -134,7 +134,7 @@ namespace Aplicativo
 
         public void cargarOrdenes(string tipo, string id)
         {
-            string query = "SELECT h.ID, a.Actividad, area.Lote, h.fechaInicio, h.fechaFinal, (t.Nombres + ' ' + t.Apellidos) As Supervisor, h.Costo, h.estadoOrden FROM Actividades AS a INNER JOIN (Trabajadores AS t INNER JOIN ((BancoTierras AS b INNER JOIN Areas AS area ON b.ID = area.Predio) INNER JOIN historicoOrdenes AS h ON area.Codigo = h.Lote) ON t.ID = h.Supervisor) ON a.ID = h.Actividad WHERE " + tipo + " = " + id + " UNION ALL SELECT h.ID, a.Actividad, area.Lote, h.fechaInicio, h.fechaFinal, (t.Nombres + ' ' + t.Apellidos) As Supervisor, h.Costo, h.estadoOrden FROM Actividades AS a INNER JOIN (Trabajadores AS t INNER JOIN ((BancoTierras AS b INNER JOIN Lotes AS area ON b.ID = area.Predio) INNER JOIN historicoOrdenes AS h ON area.Codigo = h.Lote) ON t.ID = h.Supervisor) ON a.ID = h.Actividad WHERE " + tipo + " = " + id + " UNION ALL SELECT h.ID, a.Actividad, area.Lote, h.fechaInicio, h.fechaFinal, (t.Nombres + ' ' + t.Apellidos) As Supervisor, h.Costo, h.estadoOrden FROM Actividades AS a INNER JOIN (Trabajadores AS t INNER JOIN ((BancoTierras AS b INNER JOIN LoteGanadero AS area ON b.ID = area.Predio) INNER JOIN historicoOrdenes AS h ON area.Codigo = h.Lote) ON t.ID = h.Supervisor) ON a.ID = h.Actividad  WHERE " + tipo + " = " + id;
+            string query = "SELECT h.ID, h.OT, a.Actividad, area.Lote, h.fechaInicio, h.fechaFinal, (t.Nombres + ' ' + t.Apellidos) As Supervisor, h.costoFinal, h.estadoOrden FROM Actividades AS a INNER JOIN (Trabajadores AS t INNER JOIN ((BancoTierras AS b INNER JOIN Areas AS area ON b.ID = area.Predio) INNER JOIN historicoOrdenes AS h ON area.Codigo = h.Lote) ON t.ID = h.Supervisor) ON a.ID = h.Actividad WHERE " + tipo + " = " + id + " UNION ALL SELECT h.ID, h.OT, a.Actividad, area.Lote, h.fechaInicio, h.fechaFinal, (t.Nombres + ' ' + t.Apellidos) As Supervisor, h.costoFinal, h.estadoOrden FROM Actividades AS a INNER JOIN (Trabajadores AS t INNER JOIN ((BancoTierras AS b INNER JOIN Lotes AS area ON b.ID = area.Predio) INNER JOIN historicoOrdenes AS h ON area.Codigo = h.Lote) ON t.ID = h.Supervisor) ON a.ID = h.Actividad WHERE " + tipo + " = " + id + " UNION ALL SELECT h.ID, h.OT, a.Actividad, area.Lote, h.fechaInicio, h.fechaFinal, (t.Nombres + ' ' + t.Apellidos) As Supervisor, h.costoFinal, h.estadoOrden FROM Actividades AS a INNER JOIN (Trabajadores AS t INNER JOIN ((BancoTierras AS b INNER JOIN LoteGanadero AS area ON b.ID = area.Predio) INNER JOIN historicoOrdenes AS h ON area.Codigo = h.Lote) ON t.ID = h.Supervisor) ON a.ID = h.Actividad  WHERE " + tipo + " = " + id;
             //Ejecutar el query y llenar el GridView.
             conn.ConnectionString = connectionString;
             OleDbCommand cmd = new OleDbCommand(query, conn);
@@ -142,10 +142,13 @@ namespace Aplicativo
             OleDbDataAdapter da = new OleDbDataAdapter(cmd);
             da.Fill(banco);
             dataGridView3.DataSource = banco;
-            dataGridView3.Columns[0].HeaderText = "Orden de Trabajo #";
-            dataGridView3.Columns[3].HeaderText = "Fecha de Inicio";
-            dataGridView3.Columns[4].HeaderText = "Fecha de Finalización";
-            dataGridView3.Columns[7].HeaderText = "Estado de la Orden";
+            dataGridView3.Columns[0].Visible = false;
+            dataGridView3.Columns[1].HeaderText = "Orden de Trabajo #";
+            dataGridView3.Columns[4].HeaderText = "Fecha de Inicio";
+            dataGridView3.Columns[5].HeaderText = "Fecha de Finalización";
+            dataGridView3.Columns[8].HeaderText = "Estado de la Orden";
+            dataGridView3.Columns[7].HeaderText = "Costo";
+            dataGridView3.Columns[7].DefaultCellStyle.Format = "c";
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -247,7 +250,6 @@ namespace Aplicativo
 
                     string ext = Path.GetExtension(PDF);
                     fs.CopyTo(File.Create("C:\\Users\\" + Environment.UserName + "\\Dropbox\\Anexos\\Predios\\" + this.Text + "\\Croquis" + "\\CroquisPDF" + ext));
-                    fs.Close();
                 }
             }
             string SHP = textBox2.Text;
@@ -269,7 +271,6 @@ namespace Aplicativo
 
                     string ext = Path.GetExtension(SHP);
                     fs.CopyTo(File.Create("C:\\Users\\" + Environment.UserName + "\\Dropbox\\Anexos\\Predios\\" + this.Text + "\\Croquis" + "\\CroquisSHP" + ext));
-                    fs.Close();
                 }
             }
             string KMZ = textBox4.Text;
@@ -291,7 +292,6 @@ namespace Aplicativo
 
                     string ext = Path.GetExtension(SHP);
                     fs.CopyTo(File.Create("C:\\Users\\" + Environment.UserName + "\\Dropbox\\Anexos\\Predios\\" + this.Text + "\\KMZ" + "\\KMZ" + ext));
-                    fs.Close();
                 }
             }
             string escritura = txtEscritura.Text;
@@ -313,7 +313,6 @@ namespace Aplicativo
                     
                     string ext = Path.GetExtension(escritura);
                     fs.CopyTo(File.Create("C:\\Users\\" + Environment.UserName + "\\Dropbox\\Anexos\\Predios\\" + this.Text + "\\Escritura" + "\\EscrituraPublica" + ext));
-                    fs.Close();
                 }
             }
             string certificado = textBox3.Text;
@@ -335,9 +334,9 @@ namespace Aplicativo
 
                     string ext = Path.GetExtension(escritura);
                     fs.CopyTo(File.Create("C:\\Users\\" + Environment.UserName + "\\Dropbox\\Anexos\\Predios\\" + this.Text + "\\Certificado" + "\\CertificadoDeTradicionYLibertad" + ext));
-                    fs.Close();
                 }
             }
+            MessageBox.Show("Anexos agregados.");
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

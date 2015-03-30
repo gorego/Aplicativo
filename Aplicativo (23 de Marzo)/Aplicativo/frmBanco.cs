@@ -76,7 +76,7 @@ namespace Aplicativo
 
         public void buscarBanco()
         {
-            string query = "SELECT b.ID, b.Predio, b.Codigo_predio, b.Codigo_catrastal, b.Matricula,b.numeroEscritura, b.Area, p.Nombre, m.Municipio, b.Longitud, b.Latitud FROM Municipio AS m INNER JOIN (Propietarios AS p INNER JOIN BancoTierras AS b ON p.ID = b.Propietario) ON m.ID = b.Municipio ";
+            string query = "SELECT b.ID, b.Predio, b.Codigo_predio, b.Codigo_catrastal, b.Matricula,b.numeroEscritura, b.Area, p.Nombre, m.Municipio, b.Longitud, b.Latitud, b.Ubicacion FROM Municipio AS m INNER JOIN (Propietarios AS p INNER JOIN BancoTierras AS b ON p.ID = b.Propietario) ON m.ID = b.Municipio ";
             int i = 0;
             if (!txtPredio.Text.Equals(""))
             {
@@ -167,6 +167,15 @@ namespace Aplicativo
                     query += "WHERE ";
                 i++;
                 query += "b.Latitud LIKE '%" + txtLat.Text + "%'";
+            }
+            if (!textBox1.Text.Equals(""))
+            {
+                if (i != 0)
+                    query += " AND ";
+                else
+                    query += "WHERE ";
+                i++;
+                query += "b.Ubicacion LIKE '%" + textBox1.Text + "%'";
             }
             //Ejecutar el query y llenar el GridView.
             conn.ConnectionString = connectionString;
@@ -321,9 +330,16 @@ namespace Aplicativo
                 {
                     if (!txtPropietario.Text.Equals(""))
                     {
-                        agregarBanco();
-                        cargarBanco();
-                        reiniciarTablero();
+                        if (!txtCodPred.Text.Equals(""))
+                        {
+                            agregarBanco();
+                            cargarBanco();
+                            reiniciarTablero();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Favor seleccionar codigo de predio.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        }
                     }
                     else
                         MessageBox.Show("Favor seleccionar propietario.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -337,10 +353,11 @@ namespace Aplicativo
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dataGridView1.CurrentCell.ColumnIndex == 1)
+            if (dataGridView1.CurrentCell.ColumnIndex == 1 && !dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[0].Value.Equals(""))
             {
                 frmInfoBanco newFrm = new frmInfoBanco(dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[0].Value.ToString());
                 newFrm.Show();
+                dataGridView1.ClearSelection();
             }
             txtPredio.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[1].Value.ToString();
             txtCodCat.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[3].Value.ToString();
@@ -363,9 +380,16 @@ namespace Aplicativo
                 {
                     if (!txtPropietario.Text.Equals(""))
                     {
-                        modificarBanco();
-                        cargarBanco();
-                        reiniciarTablero();
+                        if (!txtCodPred.Text.Equals(""))
+                        {
+                            modificarBanco();
+                            cargarBanco();
+                            reiniciarTablero();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Favor seleccionar codigo de predio.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        }
                     }
                     else
                         MessageBox.Show("Favor seleccionar propietario.", "Error");
@@ -449,6 +473,11 @@ namespace Aplicativo
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Variables.imprimir(dataGridView1);
+        }
+
+        private void frmBanco_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

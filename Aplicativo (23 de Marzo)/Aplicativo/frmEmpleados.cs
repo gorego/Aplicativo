@@ -436,7 +436,7 @@ namespace Aplicativo
 
         public void buscarEmpleado()
         {
-            string query = "SELECT t.ID, t.Nombres, t.Apellidos, t.Cedula, t.fechaNacimiento, t.grupoSanguineo, t.Celular, t.diasLaborados, t.Direccion, d.Departamento, c.Cargo, (m.Tipo+' / '+m.Marca +' / ' + m.Placa) As Maquinaria, t.fechaIngreso, t.fechaTerminacion, t.Pantalon, t.Camisa, t.Botas, t.Tipo FROM Maquinarias AS m INNER JOIN (Departamentos AS d INNER JOIN (CargoLaboral AS c INNER JOIN Trabajadores AS t ON c.ID = t.Cargo) ON d.ID = t.Departamento) ON m.ID = t.Maquina ";
+            string query = "SELECT t.ID, t.Nombres, t.Apellidos, t.Cedula, t.fechaNacimiento, t.grupoSanguineo, t.Celular, t.Direccion, d.Departamento, c.Cargo, (m.Tipo+' / '+m.Marca +' / ' + m.Placa) As Maquinaria,t.fechaIngreso,t.fechaTerminacion, t.Pantalon, t.Camisa, t.Botas, t.Tipo, t.Ubicacion,t.diasLaborados FROM Maquinarias AS m INNER JOIN (Departamentos AS d INNER JOIN (CargoLaboral AS c INNER JOIN Trabajadores AS t ON c.ID = t.Cargo) ON d.ID = t.Departamento) ON m.ID = t.Maquina ";
             int i = 0;
             if (!txtNombre.Text.Equals(""))
             {
@@ -465,8 +465,8 @@ namespace Aplicativo
                 i++;
                 query += "t.Cedula LIKE '%" + txtCedula.Text + "%'";
             }
-            string date1 = dateTimePicker1.Value.Month.ToString() + "/" + dateTimePicker1.Value.Day.ToString() + "/" + dateTimePicker1.Value.Year.ToString();
-            string date2 = DateTime.Now.Month.ToString() + "/" + DateTime.Now.Day.ToString() + "/" + DateTime.Now.Year.ToString();
+            string date1 = dateTimePicker1.Value.Day.ToString() + "/" + dateTimePicker1.Value.Month.ToString() + "/" + dateTimePicker1.Value.Year.ToString();
+            string date2 = DateTime.Now.Day.ToString() + "/" + DateTime.Now.Month.ToString() + "/" + DateTime.Now.Year.ToString();
             if (!date1.Equals(date2))
             {
                 if (i != 0)
@@ -476,8 +476,8 @@ namespace Aplicativo
                 i++;
                 query += "t.fechaNacimiento LIKE '%" + date1 + "%'";
             }
-            date1 = dateTimePicker2.Value.Month.ToString() + "/" + dateTimePicker2.Value.Day.ToString() + "/" + dateTimePicker2.Value.Year.ToString();
-            date2 = DateTime.Now.Month.ToString() + "/" + DateTime.Now.Day.ToString() + "/" + DateTime.Now.Year.ToString();
+            date1 = dateTimePicker2.Value.Day.ToString() + "/" + dateTimePicker2.Value.Month.ToString() + "/" + dateTimePicker2.Value.Year.ToString();
+            date2 = DateTime.Now.Day.ToString() + "/" + DateTime.Now.Month.ToString() + "/" + DateTime.Now.Year.ToString();
             if (!date1.Equals(date2))
             {
                 if (i != 0)
@@ -487,8 +487,8 @@ namespace Aplicativo
                 i++;
                 query += "t.fechaIngreso LIKE '%" + date1 + "%'";
             }
-            date1 = dateTimePicker3.Value.Month.ToString() + "/" + dateTimePicker3.Value.Day.ToString() + "/" + dateTimePicker3.Value.Year.ToString();
-            date2 = DateTime.Now.Month.ToString() + "/" + DateTime.Now.Day.ToString() + "/" + DateTime.Now.Year.ToString();
+            date1 = dateTimePicker3.Value.Day.ToString() + "/" + dateTimePicker3.Value.Month.ToString() + "/" + dateTimePicker3.Value.Year.ToString();
+            date2 = DateTime.Now.Day.ToString() + "/" + DateTime.Now.Month.ToString() + "/" + DateTime.Now.Year.ToString();
             if (textTerminado.Text.Equals("Si"))
             {
                 if (!date1.Equals(date2))
@@ -518,15 +518,6 @@ namespace Aplicativo
                     query += "WHERE ";
                 i++;
                 query += "t.Celular LIKE '%" + txtCelular.Text + "%'";
-            }
-            if (!textBox2.Text.Equals(""))
-            {
-                if (i != 0)
-                    query += " AND ";
-                else
-                    query += "WHERE ";
-                i++;
-                query += "t.diasLaborados LIKE '%" + textBox2.Text + "%'";
             }
             if (!txtDir.Text.Equals(""))
             {
@@ -606,6 +597,24 @@ namespace Aplicativo
                         query += "WHERE ";
                     i++;
                     query += "t.Tipo LIKE 'Contratista'";
+            }
+            if (!textBox1.Text.Equals(""))
+            {
+                if (i != 0)
+                    query += " AND ";
+                else
+                    query += "WHERE ";
+                i++;
+                query += "t.Ubicacion LIKE '%" + textBox1.Text + "%'";
+            }
+            if (!textBox2.Text.Equals("") && !textBox2.Text.Equals("0"))
+            {
+                if (i != 0)
+                    query += " AND ";
+                else
+                    query += "WHERE ";
+                i++;
+                query += "t.diasLaborados LIKE '%" + textBox2.Text + "%'";
             }
             //Ejecutar el query y llenar el GridView.
             conn.ConnectionString = connectionString;

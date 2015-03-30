@@ -25,7 +25,7 @@ namespace Aplicativo
 
         public void cargarProveedores(string id)
         {
-            string query = "SELECT p.ID, (i.Codigo + ' ' + i.Marca + ' ' + i.Modelo) As Insumo, p.Cantidad, p.Fecha, p.Costo FROM Insumos AS i INNER JOIN proveedorInsumo AS p ON i.ID = p.Insumo WHERE p.Proveedor = " + id;
+            string query = "SELECT p.ID, (i.Clase + ' ' + i.Marca + ' ' + i.Modelo) As Insumo, p.Cantidad, p.Fecha, p.Costo FROM Insumos AS i INNER JOIN proveedorInsumo AS p ON i.ID = p.Insumo WHERE p.Proveedor = " + id;
             //Ejecutar el query y llenar el GridView.
             conn.ConnectionString = connectionString;
             OleDbCommand cmd = new OleDbCommand(query, conn);
@@ -39,10 +39,10 @@ namespace Aplicativo
 
         public void totalCosto()
         {
-            int total = 0;
+            double total = 0;
             for (int i = 0; i < dataGridView2.Rows.Count; i++)
             {
-                total += Int32.Parse(dataGridView2.Rows[i].Cells[4].Value.ToString());
+                total += double.Parse(dataGridView2.Rows[i].Cells[4].Value.ToString());
             }
             label1.Text = "Total: " + String.Format("{0:c}", total);
         }

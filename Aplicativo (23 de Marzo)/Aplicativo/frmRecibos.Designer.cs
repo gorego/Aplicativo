@@ -84,6 +84,9 @@
             // 
             // tabControl1
             // 
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
@@ -242,6 +245,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(46, 540);
             this.label1.Name = "label1";
@@ -251,6 +255,7 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "Transferencia de Material",
@@ -263,6 +268,7 @@
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(73, 571);
             this.label2.Name = "label2";
@@ -272,6 +278,7 @@
             // 
             // comboBox2
             // 
+            this.comboBox2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Items.AddRange(new object[] {
             "Entresaca",
@@ -284,6 +291,7 @@
             // 
             // comboBox3
             // 
+            this.comboBox3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.comboBox3.FormattingEnabled = true;
             this.comboBox3.Items.AddRange(new object[] {
             "Teca",
@@ -298,6 +306,7 @@
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(321, 540);
             this.label3.Name = "label3";
@@ -307,6 +316,7 @@
             // 
             // comboBox4
             // 
+            this.comboBox4.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.comboBox4.FormattingEnabled = true;
             this.comboBox4.Items.AddRange(new object[] {
             "10",
@@ -327,6 +337,7 @@
             // 
             // label4
             // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(324, 571);
             this.label4.Name = "label4";
@@ -336,6 +347,7 @@
             // 
             // textBox1
             // 
+            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.textBox1.Location = new System.Drawing.Point(611, 537);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(78, 20);
@@ -343,6 +355,7 @@
             // 
             // label5
             // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(544, 571);
             this.label5.Name = "label5";
@@ -352,6 +365,7 @@
             // 
             // label6
             // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(527, 540);
             this.label6.Name = "label6";
@@ -361,6 +375,7 @@
             // 
             // textBox2
             // 
+            this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.textBox2.Location = new System.Drawing.Point(611, 568);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(78, 20);
@@ -368,6 +383,7 @@
             // 
             // textBox3
             // 
+            this.textBox3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.textBox3.Location = new System.Drawing.Point(762, 568);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(78, 20);
@@ -375,6 +391,7 @@
             // 
             // label7
             // 
+            this.label7.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(695, 540);
             this.label7.Name = "label7";
@@ -384,6 +401,7 @@
             // 
             // label8
             // 
+            this.label8.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(710, 571);
             this.label8.Name = "label8";
@@ -393,6 +411,7 @@
             // 
             // textBox4
             // 
+            this.textBox4.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.textBox4.Location = new System.Drawing.Point(762, 537);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(78, 20);
@@ -400,6 +419,7 @@
             // 
             // comboBox5
             // 
+            this.comboBox5.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.comboBox5.FormattingEnabled = true;
             this.comboBox5.Location = new System.Drawing.Point(883, 537);
             this.comboBox5.Name = "comboBox5";
@@ -408,6 +428,7 @@
             // 
             // label9
             // 
+            this.label9.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(846, 540);
             this.label9.Name = "label9";
@@ -417,6 +438,7 @@
             // 
             // textBox5
             // 
+            this.textBox5.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.textBox5.Location = new System.Drawing.Point(904, 568);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(78, 20);
@@ -424,6 +446,7 @@
             // 
             // label10
             // 
+            this.label10.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(846, 571);
             this.label10.Name = "label10";
@@ -433,6 +456,7 @@
             // 
             // dateTimePicker3
             // 
+            this.dateTimePicker3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.dateTimePicker3.Location = new System.Drawing.Point(1114, 568);
             this.dateTimePicker3.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker3.Name = "dateTimePicker3";
@@ -441,6 +465,7 @@
             // 
             // label11
             // 
+            this.label11.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(1040, 571);
             this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -451,6 +476,7 @@
             // 
             // dateTimePicker2
             // 
+            this.dateTimePicker2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.dateTimePicker2.Location = new System.Drawing.Point(1114, 537);
             this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker2.Name = "dateTimePicker2";
@@ -459,6 +485,7 @@
             // 
             // label12
             // 
+            this.label12.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(1040, 540);
             this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -469,6 +496,7 @@
             // 
             // button1
             // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.button1.Location = new System.Drawing.Point(307, 603);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(251, 29);
@@ -479,6 +507,7 @@
             // 
             // button2
             // 
+            this.button2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.button2.Location = new System.Drawing.Point(564, 603);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(251, 29);
@@ -489,6 +518,7 @@
             // 
             // button3
             // 
+            this.button3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.button3.Location = new System.Drawing.Point(821, 603);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(251, 29);
@@ -499,6 +529,7 @@
             // 
             // checkBox1
             // 
+            this.checkBox1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.checkBox1.AutoSize = true;
             this.checkBox1.Location = new System.Drawing.Point(1220, 548);
             this.checkBox1.Name = "checkBox1";
@@ -509,6 +540,7 @@
             // 
             // textBox6
             // 
+            this.textBox6.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.textBox6.Location = new System.Drawing.Point(375, 568);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(139, 20);
@@ -517,6 +549,7 @@
             // 
             // label13
             // 
+            this.label13.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label13.AutoSize = true;
             this.label13.Location = new System.Drawing.Point(342, 571);
             this.label13.Name = "label13";

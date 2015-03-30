@@ -91,6 +91,56 @@ namespace Aplicativo
             }
         }
 
+        public void modificarFormato(string id)
+        {
+            conn.ConnectionString = connectionString;
+            OleDbCommand cmd = new OleDbCommand("UPDATE Formatos SET Formato=@Formato,Nombre=@Nombre WHERE ID = " + id);
+            cmd.Connection = conn;
+            conn.Open();
+            if (conn.State == ConnectionState.Open)
+            {
+                string contrato = textBox3.Text;
+                if (!contrato.Equals(""))
+                {
+                    Directory.CreateDirectory("C:\\Users\\" + Environment.UserName + "\\Dropbox\\Aplicativo\\Formatos");
+                    string[] prueba = Directory.GetFiles("C:\\Users\\" + Environment.UserName + "\\Dropbox\\Aplicativo\\Formatos", textBox1.Text + "*");
+                    if (prueba.Length > 0)
+                    {
+                        if (File.Exists(prueba[0]))
+                        {
+
+                            File.Delete(prueba[0]);
+                        }
+                    }
+                    using (FileStream fs = File.Open(contrato, FileMode.Open))
+                    {
+                        Directory.CreateDirectory("C:\\Users\\" + Environment.UserName + "\\Dropbox\\Aplicativo\\Formatos");
+                        string ext = Path.GetExtension(contrato);
+                        fs.CopyTo(File.Create("C:\\Users\\" + Environment.UserName + "\\Dropbox\\Aplicativo\\Formatos\\" + textBox1.Text + ext));
+                        fs.Close();
+                    }
+                }
+                cmd.Parameters.Add("@Formato", OleDbType.VarChar).Value = textBox1.Text;
+                cmd.Parameters.Add("@Nombre", OleDbType.VarChar).Value = textBox2.Text;
+
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Formato modificado.");
+                    conn.Close();
+                }
+                catch (OleDbException ex)
+                {
+                    MessageBox.Show(ex.Source);
+                    conn.Close();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Connection Failed");
+            }
+        }
+
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             agregarFormato();
@@ -103,27 +153,29 @@ namespace Aplicativo
         private void btnModificar_Click(object sender, EventArgs e)
         {
             string contrato = textBox3.Text;
-            if (!contrato.Equals(""))
-            {
-                Directory.CreateDirectory("C:\\Users\\" + Environment.UserName + "\\Dropbox\\Aplicativo\\Formatos");
-                string[] prueba = Directory.GetFiles("C:\\Users\\" + Environment.UserName + "\\Dropbox\\Aplicativo\\Formatos", textBox1.Text + "*");
-                if (prueba.Length > 0)
-                {
-                    if (File.Exists(prueba[0]))
-                    {
+            //if (!contrato.Equals(""))
+            //{
+                modificarFormato(dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[0].Value.ToString());
+                cargarFormatos();
+                //Directory.CreateDirectory("C:\\Users\\" + Environment.UserName + "\\Dropbox\\Aplicativo\\Formatos");
+                //string[] prueba = Directory.GetFiles("C:\\Users\\" + Environment.UserName + "\\Dropbox\\Aplicativo\\Formatos", textBox1.Text + "*");
+                //if (prueba.Length > 0)
+                //{
+                //    if (File.Exists(prueba[0]))
+                //    {
 
-                        File.Delete(prueba[0]);
-                    }
-                }
-                using (FileStream fs = File.Open(contrato, FileMode.Open))
-                {
-                    Directory.CreateDirectory("C:\\Users\\" + Environment.UserName + "\\Dropbox\\Aplicativo\\Formatos");
-                    string ext = Path.GetExtension(contrato);
-                    fs.CopyTo(File.Create("C:\\Users\\" + Environment.UserName + "\\Dropbox\\Aplicativo\\Formatos\\" + textBox1.Text + ext));
-                    fs.Close();
-                    MessageBox.Show("Contrato modificado.");
-                }
-            }
+                //        File.Delete(prueba[0]);
+                //    }
+                //}
+                //using (FileStream fs = File.Open(contrato, FileMode.Open))
+                //{
+                //    Directory.CreateDirectory("C:\\Users\\" + Environment.UserName + "\\Dropbox\\Aplicativo\\Formatos");
+                //    string ext = Path.GetExtension(contrato);
+                //    fs.CopyTo(File.Create("C:\\Users\\" + Environment.UserName + "\\Dropbox\\Aplicativo\\Formatos\\" + textBox1.Text + ext));
+                //    fs.Close();
+                //    MessageBox.Show("Contrato modificado.");
+                //}
+            //}
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -135,7 +187,7 @@ namespace Aplicativo
 
                 string id = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[0].Value.ToString();
                 conn.ConnectionString = connectionString;
-                OleDbCommand cmd = new OleDbCommand("DELETE FROM Formatod WHERE id = " + id);
+                OleDbCommand cmd = new OleDbCommand("DELETE FROM Formatos WHERE id = " + id);
                 cmd.Connection = conn;
                 conn.Open();
 

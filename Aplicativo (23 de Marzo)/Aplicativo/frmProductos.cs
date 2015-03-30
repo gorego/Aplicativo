@@ -186,41 +186,41 @@ namespace Aplicativo
         {
             string query = "SELECT * FROM Productos ";
             int i = 0;
-            if (!txtCodigo.Text.Equals(""))
+            //if (!txtCodigo.Text.Equals(""))
+            //{
+            //    if (i != 0)
+            //        query += " AND ";
+            //    else
+            //        query += "WHERE ";
+            //    i++;
+            //    query += "Codigo LIKE '" + txtCodigo.Text + "'";
+            //}
+            if (!textBox1.Text.Equals("") && !textBox1.Text.Equals("0"))
             {
                 if (i != 0)
                     query += " AND ";
                 else
                     query += "WHERE ";
                 i++;
-                query += "Codigo LIKE '%" + txtCodigo.Text + "%'";
+                query += "anchoProd = " + textBox1.Text;
             }
-            if (!textBox1.Text.Equals(""))
+            if (!textBox2.Text.Equals("") && !textBox2.Text.Equals("0"))
             {
                 if (i != 0)
                     query += " AND ";
                 else
                     query += "WHERE ";
                 i++;
-                query += "anchoProd LIKE '%" + textBox1.Text + "%'";
+                query += "altoProd = " + textBox2.Text;
             }
-            if (!textBox2.Text.Equals(""))
+            if (!textBox3.Text.Equals("") && !textBox3.Text.Equals("0"))
             {
                 if (i != 0)
                     query += " AND ";
                 else
                     query += "WHERE ";
                 i++;
-                query += "altoProd LIKE '%" + textBox2.Text + "%'";
-            }
-            if (!textBox3.Text.Equals(""))
-            {
-                if (i != 0)
-                    query += " AND ";
-                else
-                    query += "WHERE ";
-                i++;
-                query += "largoProd LIKE '%" + textBox3.Text + "%'";
+                query += "largoProd = " + textBox3.Text;
             }
             if (!comboBox1.Text.Equals(""))
             {
@@ -229,7 +229,7 @@ namespace Aplicativo
                 else
                     query += "WHERE ";
                 i++;
-                query += "Caracteristica LIKE '%" + comboBox1.Text + "%'";
+                query += "Caracteristica LIKE '" + comboBox1.Text + "'";
             }
             if (!textBox11.Text.Equals(""))
             {
@@ -238,79 +238,80 @@ namespace Aplicativo
                 else
                     query += "WHERE ";
                 i++;
-                query += "Variabilidad LIKE '%" + textBox11.Text + "%'";
+                query += "Variabilidad LIKE '" + textBox11.Text + "'";
             }
-            if (!textBox12.Text.Equals(""))
+            if (!textBox12.Text.Equals("") && !textBox12.Text.Equals("0"))
             {
                 if (i != 0)
                     query += " AND ";
                 else
                     query += "WHERE ";
                 i++;
-                query += "Condiciones LIKE '%" + textBox12.Text + "%'";
+                query += "Condiciones LIKE '" + textBox12.Text + "'";
             }
-            if (!textBox14.Text.Equals(""))
+            if (!textBox14.Text.Equals("") && !textBox14.Text.Equals("0"))
             {
                 if (i != 0)
                     query += " AND ";
                 else
                     query += "WHERE ";
                 i++;
-                query += "Precio LIKE '%" + textBox14.Text + "%'";
+                int value = int.Parse(textBox14.Text, System.Globalization.NumberStyles.Currency);
+                query += "Precio = " + value;
             }
-            if (!textBox10.Text.Equals(""))
+            if (!textBox10.Text.Equals("") && !textBox10.Text.Equals("0"))
             {
                 if (i != 0)
                     query += " AND ";
                 else
                     query += "WHERE ";
                 i++;
-                query += "anchoFact LIKE '%" + textBox10.Text + "%'";
+                query += "anchoFact = " + textBox10.Text;
             }
-            if (!textBox9.Text.Equals(""))
+            if (!textBox9.Text.Equals("") && !textBox9.Text.Equals("0"))
             {
                 if (i != 0)
                     query += " AND ";
                 else
                     query += "WHERE ";
                 i++;
-                query += "altoFact LIKE '%" + textBox9.Text + "%'";
+                query += "altoFact = " + textBox9.Text;
             }
-            if (!textBox8.Text.Equals(""))
+            if (!textBox8.Text.Equals("") && !textBox9.Text.Equals("0"))
             {
                 if (i != 0)
                     query += " AND ";
                 else
                     query += "WHERE ";
                 i++;
-                query += "largoFact LIKE '%" + textBox8.Text + "%'";
+                query += "largoFact = " + textBox8.Text;
             }
-            if (!textBox17.Text.Equals(""))
+            if (!textBox17.Text.Equals("") && !textBox17.Text.Equals("0"))
             {
                 if (i != 0)
                     query += " AND ";
                 else
                     query += "WHERE ";
                 i++;
-                query += "anchoEmp LIKE '%" + textBox17.Text + "%'";
+                query += "anchoEmp = " + textBox17.Text;
             }
-            if (!textBox16.Text.Equals(""))
+            if (!textBox16.Text.Equals("") && !textBox16.Text.Equals("0"))
             {
                 if (i != 0)
                     query += " AND ";
                 else
                     query += "WHERE ";
                 i++;
-                query += "altoEmp LIKE '%" + textBox16.Text + "%'";
+                query += "altoEmp = " + textBox16.Text;
             }
-            if (!textBox15.Text.Equals(""))
+            if (!textBox15.Text.Equals("") && !textBox15.Text.Equals("0"))
             {
                 if (i != 0)
                     query += " AND ";
                 else
                     query += "WHERE ";
                 i++;
-                query += "largoEmp LIKE '%" + textBox15.Text + "%'";
+                query += "largoEmp = " + textBox15.Text;
             }
             if (!textBox20.Text.Equals("") && !textBox20.Text.Equals("0"))
             {
@@ -319,7 +320,7 @@ namespace Aplicativo
                 else
                     query += "WHERE ";
                 i++;
-                query += "distSeparador LIKE '%" + textBox20.Text + "%'";
+                query += "distSeparador = " + textBox20.Text;
             }
             if (!textBox18.Text.Equals("") && !textBox18.Text.Equals("0"))
             {
@@ -328,7 +329,7 @@ namespace Aplicativo
                 else
                     query += "WHERE ";
                 i++;
-                query += "xSeparador LIKE '%" + textBox18.Text + "%'";
+                query += "xSeparador = " + textBox18.Text;
             }
             if (!textBox19.Text.Equals("") && !textBox19.Text.Equals("0"))
             {
@@ -337,25 +338,25 @@ namespace Aplicativo
                 else
                     query += "WHERE ";
                 i++;
-                query += "ySeparador LIKE '%" + textBox19.Text + "%'";
+                query += "ySeparador = " + textBox19.Text;
             }
-            if (!textBox23.Text.Equals(""))
+            if (!textBox23.Text.Equals("") && !textBox23.Text.Equals("0") && !textBox23.Text.Equals("1"))
             {
                 if (i != 0)
                     query += " AND ";
                 else
                     query += "WHERE ";
                 i++;
-                query += "numAnchoEmp LIKE '%" + textBox23.Text + "%'";
+                query += "numAnchoEmp = " + textBox23.Text;
             }
-            if (!textBox22.Text.Equals(""))
+            if (!textBox22.Text.Equals("") && !textBox22.Text.Equals("0") && !textBox22.Text.Equals("1"))
             {
                 if (i != 0)
                     query += " AND ";
                 else
                     query += "WHERE ";
                 i++;
-                query += "numAltoEmp LIKE '%" + textBox22.Text + "%'";
+                query += "numAltoEmp = " + textBox22.Text;
             }
             if (!txtEspecie.Text.Equals(""))
             {
@@ -364,7 +365,7 @@ namespace Aplicativo
                 else
                     query += "WHERE ";
                 i++;
-                query += "Especie LIKE '%" + txtEspecie.Text + "%'";
+                query += "Especie LIKE '" + txtEspecie.Text + "'";
             }
             conn.ConnectionString = connectionString;
             OleDbCommand cmd = new OleDbCommand(query, conn);
@@ -467,8 +468,10 @@ namespace Aplicativo
                 if (comboBox1.SelectedIndex == 0)
                     cod = "DIM ";
                 else if (comboBox1.SelectedIndex == 1)
-                    cod = "SD ";
+                    cod = "DIM SD ";
                 else if (comboBox1.SelectedIndex == 2)
+                    cod = "SD ";
+                else if (comboBox1.SelectedIndex == 3)
                     cod = "SC ";
                 else
                     cod = "SLATS ";
@@ -502,8 +505,10 @@ namespace Aplicativo
                 if (comboBox1.SelectedIndex == 0)
                     cod = "DIM ";
                 else if (comboBox1.SelectedIndex == 1)
-                    cod = "SD ";
+                    cod = "DIM SD ";
                 else if (comboBox1.SelectedIndex == 2)
+                    cod = "SD ";
+                else if (comboBox1.SelectedIndex == 3)
                     cod = "SC ";
                 else
                     cod = "SLATS ";
@@ -532,8 +537,10 @@ namespace Aplicativo
                 if (comboBox1.SelectedIndex == 0)
                     cod = "DIM ";
                 else if (comboBox1.SelectedIndex == 1)
-                    cod = "SD ";
+                    cod = "DIM SD ";
                 else if (comboBox1.SelectedIndex == 2)
+                    cod = "SD ";
+                else if (comboBox1.SelectedIndex == 3)
                     cod = "SC ";
                 else
                     cod = "SLATS ";
@@ -605,8 +612,10 @@ namespace Aplicativo
                 if (comboBox1.SelectedIndex == 0)
                     cod = "DIM ";
                 else if (comboBox1.SelectedIndex == 1)
-                    cod = "SD ";
+                    cod = "DIM SD ";
                 else if (comboBox1.SelectedIndex == 2)
+                    cod = "SD ";
+                else if (comboBox1.SelectedIndex == 3)
                     cod = "SC ";
                 else
                     cod = "SLATS ";
@@ -822,8 +831,10 @@ namespace Aplicativo
                 if (comboBox1.SelectedIndex == 0)
                     cod = "DIM ";
                 else if (comboBox1.SelectedIndex == 1)
-                    cod = "SD ";
+                    cod = "DIM SD ";
                 else if (comboBox1.SelectedIndex == 2)
+                    cod = "SC ";
+                else if (comboBox1.SelectedIndex == 3)
                     cod = "SC ";
                 else
                     cod = "SLATS ";

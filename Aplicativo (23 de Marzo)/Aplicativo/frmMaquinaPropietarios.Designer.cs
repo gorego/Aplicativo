@@ -46,9 +46,9 @@
             // 
             // btnCerrar
             // 
-            this.btnCerrar.Location = new System.Drawing.Point(139, 376);
+            this.btnCerrar.Location = new System.Drawing.Point(12, 340);
             this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(170, 30);
+            this.btnCerrar.Size = new System.Drawing.Size(434, 30);
             this.btnCerrar.TabIndex = 29;
             this.btnCerrar.Text = "Cerrar Ventana";
             this.btnCerrar.UseVisualStyleBackColor = true;
@@ -72,7 +72,7 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(139, 340);
+            this.btnEliminar.Location = new System.Drawing.Point(234, 304);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(170, 30);
             this.btnEliminar.TabIndex = 26;
@@ -82,7 +82,7 @@
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(141, 304);
+            this.btnAgregar.Location = new System.Drawing.Point(58, 304);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(170, 30);
             this.btnAgregar.TabIndex = 25;
@@ -94,7 +94,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(458, 418);
+            this.ClientSize = new System.Drawing.Size(458, 376);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.textBox1);

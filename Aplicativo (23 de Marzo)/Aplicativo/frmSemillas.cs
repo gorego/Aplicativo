@@ -20,8 +20,8 @@ namespace Aplicativo
         public frmSemillas()
         {
             InitializeComponent();
-            Variables.cargar(dataGridView1, "SELECT * FROM Semillas");
-            dataGridView1.Columns[1].DefaultCellStyle.Font = new Font(dataGridView1.DefaultCellStyle.Font, FontStyle.Underline);
+            Variables.cargar(dataGridView1, "SELECT * FROM Semillas WHERE Nombre <> 'N/A'");
+            //dataGridView1.Columns[1].DefaultCellStyle.Font = new Font(dataGridView1.DefaultCellStyle.Font, FontStyle.Underline);
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -91,19 +91,89 @@ namespace Aplicativo
         {
             modificarSemilla(0);
             subirArchivo();
-            Variables.cargar(dataGridView1, "SELECT * FROM Semillas");
+            Variables.cargar(dataGridView1, "SELECT * FROM Semillas WHERE Nombre <> 'N/A'");
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             modificarSemilla(1);
             subirArchivo();
-            Variables.cargar(dataGridView1, "SELECT * FROM Semillas");
+            Variables.cargar(dataGridView1, "SELECT * FROM Semillas WHERE Nombre <> 'N/A'");
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             textBox1.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[1].Value.ToString();
+            //Directory.CreateDirectory("C:\\Users\\" + Environment.UserName + "\\Dropbox\\Anexos\\Semillas");
+            //if (!textBox1.Text.Equals("N/A"))
+            //{
+            //    string[] prueba = Directory.GetFiles("C:\\Users\\" + Environment.UserName + "\\Dropbox\\Anexos\\Semillas", textBox1.Text + "*");
+            //    if (prueba.Length > 0)
+            //    {
+            //        if (File.Exists(prueba[0]))
+            //        {
+            //            System.Diagnostics.Process.Start(prueba[0]);
+            //        }
+            //        else
+            //        {
+            //            MessageBox.Show("No se encuentra el archivo.", "Error");
+            //        }
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("No se encuentra el archivo.", "Error");
+            //    }
+            //}
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = System.Windows.Forms.MessageBox.Show("Seguro de eliminar la semilla " + dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[1].Value.ToString() + "?", "Confirmar", MessageBoxButtons.YesNo);
+
+            if (dialogResult == DialogResult.Yes)
+            {
+
+                string id = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[0].Value.ToString();
+                conn.ConnectionString = connectionString;
+                OleDbCommand cmd = new OleDbCommand("DELETE FROM Semillas WHERE id = " + id);
+                cmd.Connection = conn;
+                conn.Open();
+
+                if (conn.State == ConnectionState.Open)
+                {
+                    try
+                    {
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Semilla eliminada.");
+                        Directory.CreateDirectory("C:\\Users\\" + Environment.UserName + "\\Dropbox\\Anexos\\Semillas");
+                        string[] prueba = Directory.GetFiles("C:\\Users\\" + Environment.UserName + "\\Dropbox\\Anexos\\Semillas", textBox1.Text + "*");
+                        if (prueba.Length > 0)
+                        {
+                            if (File.Exists(prueba[0]))
+                            {
+
+                                File.Delete(prueba[0]);
+                            }
+                        }
+                        conn.Close();
+                    }
+                    catch (OleDbException ex)
+                    {
+                        MessageBox.Show(ex.Source);
+                        conn.Close();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Connection Failed");
+                }
+                Variables.cargar(dataGridView1, "SELECT * FROM Semillas WHERE Nombre <> 'N/A'");
+            }
+        }
+
+        private void linkLabel3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            //textBox1.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[1].Value.ToString();
             Directory.CreateDirectory("C:\\Users\\" + Environment.UserName + "\\Dropbox\\Anexos\\Semillas");
             if (!textBox1.Text.Equals("N/A"))
             {

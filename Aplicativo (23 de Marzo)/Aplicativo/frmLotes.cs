@@ -17,11 +17,8 @@ namespace Aplicativo
         String connectionString = Variables.connectionString;
         OleDbConnection conn = new OleDbConnection();
 
-        public void cargarLotes() {
-            while (dataGridView1.Rows.Count != 0)
-            {
-                dataGridView1.Rows.RemoveAt(0);
-            }
+        public void cargarLotes2() {
+            dataGridView9.Rows.Clear();
             string query = "SELECT l.Codigo, l.Lote, b.Predio, l.Longitud, l.Latitud, l.Figura, p.Nombre, u.Unidad, m.Municipio, l.Especie, l.Ano, l.areaPlantacion, l.areaEfectiva, l.estadoFSC, l.FSC, l.sumidero,l.CIF,l.restAmbiental,l.registroPlantacion,l.Ubicacion,s.Nombre, l.extraidoEntresaca, l.extraidoTalaRaza, l.extraidoRecuperacion FROM ((UnidadDeManejo AS u INNER JOIN (Municipio AS m INNER JOIN (BancoTierras AS b INNER JOIN Lotes AS l ON b.ID = l.Predio) ON m.ID = b.Municipio) ON u.ID = l.Unidad) INNER JOIN Semillas AS s ON l.semillaOrigen = s.Id) INNER JOIN Propietarios AS p ON b.Propietario = p.ID";
             //Ejecutar el query y llenar el GridView.
             conn.ConnectionString = connectionString;
@@ -34,31 +31,31 @@ namespace Aplicativo
             {
                 while (myReader.Read())
                 {                    
-                    dataGridView1.Rows.Add();
-                    dataGridView1.Rows[i].Cells[0].Value = myReader.GetInt32(0);
-                    dataGridView1.Rows[i].Cells[1].Value = myReader.GetString(1);
-                    dataGridView1.Rows[i].Cells[2].Value = myReader.GetString(2);
-                    dataGridView1.Rows[i].Cells[3].Value = myReader.GetValue(3);
-                    dataGridView1.Rows[i].Cells[4].Value = myReader.GetValue(4);
-                    dataGridView1.Rows[i].Cells[5].Value = myReader.GetString(5);
-                    dataGridView1.Rows[i].Cells[6].Value = myReader.GetString(6);
-                    dataGridView1.Rows[i].Cells[7].Value = myReader.GetString(7);
-                    dataGridView1.Rows[i].Cells[8].Value = myReader.GetString(8);
-                    dataGridView1.Rows[i].Cells[9].Value = myReader.GetString(9);
-                    dataGridView1.Rows[i].Cells[10].Value = myReader.GetInt32(10);
-                    dataGridView1.Rows[i].Cells[11].Value = myReader.GetString(11);
-                    dataGridView1.Rows[i].Cells[12].Value = myReader.GetString(12);
-                    dataGridView1.Rows[i].Cells[13].Value = myReader.GetString(13);
-                    dataGridView1.Rows[i].Cells[14].Value = myReader.GetString(14);
-                    dataGridView1.Rows[i].Cells[15].Value = myReader.GetString(15);
-                    dataGridView1.Rows[i].Cells[16].Value = myReader.GetString(16);
-                    dataGridView1.Rows[i].Cells[17].Value = myReader.GetString(17);
-                    dataGridView1.Rows[i].Cells[18].Value = myReader.GetString(18);
-                    dataGridView1.Rows[i].Cells[19].Value = myReader.GetString(19);
-                    dataGridView1.Rows[i].Cells[20].Value = myReader.GetString(20);
-                    dataGridView1.Rows[i].Cells[21].Value = Math.Round(myReader.GetDouble(21), 4, MidpointRounding.AwayFromZero);
-                    dataGridView1.Rows[i].Cells[22].Value = Math.Round(myReader.GetDouble(22), 4, MidpointRounding.AwayFromZero);
-                    dataGridView1.Rows[i].Cells[23].Value = Math.Round(myReader.GetDouble(23), 4, MidpointRounding.AwayFromZero);
+                    dataGridView9.Rows.Add();
+                    dataGridView9.Rows[i].Cells[0].Value = myReader.GetInt32(0);
+                    dataGridView9.Rows[i].Cells[1].Value = myReader.GetString(1);
+                    dataGridView9.Rows[i].Cells[2].Value = myReader.GetString(2);
+                    dataGridView9.Rows[i].Cells[3].Value = myReader.GetValue(3);
+                    dataGridView9.Rows[i].Cells[4].Value = myReader.GetValue(4);
+                    dataGridView9.Rows[i].Cells[5].Value = myReader.GetString(5);
+                    dataGridView9.Rows[i].Cells[6].Value = myReader.GetString(6);
+                    dataGridView9.Rows[i].Cells[7].Value = myReader.GetString(7);
+                    dataGridView9.Rows[i].Cells[8].Value = myReader.GetString(8);
+                    dataGridView9.Rows[i].Cells[9].Value = myReader.GetString(9);
+                    dataGridView9.Rows[i].Cells[10].Value = myReader.GetInt32(10);
+                    dataGridView9.Rows[i].Cells[11].Value = myReader.GetString(11);
+                    dataGridView9.Rows[i].Cells[12].Value = myReader.GetString(12);
+                    dataGridView9.Rows[i].Cells[13].Value = myReader.GetString(13);
+                    dataGridView9.Rows[i].Cells[14].Value = myReader.GetString(14);
+                    dataGridView9.Rows[i].Cells[15].Value = myReader.GetString(15);
+                    dataGridView9.Rows[i].Cells[16].Value = myReader.GetString(16);
+                    dataGridView9.Rows[i].Cells[17].Value = myReader.GetString(17);
+                    dataGridView9.Rows[i].Cells[18].Value = myReader.GetString(18);
+                    dataGridView9.Rows[i].Cells[19].Value = myReader.GetString(19);
+                    dataGridView9.Rows[i].Cells[20].Value = myReader.GetString(20);
+                    dataGridView9.Rows[i].Cells[21].Value = Math.Round(myReader.GetDouble(21), 4, MidpointRounding.AwayFromZero);
+                    dataGridView9.Rows[i].Cells[22].Value = Math.Round(myReader.GetDouble(22), 4, MidpointRounding.AwayFromZero);
+                    dataGridView9.Rows[i].Cells[23].Value = Math.Round(myReader.GetDouble(23), 4, MidpointRounding.AwayFromZero);
                     i++;
                 }
             }
@@ -71,12 +68,43 @@ namespace Aplicativo
             }
         }
 
+        public void cargarLotes()
+        {
+            //dataGridView6.Rows.Clear();
+            string query = "SELECT l.Codigo, l.Lote, b.Predio, l.Longitud, l.Latitud, l.Figura, p.Nombre, u.Unidad, m.Municipio, l.Especie, l.Ano, l.areaPlantacion, l.areaEfectiva, l.estadoFSC, l.FSC, l.sumidero,l.CIF,l.restAmbiental,l.registroPlantacion,l.Ubicacion,s.Nombre, l.extraidoEntresaca, l.extraidoTalaRaza, l.extraidoRecuperacion FROM ((UnidadDeManejo AS u INNER JOIN (Municipio AS m INNER JOIN (BancoTierras AS b INNER JOIN Lotes AS l ON b.ID = l.Predio) ON m.ID = b.Municipio) ON u.ID = l.Unidad) INNER JOIN Semillas AS s ON l.semillaOrigen = s.Id) INNER JOIN Propietarios AS p ON b.Propietario = p.ID";
+            //Ejecutar el query y llenar el GridView.
+            conn.ConnectionString = connectionString;
+            OleDbCommand cmd = new OleDbCommand(query, conn);
+            DataTable banco = new DataTable();
+            OleDbDataAdapter da = new OleDbDataAdapter(cmd);
+            da.Fill(banco);
+            dataGridView1.DataSource = banco;
+            dataGridView1.Columns[6].HeaderText = "Propietario";
+            dataGridView1.Columns[7].HeaderText = "Unidad de Manejo";
+            dataGridView1.Columns[10].HeaderText = "Año";
+            dataGridView1.Columns[11].HeaderText = "Area de Plantación";
+            dataGridView1.Columns[12].HeaderText = "Area Efectiva";
+            dataGridView1.Columns[13].HeaderText = "FSC";
+            dataGridView1.Columns[14].HeaderText = "# FSC";
+            dataGridView1.Columns[15].HeaderText = "# Sumidero";
+            dataGridView1.Columns[17].HeaderText = "# Restricción Ambiental";
+            dataGridView1.Columns[18].HeaderText = "# Registro de Plantación";
+            dataGridView1.Columns[19].HeaderText = "Ubicación Fisica";
+            dataGridView1.Columns[20].HeaderText = "Origen Semilla";
+            dataGridView1.Columns[21].HeaderText = "Extraido Entresaca";
+            dataGridView1.Columns[22].HeaderText = "Extraido Tala Raza";
+            dataGridView1.Columns[23].HeaderText = "Extraido Recuperación de Material";
+
+        }
+
+
         public void cargarCampamento()
         {
-            while (dataGridView5.Rows.Count != 0)
-            {
-                dataGridView5.Rows.RemoveAt(0);
-            }
+            //while (dataGridView5.Rows.Count != 0)
+            //{
+            //    dataGridView5.Rows.RemoveAt(0);
+            //}
+            dataGridView5.Rows.Clear();
             string query = "SELECT c.ID, b.Predio, c.Longitud, c.Latitud, c.codCamp, c.Ocupacion, c.tipoMaterial, c.materialPred, c.Energia, c.agua, c.aguaAseo, c.otroServicio FROM Campamentos AS c INNER JOIN BancoTierras AS b ON c.Predio = b.ID;";
             //Ejecutar el query y llenar el GridView.
             conn.ConnectionString = connectionString;
@@ -116,10 +144,11 @@ namespace Aplicativo
 
         public void cargarLotesGanadero()
         {
-            while (dataGridView3.Rows.Count != 0)
-            {
-                dataGridView3.Rows.RemoveAt(0);
-            }
+            //while (dataGridView3.Rows.Count != 0)
+            //{
+            //    dataGridView3.Rows.RemoveAt(0);
+            //}
+            dataGridView3.Rows.Clear();
             string query = "SELECT l.Codigo, l.Lote, b.Predio, l.Longitud, l.Latitud, p.Nombre, u.Unidad, l.Pasto, m.Municipio, l.Area, l.Renovacion, l.Riesgo, l.Henificable,l.Ubicacion FROM (Propietarios AS p INNER JOIN (Municipio AS m INNER JOIN BancoTierras AS b ON m.ID = b.Municipio) ON p.ID = b.Propietario) INNER JOIN (UnidadDeManejo AS u INNER JOIN LoteGanadero AS l ON u.ID = l.Unidad) ON b.ID = l.Predio;";
             //Ejecutar el query y llenar el GridView.
             conn.ConnectionString = connectionString;
@@ -163,17 +192,19 @@ namespace Aplicativo
         {
             if (clase == 1)
             {
-                while (dataGridView2.Rows.Count != 0)
-                {
-                    dataGridView2.Rows.RemoveAt(0);
-                }
+                //while (dataGridView2.Rows.Count != 0)
+                //{
+                //    dataGridView2.Rows.RemoveAt(0);
+                //}
+                dataGridView2.Rows.Clear();
             }
             else
             {
-                while (dataGridView4.Rows.Count != 0)
-                {
-                    dataGridView4.Rows.RemoveAt(0);
-                }
+                //while (dataGridView4.Rows.Count != 0)
+                //{
+                //    dataGridView4.Rows.RemoveAt(0);
+                //}
+                dataGridView4.Rows.Clear();
             }
             string query = "SELECT a.Codigo, a.Lote, b.Predio, a.Longitud, a.Latitud, p.Nombre, u.Unidad, m.Municipio, a.Area,a.Ubicacion FROM Municipio AS m INNER JOIN (Propietarios AS p INNER JOIN (UnidadDeManejo AS u INNER JOIN (BancoTierras AS b INNER JOIN Areas AS a ON b.ID = a.Predio) ON u.ID = a.Unidad) ON p.ID = b.Propietario) ON m.ID = b.Municipio WHERE a.Clase = " + clase;
             //Ejecutar el query y llenar el GridView.
@@ -651,14 +682,14 @@ namespace Aplicativo
             txtCodigo.Text = "";
             txtLote.Text = "";
             txtPredio.Text = "";
-            txtLong.Text = "";
-            txtLat.Text = "";
+            txtLong.Text = "0";
+            txtLat.Text = "0";
             txtFigura.Text = "";
             txtUnidad.Text = "";
             txtEspecie.Text = "";
-            txtAno.Text = "";
-            txtAreaPlant.Text = "";
-            txtAreaEfe.Text = "";
+            txtAno.Text = "0";
+            txtAreaPlant.Text = "0";
+            txtAreaEfe.Text = "0";
             txtFSC.Text = "";
             txtNumFSC.Text = "";
             txtNumSum.Text = "";
@@ -669,15 +700,19 @@ namespace Aplicativo
             txtUbicacion.Text = "";
             txtAmbiental.Text = "";
             textBox7.Text = "";
+            textBox4.Text = "0";
+            textBox5.Text = "0";
+            textBox6.Text = "0";
         }
 
         public void buscarLote()
         {
-            while (dataGridView1.Rows.Count != 0)
-            {
-                dataGridView1.Rows.RemoveAt(0);
-            }
-            string query = "SELECT l.Codigo, l.Lote, b.Predio, l.Longitud, l.Latitud, l.Figura, p.Nombre, u.Unidad, m.Municipio, l.Especie, l.Ano, l.areaPlantacion, l.areaEfectiva,l.estadoFSC ,l.FSC, l.sumidero, l.CIF FROM UnidadDeManejo AS u INNER JOIN ((Municipio AS m INNER JOIN (Propietarios AS p INNER JOIN BancoTierras AS b ON p.ID = b.Propietario) ON m.ID = b.Municipio) INNER JOIN Lotes AS l ON b.ID = l.Predio) ON u.ID = l.Unidad ";
+            //while (dataGridView1.Rows.Count != 0)
+            //{
+            //    dataGridView1.Rows.RemoveAt(0);
+            //}
+            dataGridView9.Rows.Clear();
+            string query = "SELECT l.Codigo, l.Lote, b.Predio, l.Longitud, l.Latitud, l.Figura, p.Nombre, u.Unidad, m.Municipio, l.Especie, l.Ano, l.areaPlantacion, l.areaEfectiva, l.estadoFSC, l.FSC, l.sumidero,l.CIF,l.restAmbiental,l.registroPlantacion,l.Ubicacion,s.Nombre, l.extraidoEntresaca, l.extraidoTalaRaza, l.extraidoRecuperacion FROM ((UnidadDeManejo AS u INNER JOIN (Municipio AS m INNER JOIN (BancoTierras AS b INNER JOIN Lotes AS l ON b.ID = l.Predio) ON m.ID = b.Municipio) ON u.ID = l.Unidad) INNER JOIN Semillas AS s ON l.semillaOrigen = s.Id) INNER JOIN Propietarios AS p ON b.Propietario = p.ID ";
             int i = 0;
             if (!txtCodigo.Text.Equals(""))
             {
@@ -706,7 +741,7 @@ namespace Aplicativo
                 i++;
                 query += "b.Predio LIKE '" + txtPredio.Text + "'";
             }
-            if (!txtLong.Text.Equals(""))
+            if (!txtLong.Text.Equals("") && !txtLong.Text.Equals("0"))
             {
                 if (i != 0)
                     query += " AND ";
@@ -715,7 +750,7 @@ namespace Aplicativo
                 i++;
                 query += "l.Longitud LIKE '%" + txtLong.Text + "%'";
             }
-            if (!txtLat.Text.Equals(""))
+            if (!txtLat.Text.Equals("") && !txtLat.Text.Equals("0"))
             {
                 if (i != 0)
                     query += " AND ";
@@ -751,7 +786,7 @@ namespace Aplicativo
                 i++;
                 query += "l.Especie LIKE '%" + txtEspecie.Text + "%'";
             }
-            if (!txtAno.Text.Equals(""))
+            if (!txtAno.Text.Equals("") && !txtAno.Text.Equals("0"))
             {
                 if (i != 0)
                     query += " AND ";
@@ -760,7 +795,7 @@ namespace Aplicativo
                 i++;
                 query += "l.Ano LIKE '%" + txtAno.Text + "%'";
             }
-            if (!txtAreaPlant.Text.Equals(""))
+            if (!txtAreaPlant.Text.Equals("") && !txtAreaPlant.Text.Equals("0"))
             {
                 if (i != 0)
                     query += " AND ";
@@ -769,7 +804,7 @@ namespace Aplicativo
                 i++;
                 query += "l.areaPlantacion LIKE '%" + txtAreaPlant.Text + "%'";
             }
-            if (!txtAreaEfe.Text.Equals(""))
+            if (!txtAreaEfe.Text.Equals("") && !txtAreaEfe.Text.Equals("0"))
             {
                 if (i != 0)
                     query += " AND ";
@@ -778,16 +813,16 @@ namespace Aplicativo
                 i++;
                 query += "l.areaEfectiva LIKE '%" + txtAreaEfe.Text + "%'";
             }
-            if (!txtFSC.Text.Equals(""))
-            {
-                if (i != 0)
-                    query += " AND ";
-                else
-                    query += "WHERE ";
-                i++;
-                query += "l.estadoFSC LIKE '%" + txtFSC.Text + "%'";
-            }
-            if (!txtNumFSC.Text.Equals(""))
+            //if (!txtFSC.Text.Equals(""))
+            //{
+            //    if (i != 0)
+            //        query += " AND ";
+            //    else
+            //        query += "WHERE ";
+            //    i++;
+            //    query += "l.estadoFSC LIKE '%" + txtFSC.Text + "%'";
+            //}
+            if (!txtNumFSC.Text.Equals("") && !txtNumFSC.Text.Equals("0"))
             {
                 if (i != 0)
                     query += " AND ";
@@ -796,7 +831,7 @@ namespace Aplicativo
                 i++;
                 query += "l.FSC LIKE '%" + txtNumFSC.Text + "%'";
             }
-            if (!txtNumSum.Text.Equals(""))
+            if (!txtNumSum.Text.Equals("") && !txtNumSum.Text.Equals("0"))
             {
                 if (i != 0)
                     query += " AND ";
@@ -805,7 +840,7 @@ namespace Aplicativo
                 i++;
                 query += "l.sumidero LIKE '%" + txtNumSum.Text + "%'";
             }
-            if (!txtNumCif.Text.Equals(""))
+            if (!txtNumCif.Text.Equals("") && !txtNumCif.Text.Equals("0"))
             {
                 if (i != 0)
                     query += " AND ";
@@ -813,6 +848,69 @@ namespace Aplicativo
                     query += "WHERE ";
                 i++;
                 query += "l.CIF LIKE '%" + txtNumCif.Text + "%'";
+            }
+            if (!txtAmbiental.Text.Equals("") && !txtAmbiental.Text.Equals("0"))
+            {
+                if (i != 0)
+                    query += " AND ";
+                else
+                    query += "WHERE ";
+                i++;
+                query += "l.restAmbiental LIKE '%" + txtAmbiental.Text + "%'";
+            }
+            if (!txtPlantacion.Text.Equals("") && !txtPlantacion.Text.Equals("0"))
+            {
+                if (i != 0)
+                    query += " AND ";
+                else
+                    query += "WHERE ";
+                i++;
+                query += "l.registroPlantacion LIKE '%" + txtPlantacion.Text + "%'";
+            }
+            if (!txtUbicacion.Text.Equals(""))
+            {
+                if (i != 0)
+                    query += " AND ";
+                else
+                    query += "WHERE ";
+                i++;
+                query += "l.Ubicacion LIKE '%" + txtUbicacion.Text + "%'";
+            }
+            if (!textBox7.Text.Equals(""))
+            {
+                if (i != 0)
+                    query += " AND ";
+                else
+                    query += "WHERE ";
+                i++;
+                query += "l.semillaOrigen LIKE '%" + textBox7.SelectedValue + "%'";
+            }
+            if (!textBox4.Text.Equals("") && !textBox4.Text.Equals("0"))
+            {
+                if (i != 0)
+                    query += " AND ";
+                else
+                    query += "WHERE ";
+                i++;
+                query += "l.extraidoEntresaca = " + textBox4.Text;
+            }
+            if (!textBox5.Text.Equals("") && !textBox5.Text.Equals("0"))
+            {
+                if (i != 0)
+                    query += " AND ";
+                else
+                    query += "WHERE ";
+                i++;
+                query += "l.extraidoTalaRaza = " + textBox5.Text;
+            }
+            if (!textBox6.Text.Equals("") && !textBox6.Text.Equals("0"))
+            {
+                if (i != 0)
+                    query += " AND ";
+                else
+                    query += "WHERE ";
+                i++;
+                query += "l.extraidoRecuperacion = " + textBox6.Text;
             }
             //Ejecutar el query y llenar el GridView.
             conn.ConnectionString = connectionString;
@@ -825,24 +923,31 @@ namespace Aplicativo
             {
                 while (myReader.Read())
                 {
-                    dataGridView1.Rows.Add();
-                    dataGridView1.Rows[j].Cells[0].Value = myReader.GetInt32(0);
-                    dataGridView1.Rows[j].Cells[1].Value = myReader.GetString(1);
-                    dataGridView1.Rows[j].Cells[2].Value = myReader.GetString(2);
-                    dataGridView1.Rows[j].Cells[3].Value = myReader.GetInt32(3);
-                    dataGridView1.Rows[j].Cells[4].Value = myReader.GetInt32(4);
-                    dataGridView1.Rows[j].Cells[5].Value = myReader.GetString(5);
-                    dataGridView1.Rows[j].Cells[6].Value = myReader.GetString(6);
-                    dataGridView1.Rows[j].Cells[7].Value = myReader.GetString(7);
-                    dataGridView1.Rows[j].Cells[8].Value = myReader.GetString(8);
-                    dataGridView1.Rows[j].Cells[9].Value = myReader.GetString(9);
-                    dataGridView1.Rows[j].Cells[10].Value = myReader.GetInt32(10);
-                    dataGridView1.Rows[j].Cells[11].Value = myReader.GetString(11);
-                    dataGridView1.Rows[j].Cells[12].Value = myReader.GetString(12);
-                    dataGridView1.Rows[j].Cells[13].Value = myReader.GetString(13);
-                    dataGridView1.Rows[j].Cells[14].Value = myReader.GetString(14);
-                    dataGridView1.Rows[j].Cells[15].Value = myReader.GetString(15);
-                    dataGridView1.Rows[j].Cells[16].Value = myReader.GetString(16);
+                    dataGridView9.Rows.Add();
+                    dataGridView9.Rows[j].Cells[0].Value = myReader.GetInt32(0);
+                    dataGridView9.Rows[j].Cells[1].Value = myReader.GetString(1);
+                    dataGridView9.Rows[j].Cells[2].Value = myReader.GetString(2);
+                    dataGridView9.Rows[j].Cells[3].Value = myReader.GetValue(3);
+                    dataGridView9.Rows[j].Cells[4].Value = myReader.GetValue(4);
+                    dataGridView9.Rows[j].Cells[5].Value = myReader.GetString(5);
+                    dataGridView9.Rows[j].Cells[6].Value = myReader.GetString(6);
+                    dataGridView9.Rows[j].Cells[7].Value = myReader.GetString(7);
+                    dataGridView9.Rows[j].Cells[8].Value = myReader.GetString(8);
+                    dataGridView9.Rows[j].Cells[9].Value = myReader.GetString(9);
+                    dataGridView9.Rows[j].Cells[10].Value = myReader.GetInt32(10);
+                    dataGridView9.Rows[j].Cells[11].Value = myReader.GetString(11);
+                    dataGridView9.Rows[j].Cells[12].Value = myReader.GetString(12);
+                    dataGridView9.Rows[j].Cells[13].Value = myReader.GetString(13);
+                    dataGridView9.Rows[j].Cells[14].Value = myReader.GetString(14);
+                    dataGridView9.Rows[j].Cells[15].Value = myReader.GetString(15);
+                    dataGridView9.Rows[j].Cells[16].Value = myReader.GetString(16);
+                    dataGridView9.Rows[j].Cells[17].Value = myReader.GetString(17);
+                    dataGridView9.Rows[j].Cells[18].Value = myReader.GetString(18);
+                    dataGridView9.Rows[j].Cells[19].Value = myReader.GetString(19);
+                    dataGridView9.Rows[j].Cells[20].Value = myReader.GetString(20);
+                    dataGridView9.Rows[j].Cells[21].Value = Math.Round(myReader.GetDouble(21), 4, MidpointRounding.AwayFromZero);
+                    dataGridView9.Rows[j].Cells[22].Value = Math.Round(myReader.GetDouble(22), 4, MidpointRounding.AwayFromZero);
+                    dataGridView9.Rows[j].Cells[23].Value = Math.Round(myReader.GetDouble(23), 4, MidpointRounding.AwayFromZero);
                     j++;
                 }
             }
@@ -853,6 +958,221 @@ namespace Aplicativo
                 // always call Close when done reading.
                 conn.Close();
             }
+        }
+
+        public void buscarLote2()
+        {
+            //while (dataGridView1.Rows.Count != 0)
+            //{
+            //    dataGridView1.Rows.RemoveAt(0);
+            //}
+            string query = "SELECT l.Codigo, l.Lote, b.Predio, l.Longitud, l.Latitud, l.Figura, p.Nombre, u.Unidad, m.Municipio, l.Especie, l.Ano, l.areaPlantacion, l.areaEfectiva, l.estadoFSC, l.FSC, l.sumidero,l.CIF,l.restAmbiental,l.registroPlantacion,l.Ubicacion,s.Nombre, l.extraidoEntresaca, l.extraidoTalaRaza, l.extraidoRecuperacion FROM ((UnidadDeManejo AS u INNER JOIN (Municipio AS m INNER JOIN (BancoTierras AS b INNER JOIN Lotes AS l ON b.ID = l.Predio) ON m.ID = b.Municipio) ON u.ID = l.Unidad) INNER JOIN Semillas AS s ON l.semillaOrigen = s.Id) INNER JOIN Propietarios AS p ON b.Propietario = p.ID ";
+            int i = 0;
+            if (!txtCodigo.Text.Equals(""))
+            {
+                if (i != 0)
+                    query += " AND ";
+                else
+                    query += "WHERE ";
+                i++;
+                query += "l.Codigo LIKE '%" + txtCodigo.Text + "%'";
+            }
+            if (!txtLote.Text.Equals(""))
+            {
+                if (i != 0)
+                    query += " AND ";
+                else
+                    query += "WHERE ";
+                i++;
+                query += "l.Lote LIKE '%" + txtLote.Text + "%'";
+            }
+            if (!txtPredio.Text.Equals(""))
+            {
+                if (i != 0)
+                    query += " AND ";
+                else
+                    query += "WHERE ";
+                i++;
+                query += "b.Predio LIKE '" + txtPredio.Text + "'";
+            }
+            if (!txtLong.Text.Equals("") && !txtLong.Text.Equals("0"))
+            {
+                if (i != 0)
+                    query += " AND ";
+                else
+                    query += "WHERE ";
+                i++;
+                query += "l.Longitud LIKE '%" + txtLong.Text + "%'";
+            }
+            if (!txtLat.Text.Equals("") && !txtLat.Text.Equals("0"))
+            {
+                if (i != 0)
+                    query += " AND ";
+                else
+                    query += "WHERE ";
+                i++;
+                query += "l.Latitud LIKE '%" + txtLat.Text + "%'";
+            }
+            if (!txtFigura.Text.Equals(""))
+            {
+                if (i != 0)
+                    query += " AND ";
+                else
+                    query += "WHERE ";
+                i++;
+                query += "l.Figura LIKE '%" + txtFigura.Text + "%'";
+            }
+            if (!txtUnidad.Text.Equals(""))
+            {
+                if (i != 0)
+                    query += " AND ";
+                else
+                    query += "WHERE ";
+                i++;
+                query += "u.Unidad LIKE '%" + txtUnidad.Text + "%'";
+            }
+            if (!txtEspecie.Text.Equals(""))
+            {
+                if (i != 0)
+                    query += " AND ";
+                else
+                    query += "WHERE ";
+                i++;
+                query += "l.Especie LIKE '%" + txtEspecie.Text + "%'";
+            }
+            if (!txtAno.Text.Equals("") && !txtAno.Text.Equals("0"))
+            {
+                if (i != 0)
+                    query += " AND ";
+                else
+                    query += "WHERE ";
+                i++;
+                query += "l.Ano LIKE '%" + txtAno.Text + "%'";
+            }
+            if (!txtAreaPlant.Text.Equals("") && !txtAreaPlant.Text.Equals("0"))
+            {
+                if (i != 0)
+                    query += " AND ";
+                else
+                    query += "WHERE ";
+                i++;
+                query += "l.areaPlantacion LIKE '%" + txtAreaPlant.Text + "%'";
+            }
+            if (!txtAreaEfe.Text.Equals("") && !txtAreaEfe.Text.Equals("0"))
+            {
+                if (i != 0)
+                    query += " AND ";
+                else
+                    query += "WHERE ";
+                i++;
+                query += "l.areaEfectiva LIKE '%" + txtAreaEfe.Text + "%'";
+            }
+            //if (!txtFSC.Text.Equals(""))
+            //{
+            //    if (i != 0)
+            //        query += " AND ";
+            //    else
+            //        query += "WHERE ";
+            //    i++;
+            //    query += "l.estadoFSC LIKE '%" + txtFSC.Text + "%'";
+            //}
+            if (!txtNumFSC.Text.Equals("") && !txtNumFSC.Text.Equals("0"))
+            {
+                if (i != 0)
+                    query += " AND ";
+                else
+                    query += "WHERE ";
+                i++;
+                query += "l.FSC LIKE '%" + txtNumFSC.Text + "%'";
+            }
+            if (!txtNumSum.Text.Equals("") && !txtNumSum.Text.Equals("0"))
+            {
+                if (i != 0)
+                    query += " AND ";
+                else
+                    query += "WHERE ";
+                i++;
+                query += "l.sumidero LIKE '%" + txtNumSum.Text + "%'";
+            }
+            if (!txtNumCif.Text.Equals("") && !txtNumCif.Text.Equals("0"))
+            {
+                if (i != 0)
+                    query += " AND ";
+                else
+                    query += "WHERE ";
+                i++;
+                query += "l.CIF LIKE '%" + txtNumCif.Text + "%'";
+            }
+            if (!txtAmbiental.Text.Equals("") && !txtAmbiental.Text.Equals("0"))
+            {
+                if (i != 0)
+                    query += " AND ";
+                else
+                    query += "WHERE ";
+                i++;
+                query += "l.restAmbiental LIKE '%" + txtAmbiental.Text + "%'";
+            }
+            if (!txtPlantacion.Text.Equals("") && !txtPlantacion.Text.Equals("0"))
+            {
+                if (i != 0)
+                    query += " AND ";
+                else
+                    query += "WHERE ";
+                i++;
+                query += "l.registroPlantacion LIKE '%" + txtPlantacion.Text + "%'";
+            }
+            if (!txtUbicacion.Text.Equals(""))
+            {
+                if (i != 0)
+                    query += " AND ";
+                else
+                    query += "WHERE ";
+                i++;
+                query += "l.Ubicacion LIKE '%" + txtUbicacion.Text + "%'";
+            }
+            if (!textBox7.Text.Equals(""))
+            {
+                if (i != 0)
+                    query += " AND ";
+                else
+                    query += "WHERE ";
+                i++;
+                query += "l.semillaOrigen LIKE '%" + textBox7.SelectedValue + "%'";
+            }
+            if (!textBox4.Text.Equals("") && !textBox4.Text.Equals("0"))
+            {
+                if (i != 0)
+                    query += " AND ";
+                else
+                    query += "WHERE ";
+                i++;
+                query += "l.extraidoEntresaca = " + textBox4.Text;
+            }
+            if (!textBox5.Text.Equals("") && !textBox5.Text.Equals("0"))
+            {
+                if (i != 0)
+                    query += " AND ";
+                else
+                    query += "WHERE ";
+                i++;
+                query += "l.extraidoTalaRaza = " + textBox5.Text;
+            }
+            if (!textBox6.Text.Equals("") && !textBox6.Text.Equals("0"))
+            {
+                if (i != 0)
+                    query += " AND ";
+                else
+                    query += "WHERE ";
+                i++;
+                query += "l.extraidoRecuperacion = " + textBox6.Text;
+            }
+            //Ejecutar el query y llenar el GridView.
+            conn.ConnectionString = connectionString;
+            OleDbCommand cmd = new OleDbCommand(query, conn);
+            DataTable banco = new DataTable();
+            OleDbDataAdapter da = new OleDbDataAdapter(cmd);
+            da.Fill(banco);
+            dataGridView1.DataSource = banco;
         }
 
         public int getMaxID() {
@@ -1378,6 +1698,7 @@ namespace Aplicativo
         {
             InitializeComponent();
             cargarLotes();
+            //cargarLotes2();
             cargarPredios();
             cargarUnidades();
             cargarAreas(1);
@@ -1397,7 +1718,7 @@ namespace Aplicativo
             txtUnidadGan.SelectedItem = null;
             Camp1.SelectedItem = null;
             Variables.cargar(textBox7, "SELECT * FROM Semillas", "Nombre");
-            dataGridView1.Columns[1].DefaultCellStyle.Font = new Font(dataGridView1.DefaultCellStyle.Font, FontStyle.Underline);
+            dataGridView1.Columns[1].DefaultCellStyle.Font = new Font(dataGridView9.DefaultCellStyle.Font, FontStyle.Underline);
             dataGridView2.Columns[1].DefaultCellStyle.Font = new Font(dataGridView2.DefaultCellStyle.Font, FontStyle.Underline);
             dataGridView3.Columns[1].DefaultCellStyle.Font = new Font(dataGridView3.DefaultCellStyle.Font, FontStyle.Underline);
             dataGridView4.Columns[1].DefaultCellStyle.Font = new Font(dataGridView4.DefaultCellStyle.Font, FontStyle.Underline);            
@@ -1453,7 +1774,8 @@ namespace Aplicativo
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            buscarLote();
+            //buscarLote();
+            buscarLote2();
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -1499,46 +1821,50 @@ namespace Aplicativo
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dataGridView1.CurrentCell.ColumnIndex == 0)
+            if (dataGridView9.CurrentCell.ColumnIndex == 0)
             {
-                frmOrdenes newFrm = new frmOrdenes("Lote",dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[0].Value.ToString());
+                frmOrdenes newFrm = new frmOrdenes("Lote",dataGridView9.Rows[dataGridView9.CurrentCell.RowIndex].Cells[0].Value.ToString());
                 newFrm.Show();
             }
-            if (dataGridView1.CurrentCell.ColumnIndex == 1)
+            if (dataGridView9.CurrentCell.ColumnIndex == 1)
             {                
-                frmEstudio newFrm = new frmEstudio(dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[0].Value.ToString());
+                frmEstudio newFrm = new frmEstudio(dataGridView9.Rows[dataGridView9.CurrentCell.RowIndex].Cells[0].Value.ToString());
                 newFrm.Show();
             }
-            txtCodigo.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[0].Value.ToString();
-            txtLote.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[1].Value.ToString();
-            txtPredio.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[2].Value.ToString();
-            txtLong.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[3].Value.ToString();
-            txtLat.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[4].Value.ToString();
-            txtFigura.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[5].Value.ToString();
-            txtUnidad.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[7].Value.ToString();
-            txtEspecie.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[9].Value.ToString();
-            txtAno.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[10].Value.ToString();
-            txtAreaPlant.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[11].Value.ToString();
-            txtAreaEfe.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[12].Value.ToString();
-            txtFSC.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[13].Value.ToString();
-            txtNumFSC.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[14].Value.ToString();
-            txtNumSum.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[15].Value.ToString();
-            txtNumCif.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[16].Value.ToString();
-            txtAmbiental.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[17].Value.ToString();
-            txtPlantacion.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[18].Value.ToString();
-            txtUbicacion.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[19].Value.ToString();
-            textBox7.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[20].Value.ToString();
-            textBox4.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[21].Value.ToString();
-            textBox5.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[22].Value.ToString();
-            textBox6.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[23].Value.ToString();
-            if (txtNumCif.Equals(""))
+            txtCodigo.Text = dataGridView9.Rows[dataGridView9.CurrentCell.RowIndex].Cells[0].Value.ToString();
+            txtLote.Text = dataGridView9.Rows[dataGridView9.CurrentCell.RowIndex].Cells[1].Value.ToString();
+            txtPredio.Text = dataGridView9.Rows[dataGridView9.CurrentCell.RowIndex].Cells[2].Value.ToString();
+            txtLong.Text = dataGridView9.Rows[dataGridView9.CurrentCell.RowIndex].Cells[3].Value.ToString();
+            txtLat.Text = dataGridView9.Rows[dataGridView9.CurrentCell.RowIndex].Cells[4].Value.ToString();
+            txtFigura.Text = dataGridView9.Rows[dataGridView9.CurrentCell.RowIndex].Cells[5].Value.ToString();
+            txtUnidad.Text = dataGridView9.Rows[dataGridView9.CurrentCell.RowIndex].Cells[7].Value.ToString();
+            txtEspecie.Text = dataGridView9.Rows[dataGridView9.CurrentCell.RowIndex].Cells[9].Value.ToString();
+            txtAno.Text = dataGridView9.Rows[dataGridView9.CurrentCell.RowIndex].Cells[10].Value.ToString();
+            txtAreaPlant.Text = dataGridView9.Rows[dataGridView9.CurrentCell.RowIndex].Cells[11].Value.ToString();
+            txtAreaEfe.Text = dataGridView9.Rows[dataGridView9.CurrentCell.RowIndex].Cells[12].Value.ToString();
+            txtFSC.Text = dataGridView9.Rows[dataGridView9.CurrentCell.RowIndex].Cells[13].Value.ToString();
+            txtNumFSC.Text = dataGridView9.Rows[dataGridView9.CurrentCell.RowIndex].Cells[14].Value.ToString();
+            txtNumSum.Text = dataGridView9.Rows[dataGridView9.CurrentCell.RowIndex].Cells[15].Value.ToString();
+            txtNumCif.Text = dataGridView9.Rows[dataGridView9.CurrentCell.RowIndex].Cells[16].Value.ToString();
+            txtAmbiental.Text = dataGridView9.Rows[dataGridView9.CurrentCell.RowIndex].Cells[17].Value.ToString();
+            txtPlantacion.Text = dataGridView9.Rows[dataGridView9.CurrentCell.RowIndex].Cells[18].Value.ToString();
+            txtUbicacion.Text = dataGridView9.Rows[dataGridView9.CurrentCell.RowIndex].Cells[19].Value.ToString();
+            textBox7.Text = dataGridView9.Rows[dataGridView9.CurrentCell.RowIndex].Cells[20].Value.ToString();
+            textBox4.Text = dataGridView9.Rows[dataGridView9.CurrentCell.RowIndex].Cells[21].Value.ToString();
+            textBox5.Text = dataGridView9.Rows[dataGridView9.CurrentCell.RowIndex].Cells[22].Value.ToString();
+            textBox6.Text = dataGridView9.Rows[dataGridView9.CurrentCell.RowIndex].Cells[23].Value.ToString();
+            if (txtNumCif.Text.Equals("") || txtNumCif.Text.Equals("0"))
                 txtCif.Text = "No";
             else
                 txtCif.Text = "Si";
-            if (txtNumSum.Equals(""))
+            if (txtNumSum.Text.Equals("") || txtNumSum.Text.Equals("0"))
                 txtCarbono.Text = "No";
             else
                 txtCarbono.Text = "Si";
+            if (txtNumFSC.Text.Equals("") || txtNumFSC.Text.Equals("0"))
+                txtFSC.Text = "No";
+            else
+                txtFSC.Text = "Si";
         }
 
         private void txtCif_TextChanged(object sender, EventArgs e)
@@ -1552,7 +1878,7 @@ namespace Aplicativo
             {
                 label17.Visible = false;
                 txtNumCif.Visible = false;
-                txtNumCif.Text = "";
+                txtNumCif.Text = "0";
             }
         }
 
@@ -1562,7 +1888,7 @@ namespace Aplicativo
             {
                 label11.Visible = false;
                 txtNumFSC.Visible = false;
-                txtNumFSC.Text = "";
+                txtNumFSC.Text = "0";
             }
             else
             {
@@ -1582,7 +1908,7 @@ namespace Aplicativo
             {
                 label12.Visible = false;
                 txtNumSum.Visible = false;
-                txtNumSum.Text = "";
+                txtNumSum.Text = "0";
             }
         }
 
@@ -2141,7 +2467,7 @@ namespace Aplicativo
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             if (tabControl1.SelectedIndex == 0)
-                imprimirLotes(dataGridView1);
+                imprimirLotes(dataGridView9);
             else if (tabControl1.SelectedIndex == 1)
                 imprimirLotes(dataGridView3);
             else if (tabControl1.SelectedIndex == 2)
@@ -2192,6 +2518,59 @@ namespace Aplicativo
                     MessageBox.Show("No se encuentra el archivo.", "Error");
                 }
             }
+        }
+
+        private void dataGridView1_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridView1.CurrentCell.ColumnIndex == 0)
+            {
+                frmOrdenes newFrm = new frmOrdenes("Lote", dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[0].Value.ToString());
+                newFrm.Show();
+            }
+            if (dataGridView1.CurrentCell.ColumnIndex == 1)
+            {
+                frmEstudio newFrm = new frmEstudio(dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[0].Value.ToString());
+                newFrm.Show();
+            }
+            txtCodigo.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[0].Value.ToString();
+            txtLote.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[1].Value.ToString();
+            txtPredio.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[2].Value.ToString();
+            txtLong.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[3].Value.ToString();
+            txtLat.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[4].Value.ToString();
+            txtFigura.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[5].Value.ToString();
+            txtUnidad.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[7].Value.ToString();
+            txtEspecie.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[9].Value.ToString();
+            txtAno.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[10].Value.ToString();
+            txtAreaPlant.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[11].Value.ToString();
+            txtAreaEfe.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[12].Value.ToString();
+            txtFSC.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[13].Value.ToString();
+            txtNumFSC.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[14].Value.ToString();
+            txtNumSum.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[15].Value.ToString();
+            txtNumCif.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[16].Value.ToString();
+            txtAmbiental.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[17].Value.ToString();
+            txtPlantacion.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[18].Value.ToString();
+            txtUbicacion.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[19].Value.ToString();
+            textBox7.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[20].Value.ToString();
+            textBox4.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[21].Value.ToString();
+            textBox5.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[22].Value.ToString();
+            textBox6.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[23].Value.ToString();
+            if (txtNumCif.Text.Equals("") || txtNumCif.Text.Equals("0"))
+                txtCif.Text = "No";
+            else
+                txtCif.Text = "Si";
+            if (txtNumSum.Text.Equals("") || txtNumSum.Text.Equals("0"))
+                txtCarbono.Text = "No";
+            else
+                txtCarbono.Text = "Si";
+            if (txtNumFSC.Text.Equals("") || txtNumFSC.Text.Equals("0"))
+                txtFSC.Text = "No";
+            else
+                txtFSC.Text = "Si";
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

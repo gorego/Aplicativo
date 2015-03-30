@@ -76,7 +76,7 @@ namespace Aplicativo
 
         public void buscarActividades()
         {
-            string query = "SELECT a.ID,a.Actividad, a.Unidad_de_Medida,SUM(i.Costo_Unitario*ia.Cantidad), d.Departamento,a.Tipo_Actividad,a.Condicion_Minima,a.Descripcion_Actividad,a.Rodilla,a.Cintura,a.Cabeza FROM (Actividades AS a INNER JOIN (Insumos AS i INNER JOIN insumoActividades AS ia ON i.ID = ia.Actividad) ON a.ID = ia.Insumo) INNER JOIN Departamentos AS d ON d.ID = a.Departamento ";
+            string query = "SELECT a.ID, a.Actividad, a.Unidad_de_Medida, Sum(i.Costo_Unitario*ia.Cantidad), d.Departamento, a.Tipo_Actividad, a.Condicion_Minima, a.Descripcion_Actividad, a.Rodilla, a.Cintura, a.Cabeza FROM ((Actividades AS a INNER JOIN (Insumos AS i INNER JOIN insumoActividades AS ia ON i.ID = ia.Actividad) ON a.ID = ia.Insumo) INNER JOIN Departamentos AS d ON a.Departamento = d.ID) INNER JOIN formatosActividad ON a.ID = formatosActividad.Actividad ";
             int i = 0;
             if(!txtActividad.Text.Equals("")){
                 if(i!=0)
@@ -122,6 +122,15 @@ namespace Aplicativo
                 i++;
                 query += "a.Descripcion_Actividad LIKE '%" + txtDescripcion.Text + "%'";
             }
+            if (!txtCondiciones.Text.Equals(""))
+            {
+                if (i != 0)
+                    query += " AND ";
+                else
+                    query += "WHERE ";
+                i++;
+                query += "a.Condicion_minima LIKE '%" + txtCondiciones.Text + "%'";
+            }
             if (!txtTipo.Text.Equals(""))
             {
                 if (i != 0)
@@ -158,7 +167,28 @@ namespace Aplicativo
                 i++;
                 query += "a.Cabeza LIKE '%" + txtCabeza.Text + "%'";
             }
-            query += "GROUP BY a.ID,a.Actividad, a.Unidad_de_Medida,d.Departamento,a.Tipo_Actividad,a.Condicion_Minima,a.Descripcion_Actividad,a.Rodilla,a.Cintura,a.Cabeza";
+            for (int j = 0; j < checkedListBox1.Items.Count; j++)
+            {
+                if (checkedListBox1.GetItemCheckState(j).ToString().Equals("Checked"))
+                {
+                    if (i != 0)
+                        query += " AND ";
+                    else
+                        query += "WHERE ";
+                    i++;
+                    query += "formatosActividad.formato = '" + checkedListBox1.Items[j].ToString() + "'";
+                }
+            }
+            //if (checkedListBox1.GetItemCheckState(0).ToString().Equals("Checked"))
+            //{
+            //    if (i != 0)
+            //        query += " AND ";
+            //    else
+            //        query += "WHERE ";
+            //    i++;
+            //    query += "formatosActividad.formato = 'ADF001'";
+            //}
+            query += " GROUP BY a.ID,a.Actividad, a.Unidad_de_Medida,d.Departamento,a.Tipo_Actividad,a.Condicion_Minima,a.Descripcion_Actividad,a.Rodilla,a.Cintura,a.Cabeza";
             //if (checkedListBox1.GetItemCheckState(0).ToString().Equals("Checked"))
             //{
             //    if (i != 0)

@@ -114,6 +114,7 @@
             // 
             // btnCerrar
             // 
+            this.btnCerrar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnCerrar.Location = new System.Drawing.Point(140, 620);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(1037, 34);
@@ -124,6 +125,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.groupBox1.Controls.Add(this.label25);
             this.groupBox1.Controls.Add(this.txtEspecie);
             this.groupBox1.Controls.Add(this.linkLabel1);
@@ -342,7 +344,7 @@
             this.textBox13.ReadOnly = true;
             this.textBox13.Size = new System.Drawing.Size(81, 20);
             this.textBox13.TabIndex = 37;
-            this.textBox13.Text = "0";
+            this.textBox13.Text = "1";
             // 
             // label15
             // 
@@ -361,7 +363,7 @@
             this.textBox22.Name = "textBox22";
             this.textBox22.Size = new System.Drawing.Size(81, 20);
             this.textBox22.TabIndex = 35;
-            this.textBox22.Text = "0";
+            this.textBox22.Text = "1";
             this.textBox22.Enter += new System.EventHandler(this.textBox22_Enter);
             this.textBox22.Leave += new System.EventHandler(this.textBox22_Leave);
             // 
@@ -382,7 +384,7 @@
             this.textBox23.Name = "textBox23";
             this.textBox23.Size = new System.Drawing.Size(81, 20);
             this.textBox23.TabIndex = 33;
-            this.textBox23.Text = "0";
+            this.textBox23.Text = "1";
             this.textBox23.Enter += new System.EventHandler(this.textBox23_Enter);
             this.textBox23.Leave += new System.EventHandler(this.textBox23_Leave);
             // 
@@ -902,6 +904,9 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Window;
@@ -917,6 +922,8 @@
             // 
             // linkLabel2
             // 
+            this.linkLabel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.linkLabel2.AutoSize = true;
             this.linkLabel2.Location = new System.Drawing.Point(1205, 9);
             this.linkLabel2.Name = "linkLabel2";

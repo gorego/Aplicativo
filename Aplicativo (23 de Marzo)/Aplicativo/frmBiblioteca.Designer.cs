@@ -52,6 +52,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.button7 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -60,6 +61,9 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Window;
@@ -114,6 +118,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.groupBox1.Controls.Add(this.button7);
             this.groupBox1.Controls.Add(this.button5);
             this.groupBox1.Controls.Add(this.button4);
             this.groupBox1.Controls.Add(this.textBox5);
@@ -138,7 +144,7 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(804, 93);
+            this.button5.Location = new System.Drawing.Point(819, 92);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(126, 21);
             this.button5.TabIndex = 96;
@@ -148,7 +154,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(540, 93);
+            this.button4.Location = new System.Drawing.Point(555, 92);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(126, 21);
             this.button4.TabIndex = 95;
@@ -250,7 +256,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(672, 93);
+            this.button2.Location = new System.Drawing.Point(687, 92);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(126, 21);
             this.button2.TabIndex = 1;
@@ -260,7 +266,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(408, 93);
+            this.button1.Location = new System.Drawing.Point(291, 92);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(126, 21);
             this.button1.TabIndex = 0;
@@ -270,6 +276,7 @@
             // 
             // button3
             // 
+            this.button3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.button3.Location = new System.Drawing.Point(12, 573);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(1237, 29);
@@ -280,6 +287,8 @@
             // 
             // linkLabel1
             // 
+            this.linkLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.Location = new System.Drawing.Point(1130, 9);
             this.linkLabel1.Name = "linkLabel1";
@@ -288,6 +297,16 @@
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Exportar a Excel";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(423, 92);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(126, 21);
+            this.button7.TabIndex = 97;
+            this.button7.Text = "Modificar";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // frmBiblioteca
             // 
@@ -302,6 +321,7 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Biblioteca de Archivos";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -336,5 +356,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.Button button7;
     }
 }

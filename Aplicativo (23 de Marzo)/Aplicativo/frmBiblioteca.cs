@@ -96,12 +96,13 @@ namespace Aplicativo
             conn.Open();
             OleDbDataReader myReader = cmd.ExecuteReader();
             int i = 0;
+            int j = 1;
             try
             {
                 while (myReader.Read())
                 {
                     dataGridView1.Rows.Add();
-                    dataGridView1.Rows[i].Cells[0].Value = myReader.GetInt32(0);
+                    dataGridView1.Rows[i].Cells[0].Value = j++;
                     dataGridView1.Rows[i].Cells[1].Value = myReader.GetString(1);
                     dataGridView1.Rows[i].Cells[2].Value = myReader.GetString(2);
                     dataGridView1.Rows[i].Cells[3].Value = myReader.GetString(3);
@@ -128,12 +129,15 @@ namespace Aplicativo
             {
                 MessageBox.Show("Favor ingresar el tipo de archivo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
-            agregarBiblioteca();
-            cargarBiblioteca();
-            textBox1.Text = "";
-            textBox2.Text = "";
-            textBox4.Text = "";
-            textBox5.Text = "";
+            else
+            {
+                agregarBiblioteca();
+                cargarBiblioteca();
+                textBox1.Text = "";
+                textBox2.Text = "";
+                textBox4.Text = "";
+                textBox5.Text = "";
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -183,6 +187,56 @@ namespace Aplicativo
                     MessageBox.Show("Connection Failed");
                 }
                 cargarBiblioteca();
+            }
+        }
+
+        public void modificarBiblioteca()
+        {
+            conn.ConnectionString = connectionString;
+            OleDbCommand cmd = new OleDbCommand("UPDATE Biblioteca SET Nombre=@Nombre,Descripcion=@Descripcion,Ubicacion=@Ubicacion,Tipo=@Tipo WHERE ID = " + dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[0].Value);
+            cmd.Connection = conn;
+            conn.Open();
+            if (conn.State == ConnectionState.Open)
+            {
+                string contrato = textBox4.Text;
+                if (!contrato.Equals(""))
+                {
+                    Directory.CreateDirectory("C:\\Users\\" + Environment.UserName + "\\Dropbox\\Anexos\\Biblioteca");
+                    string[] prueba = Directory.GetFiles("C:\\Users\\" + Environment.UserName + "\\Dropbox\\Anexos\\Biblioteca", textBox1.Text + "*");
+                    if (prueba.Length > 0)
+                    {
+                        if (File.Exists(prueba[0]))
+                        {
+
+                            File.Delete(prueba[0]);
+                        }
+                    }
+                    using (FileStream fs = File.Open(contrato, FileMode.Open))
+                    {
+                        Directory.CreateDirectory("C:\\Users\\" + Environment.UserName + "\\Dropbox\\Anexos\\Biblioteca");
+                        string ext = Path.GetExtension(contrato);
+                        fs.CopyTo(File.Create("C:\\Users\\" + Environment.UserName + "\\Dropbox\\Anexos\\Biblioteca\\" + textBox1.Text + ext));
+                    }
+                }
+                cmd.Parameters.Add("@Nombre", OleDbType.VarChar).Value = textBox1.Text;
+                cmd.Parameters.Add("@Descripcion", OleDbType.VarChar).Value = textBox2.Text;
+                cmd.Parameters.Add("@Ubicacion", OleDbType.VarChar).Value = textBox3.Text;
+                cmd.Parameters.Add("@Tipo", OleDbType.VarChar).Value = textBox5.Text;
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Formato modificado.");
+                    conn.Close();
+                }
+                catch (OleDbException ex)
+                {
+                    MessageBox.Show(ex.Source);
+                    conn.Close();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Connection Failed");
             }
         }
 
@@ -299,6 +353,12 @@ namespace Aplicativo
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Variables.imprimir(dataGridView1);
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            modificarBiblioteca();
+            cargarBiblioteca();
         }
     }
 }

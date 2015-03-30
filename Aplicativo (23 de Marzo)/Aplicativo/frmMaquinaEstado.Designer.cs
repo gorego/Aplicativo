@@ -41,9 +41,9 @@
             // 
             // btnEliminarAceite
             // 
-            this.btnEliminarAceite.Location = new System.Drawing.Point(151, 331);
+            this.btnEliminarAceite.Location = new System.Drawing.Point(300, 294);
             this.btnEliminarAceite.Name = "btnEliminarAceite";
-            this.btnEliminarAceite.Size = new System.Drawing.Size(340, 31);
+            this.btnEliminarAceite.Size = new System.Drawing.Size(305, 31);
             this.btnEliminarAceite.TabIndex = 21;
             this.btnEliminarAceite.Text = "Eliminar";
             this.btnEliminarAceite.UseVisualStyleBackColor = true;
@@ -59,9 +59,9 @@
             // 
             // btnAceite
             // 
-            this.btnAceite.Location = new System.Drawing.Point(151, 294);
+            this.btnAceite.Location = new System.Drawing.Point(12, 294);
             this.btnAceite.Name = "btnAceite";
-            this.btnAceite.Size = new System.Drawing.Size(340, 31);
+            this.btnAceite.Size = new System.Drawing.Size(282, 31);
             this.btnAceite.TabIndex = 16;
             this.btnAceite.Text = "Agregar";
             this.btnAceite.UseVisualStyleBackColor = true;
@@ -110,9 +110,9 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(151, 366);
+            this.button1.Location = new System.Drawing.Point(12, 331);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(340, 31);
+            this.button1.Size = new System.Drawing.Size(593, 31);
             this.button1.TabIndex = 22;
             this.button1.Text = "Cerrar";
             this.button1.UseVisualStyleBackColor = true;
@@ -122,7 +122,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(617, 401);
+            this.ClientSize = new System.Drawing.Size(617, 370);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnEliminarAceite);
             this.Controls.Add(this.textBox2);

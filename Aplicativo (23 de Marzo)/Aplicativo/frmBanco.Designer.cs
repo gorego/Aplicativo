@@ -88,12 +88,13 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.Size = new System.Drawing.Size(1256, 398);
+            this.dataGridView1.Size = new System.Drawing.Size(1337, 398);
             this.dataGridView1.TabIndex = 22;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.label17);
             this.groupBox1.Controls.Add(this.label5);
@@ -123,14 +124,14 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Location = new System.Drawing.Point(12, 445);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1270, 116);
+            this.groupBox1.Size = new System.Drawing.Size(1351, 116);
             this.groupBox1.TabIndex = 23;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Agregar Banco";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(708, 45);
+            this.textBox1.Location = new System.Drawing.Point(760, 46);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(99, 20);
             this.textBox1.TabIndex = 60;
@@ -138,7 +139,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(619, 49);
+            this.label17.Location = new System.Drawing.Point(671, 50);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(85, 13);
             this.label17.TabIndex = 59;
@@ -147,7 +148,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(1018, 24);
+            this.label5.Location = new System.Drawing.Point(1070, 25);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(73, 13);
             this.label5.TabIndex = 58;
@@ -155,14 +156,14 @@
             // 
             // txtEscritura
             // 
-            this.txtEscritura.Location = new System.Drawing.Point(1097, 21);
+            this.txtEscritura.Location = new System.Drawing.Point(1149, 22);
             this.txtEscritura.Name = "txtEscritura";
             this.txtEscritura.Size = new System.Drawing.Size(142, 20);
             this.txtEscritura.TabIndex = 57;
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(577, 86);
+            this.btnBuscar.Location = new System.Drawing.Point(602, 86);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(117, 24);
             this.btnBuscar.TabIndex = 56;
@@ -172,7 +173,7 @@
             // 
             // btnReiniciar
             // 
-            this.btnReiniciar.Location = new System.Drawing.Point(823, 86);
+            this.btnReiniciar.Location = new System.Drawing.Point(848, 86);
             this.btnReiniciar.Name = "btnReiniciar";
             this.btnReiniciar.Size = new System.Drawing.Size(117, 24);
             this.btnReiniciar.TabIndex = 55;
@@ -182,7 +183,7 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(700, 86);
+            this.btnEliminar.Location = new System.Drawing.Point(725, 86);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(117, 24);
             this.btnEliminar.TabIndex = 54;
@@ -192,7 +193,7 @@
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(469, 86);
+            this.btnModificar.Location = new System.Drawing.Point(494, 86);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(102, 24);
             this.btnModificar.TabIndex = 53;
@@ -202,7 +203,7 @@
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(361, 86);
+            this.btnAgregar.Location = new System.Drawing.Point(386, 86);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(102, 24);
             this.btnAgregar.TabIndex = 49;
@@ -238,7 +239,7 @@
             this.txtMunicipio.FormattingEnabled = true;
             this.txtMunicipio.Location = new System.Drawing.Point(448, 47);
             this.txtMunicipio.Name = "txtMunicipio";
-            this.txtMunicipio.Size = new System.Drawing.Size(142, 21);
+            this.txtMunicipio.Size = new System.Drawing.Size(194, 21);
             this.txtMunicipio.TabIndex = 41;
             // 
             // txtPropietario
@@ -246,7 +247,7 @@
             this.txtPropietario.FormattingEnabled = true;
             this.txtPropietario.Location = new System.Drawing.Point(448, 21);
             this.txtPropietario.Name = "txtPropietario";
-            this.txtPropietario.Size = new System.Drawing.Size(142, 21);
+            this.txtPropietario.Size = new System.Drawing.Size(194, 21);
             this.txtPropietario.TabIndex = 40;
             // 
             // label9
@@ -286,7 +287,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(596, 24);
+            this.label4.Location = new System.Drawing.Point(648, 25);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(105, 13);
             this.label4.TabIndex = 30;
@@ -294,9 +295,9 @@
             // 
             // txtMatricula
             // 
-            this.txtMatricula.Location = new System.Drawing.Point(707, 21);
+            this.txtMatricula.Location = new System.Drawing.Point(760, 21);
             this.txtMatricula.Name = "txtMatricula";
-            this.txtMatricula.Size = new System.Drawing.Size(101, 20);
+            this.txtMatricula.Size = new System.Drawing.Size(99, 20);
             this.txtMatricula.TabIndex = 33;
             // 
             // label6
@@ -310,7 +311,7 @@
             // 
             // txtCodCat
             // 
-            this.txtCodCat.Location = new System.Drawing.Point(910, 47);
+            this.txtCodCat.Location = new System.Drawing.Point(962, 48);
             this.txtCodCat.Name = "txtCodCat";
             this.txtCodCat.Size = new System.Drawing.Size(102, 20);
             this.txtCodCat.TabIndex = 29;
@@ -326,7 +327,7 @@
             // 
             // txtCodPred
             // 
-            this.txtCodPred.Location = new System.Drawing.Point(910, 21);
+            this.txtCodPred.Location = new System.Drawing.Point(962, 22);
             this.txtCodPred.Name = "txtCodPred";
             this.txtCodPred.Size = new System.Drawing.Size(102, 20);
             this.txtCodPred.TabIndex = 28;
@@ -334,7 +335,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(814, 24);
+            this.label2.Location = new System.Drawing.Point(866, 25);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(90, 13);
             this.label2.TabIndex = 25;
@@ -350,7 +351,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(820, 50);
+            this.label3.Location = new System.Drawing.Point(872, 51);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(84, 13);
             this.label3.TabIndex = 26;
@@ -358,9 +359,10 @@
             // 
             // btnCerrar
             // 
+            this.btnCerrar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnCerrar.Location = new System.Drawing.Point(19, 606);
             this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(1259, 33);
+            this.btnCerrar.Size = new System.Drawing.Size(1340, 33);
             this.btnCerrar.TabIndex = 58;
             this.btnCerrar.Text = "Cerrar Ventana";
             this.btnCerrar.UseVisualStyleBackColor = true;
@@ -368,7 +370,8 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(340, 567);
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.button1.Location = new System.Drawing.Point(366, 567);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(314, 33);
             this.button1.TabIndex = 59;
@@ -378,7 +381,8 @@
             // 
             // btnPropietarios
             // 
-            this.btnPropietarios.Location = new System.Drawing.Point(824, 567);
+            this.btnPropietarios.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnPropietarios.Location = new System.Drawing.Point(850, 567);
             this.btnPropietarios.Name = "btnPropietarios";
             this.btnPropietarios.Size = new System.Drawing.Size(161, 33);
             this.btnPropietarios.TabIndex = 60;
@@ -388,7 +392,8 @@
             // 
             // btnMunicipio
             // 
-            this.btnMunicipio.Location = new System.Drawing.Point(659, 567);
+            this.btnMunicipio.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnMunicipio.Location = new System.Drawing.Point(685, 567);
             this.btnMunicipio.Name = "btnMunicipio";
             this.btnMunicipio.Size = new System.Drawing.Size(161, 33);
             this.btnMunicipio.TabIndex = 61;
@@ -398,12 +403,15 @@
             // 
             // tabControl1
             // 
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Location = new System.Drawing.Point(12, 9);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1270, 430);
+            this.tabControl1.Size = new System.Drawing.Size(1351, 430);
             this.tabControl1.TabIndex = 62;
             // 
             // tabPage1
@@ -413,7 +421,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1262, 404);
+            this.tabPage1.Size = new System.Drawing.Size(1343, 404);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Banco de Tierras";
             // 
@@ -424,7 +432,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1262, 401);
+            this.tabPage2.Size = new System.Drawing.Size(1343, 404);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Predio con Predial Vencido";
             // 
@@ -442,11 +450,13 @@
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
             this.dataGridView2.RowHeadersVisible = false;
-            this.dataGridView2.Size = new System.Drawing.Size(1256, 395);
+            this.dataGridView2.Size = new System.Drawing.Size(1337, 398);
             this.dataGridView2.TabIndex = 23;
             // 
             // linkLabel1
             // 
+            this.linkLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.Location = new System.Drawing.Point(1167, 9);
             this.linkLabel1.Name = "linkLabel1";
@@ -460,7 +470,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1296, 646);
+            this.ClientSize = new System.Drawing.Size(1371, 646);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.btnMunicipio);
@@ -473,6 +483,8 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Banco de Tierras";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frmBanco_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

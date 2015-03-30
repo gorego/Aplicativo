@@ -89,67 +89,67 @@ namespace Aplicativo
             if (!txtCodigo.Text.Equals(""))
             {                
                 query += " AND ";
-                query += "Codigo LIKE '%" + txtCodigo.Text + "%'";
+                query += "Codigo LIKE '*" + txtCodigo.Text + "*'";
             }
             if (!txtClase.Text.Equals(""))
             {
                 query += " AND ";
-                query += "Clase LIKE '%" + txtClase.Text + "%'";
+                query += "Clase LIKE '*" + txtClase.Text + "*'";
             }
             if (!txtMarca.Text.Equals(""))
             {
                 query += " AND ";
-                query += "Marca LIKE '%" + txtMarca.Text + "%'";
+                query += "Marca LIKE '*" + txtMarca.Text + "*'";
             }
             if (!txtModelo.Text.Equals(""))
             {
                 query += " AND ";               
-                query += "Modelo LIKE '%" + txtModelo.Text + "%'";
+                query += "Modelo LIKE '*" + txtModelo.Text + "*'";
             }
             if (!txtSerial.Text.Equals(""))
             {
                 query += " AND ";
-                query += "Serial LIKE '%" + txtSerial.Text + "%'";
+                query += "Serial LIKE '*" + txtSerial.Text + "*'";
             }
             if (!txtDescripcion.Text.Equals(""))
             {
                 query += " AND ";
-                query += "Descripcion LIKE '%" + txtDescripcion.Text + "%'";
+                query += "Descripcion LIKE '*" + txtDescripcion.Text + "*'";
             }
             if (!txtProveedor.Text.Equals(""))
             {
                 query += " AND ";
-                query += "Proveedor LIKE '%" + txtProveedor.Text + "%'";
+                query += "Proveedor LIKE '*" + txtProveedor.Text + "*'";
             }
             if (!txtUnidad_de_Medida.Text.Equals(""))
             {
                 query += " AND ";
-                query += "Unidad_Medida LIKE '%" + txtUnidad_de_Medida.Text + "%'";
+                query += "Unidad_Medida LIKE '*" + txtUnidad_de_Medida.Text + "*'";
             }
             if (!txtCosto_Unidad.Text.Equals(""))
             {
                 query += " AND ";
-                query += "Costo_Unitario LIKE '%" + txtCosto_Unidad.Text + "%'";
+                query += "Costo_Unitario LIKE '*" + txtCosto_Unidad.Text + "*'";
             }
             if (!txtCantidad_Stock.Text.Equals(""))
             {
                 query += " AND ";
-                query += "Cantidad_Stock LIKE '%" + txtCantidad_Stock.Text + "%'";
+                query += "Cantidad_Stock LIKE '*" + txtCantidad_Stock.Text + "*'";
             }
             if (!txtStock_Minimo.Text.Equals(""))
             {
                 query += " AND ";
-                query += "Stock_Minimo LIKE '%" + txtStock_Minimo.Text + "%'";
+                query += "Stock_Minimo LIKE '*" + txtStock_Minimo.Text + "*'";
             }
             if (!txtPeso.Text.Equals(""))
             {
                 query += " AND ";
-                query += "Peso LIKE '%" + txtPeso.Text + "%'";
+                query += "Peso LIKE '*" + txtPeso.Text + "*'";
             }
             if (!txtUbicacion.Text.Equals(""))
             {
                 query += " AND ";
-                query += "Ubicacion LIKE '%" + txtUbicacion.Text + "%'";
+                query += "Ubicacion LIKE '*" + txtUbicacion.Text + "*'";
             }
             //Ejecutar el query y llenar el GridView.
             conn.ConnectionString = connectionString;
@@ -202,8 +202,8 @@ namespace Aplicativo
 
         public void buscarInsumo()
         {
-            string query = "SELECT * FROM Insumos ";
-            int i = 0;
+            string query = "SELECT i.ID, i.Codigo, i.Clase, i.Marca, i.Modelo, i.Serial, i.Descripcion, p.Proveedor, i.Unidad_Medida, i.Costo_Unitario, i.Cantidad_Stock, i.Stock_Minimo, i.Ubicacion, i.Peso,i.Tipo,i.Ancho,i.Grueso,i.Largo FROM Proveedores AS p RIGHT JOIN Insumos AS i ON p.ID = i.Proveedor WHERE i.Codigo <> -1 ";
+            int i = 1;
             if (!txtCodigo.Text.Equals(""))
             {
                 if (i != 0)
@@ -211,7 +211,7 @@ namespace Aplicativo
                 else
                     query += "WHERE ";
                 i++;
-                query += "Codigo LIKE '%" + txtCodigo.Text + "%'";
+                query += "i.Codigo = " + txtCodigo.Text;
             }
             if (!txtClase.Text.Equals(""))
             {
@@ -220,7 +220,7 @@ namespace Aplicativo
                 else
                     query += "WHERE ";
                 i++;
-                query += "Clase LIKE '%" + txtClase.Text + "%'";
+                query += "i.Clase LIKE '%" + txtClase.Text + "%'";
             }
             if (!txtMarca.Text.Equals(""))
             {
@@ -229,7 +229,7 @@ namespace Aplicativo
                 else
                     query += "WHERE ";
                 i++;
-                query += "Marca LIKE '%" + txtMarca.Text + "%'";
+                query += "i.Marca LIKE '%" + txtMarca.Text + "%'";
             }
             if (!txtModelo.Text.Equals(""))
             {
@@ -238,7 +238,7 @@ namespace Aplicativo
                 else
                     query += "WHERE ";
                 i++;
-                query += "Modelo LIKE '%" + txtModelo.Text + "%'";
+                query += "i.Modelo LIKE '%" + txtModelo.Text + "%'";
             }
             if (!txtSerial.Text.Equals(""))
             {
@@ -247,7 +247,7 @@ namespace Aplicativo
                 else
                     query += "WHERE ";
                 i++;
-                query += "Serial LIKE '%" + txtSerial.Text + "%'";
+                query += "i.Serial LIKE '%" + txtSerial.Text + "%'";
             }
             if (!txtDescripcion.Text.Equals(""))
             {
@@ -256,7 +256,7 @@ namespace Aplicativo
                 else
                     query += "WHERE ";
                 i++;
-                query += "Descripcion LIKE '%" + txtDescripcion.Text + "%'";
+                query += "i.Descripcion LIKE '%" + txtDescripcion.Text + "%'";
             }
             if (!txtProveedor.Text.Equals(""))
             {
@@ -265,7 +265,7 @@ namespace Aplicativo
                 else
                     query += "WHERE ";
                 i++;
-                query += "Proveedor LIKE '%" + txtProveedor.Text + "%'";
+                query += "i.Proveedor = " + txtProveedor.SelectedValue;
             }
             if (!txtUnidad_de_Medida.Text.Equals(""))
             {
@@ -274,43 +274,43 @@ namespace Aplicativo
                 else
                     query += "WHERE ";
                 i++;
-                query += "Unidad_Medida LIKE '%" + txtUnidad_de_Medida.Text + "%'";
+                query += "i.Unidad_Medida LIKE '%" + txtUnidad_de_Medida.Text + "%'";
             }
-            if (!txtCosto_Unidad.Text.Equals(""))
+            if (!txtCosto_Unidad.Text.Equals("") && !txtCosto_Unidad.Text.Equals("0"))
             {
                 if (i != 0)
                     query += " AND ";
                 else
                     query += "WHERE ";
                 i++;
-                query += "Costo_Unitario LIKE '%" + txtCosto_Unidad.Text + "%'";
+                query += "i.Costo_Unitario LIKE '%" + txtCosto_Unidad.Text + "%'";
             }
-            if (!txtCantidad_Stock.Text.Equals(""))
+            if (!txtCantidad_Stock.Text.Equals("") && !txtCantidad_Stock.Text.Equals("0"))
             {
                 if (i != 0)
                     query += " AND ";
                 else
                     query += "WHERE ";
                 i++;
-                query += "Cantidad_Stock LIKE '%" + txtCantidad_Stock.Text + "%'";
+                query += "i.Cantidad_Stock = " + txtCantidad_Stock.Text;
             }
-            if (!txtStock_Minimo.Text.Equals(""))
+            if (!txtStock_Minimo.Text.Equals("") && !txtStock_Minimo.Text.Equals("0"))
             {
                 if (i != 0)
                     query += " AND ";
                 else
                     query += "WHERE ";
                 i++;
-                query += "Stock_Minimo LIKE '%" + txtStock_Minimo.Text + "%'";
+                query += "i.Stock_Minimo = " + txtStock_Minimo.Text;
             }
-            if (!txtPeso.Text.Equals(""))
+            if (!txtPeso.Text.Equals("") && !txtPeso.Text.Equals("0"))
             {
                 if (i != 0)
                     query += " AND ";
                 else
                     query += "WHERE ";
                 i++;
-                query += "Peso LIKE '%" + txtPeso.Text + "%'";
+                query += "i.Peso LIKE '%" + txtPeso.Text + "%'";
             }
             if (!txtUbicacion.Text.Equals(""))
             {
@@ -319,7 +319,43 @@ namespace Aplicativo
                 else
                     query += "WHERE ";
                 i++;
-                query += "Ubicacion LIKE '%" + txtUbicacion.Text + "%'";
+                query += "i.Ubicacion LIKE '%" + txtUbicacion.Text + "%'";
+            }
+            if (!txtTipo.Text.Equals(""))
+            {
+                if (i != 0)
+                    query += " AND ";
+                else
+                    query += "WHERE ";
+                i++;
+                query += "i.Tipo LIKE '%" + txtTipo.Text + "%'";
+            }
+            if (!txtAncho.Text.Equals("") && !txtAncho.Text.Equals("0"))
+            {
+                if (i != 0)
+                    query += " AND ";
+                else
+                    query += "WHERE ";
+                i++;
+                query += "i.Ancho = " + txtAncho.Text;
+            }
+            if (!txtGrueso.Text.Equals("") && !txtGrueso.Text.Equals("0"))
+            {
+                if (i != 0)
+                    query += " AND ";
+                else
+                    query += "WHERE ";
+                i++;
+                query += "i.Grueso = " + txtGrueso.Text;
+            }
+            if (!txtLargo.Text.Equals("") && !txtLargo.Text.Equals("0"))
+            {
+                if (i != 0)
+                    query += " AND ";
+                else
+                    query += "WHERE ";
+                i++;
+                query += "i.Largo = " + txtLargo.Text;
             }
             //Ejecutar el query y llenar el GridView.
             conn.ConnectionString = connectionString;
@@ -514,6 +550,7 @@ namespace Aplicativo
                 int id = getMaxID();
                 agregarInsumoMaquina(id);
                 reiniciarTablero();
+                txtCodigo.Text = (getMaxCod() + 1) + "";
                 cargarInsumos();
                 cargarInsumosStock();
                 if (tipousuario == 1)
@@ -583,7 +620,7 @@ namespace Aplicativo
         }
 
         public void reiniciarTablero() {
-            txtCodigo.Text = (getMaxCod() + 1) + "";
+            txtCodigo.Text = "";
             txtClase.Text = "";
             txtMarca.Text = "";
             txtModelo.Text = "";
@@ -602,6 +639,10 @@ namespace Aplicativo
             txtPeso.Text = "";
             comboBox1.Text = "";
             comboBox2.Text = "";
+            txtAncho.Text = "";
+            txtGrueso.Text = "";
+            txtLargo.Text = "";
+            txtTipo.Text = "";
             listBox1.Items.Clear();
             maquinarias.Clear();
 
@@ -900,8 +941,8 @@ namespace Aplicativo
             conn.Open();
             if (conn.State == ConnectionState.Open)
             {
-                cmd.Parameters.Add("@Cost_Unitario", OleDbType.VarChar).Value = Int32.Parse(txtCosto.Text);
-                cmd.Parameters.Add("@Cantidad_Stock", OleDbType.VarChar).Value = Int32.Parse(textBox2.Text) + Int32.Parse(textBox1.Text);
+                cmd.Parameters.Add("@Cost_Unitario", OleDbType.VarChar).Value = double.Parse(txtCosto.Text);
+                cmd.Parameters.Add("@Cantidad_Stock", OleDbType.VarChar).Value = double.Parse(textBox2.Text) + double.Parse(textBox1.Text);
                 try
                 {
                     cmd.ExecuteNonQuery();
@@ -930,7 +971,7 @@ namespace Aplicativo
             {
                 cmd.Parameters.Add("@Proveedor", OleDbType.VarChar).Value = comboBox2.SelectedValue;
                 cmd.Parameters.Add("@Insumo", OleDbType.VarChar).Value = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[0].Value.ToString();
-                cmd.Parameters.Add("@Cantidad", OleDbType.VarChar).Value = textBox1.Text;
+                cmd.Parameters.Add("@Cantidad", OleDbType.VarChar).Value = double.Parse(textBox1.Text);
                 cmd.Parameters.Add("@Fecha", OleDbType.VarChar).Value = DateTime.Now.Day + "/" + DateTime.Now.Month + "/" + DateTime.Now.Year;
                 cmd.Parameters.Add("@Costo", OleDbType.VarChar).Value = textBox3.Text;
                 try
@@ -962,6 +1003,7 @@ namespace Aplicativo
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             string costo = txtCosto.Text.Replace("$", "").Replace(".", "");
+            textBox1.Text = textBox1.Text.Replace(".", ",");
             if(!textBox1.Text.Equals("") && !costo.Equals(""))
                 textBox3.Text = String.Format("{0:c}",Double.Parse(costo) * Double.Parse(textBox1.Text));
         }

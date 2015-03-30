@@ -264,8 +264,8 @@ namespace Aplicativo
 
         public void buscarClientes()
         {
-            string query = "SELECT * FROM Clientes ";
-            int i = 0;
+            string query = "SELECT * FROM Clientes WHERE Cliente <> 'N/A'";
+            int i = 1;
             if (!textBox1.Text.Equals(""))
             {
                 if (i != 0)

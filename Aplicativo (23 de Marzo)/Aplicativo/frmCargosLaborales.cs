@@ -19,10 +19,7 @@ namespace Aplicativo
         double salario = 0;
 
         public void cargarCargos() {
-            while (dataGridView1.Rows.Count != 0)
-            {
-                dataGridView1.Rows.RemoveAt(0);
-            }
+            dataGridView1.Rows.Clear();
             string query = "SELECT * FROM CargoLaboral WHERE Cargo <> 'N/A'";
             //Ejecutar el query y llenar el GridView.
             conn.ConnectionString = connectionString;
@@ -35,7 +32,7 @@ namespace Aplicativo
             {
                 while (myReader.Read())
                 {
-                    double salario = myReader.GetInt32(3);
+                    double salario = myReader.GetDouble(3);
                     double riesgo = double.Parse(myReader.GetString(5).Replace(".",string.Empty).Replace("%",string.Empty));
                     dataGridView1.Rows.Add();
                     dataGridView1.Rows[i].Cells[0].Value = myReader.GetInt32(0);
@@ -456,12 +453,15 @@ namespace Aplicativo
 
         public void buscarCargoLaboral()
         {
-            while (dataGridView1.Rows.Count != 0)
-            {
-                dataGridView1.Rows.RemoveAt(0);
-            }
+            dataGridView1.Rows.Clear();
             string query = "SELECT * FROM CargoLaboral ";
             int i = 0;
+            if (i != 0)
+                query += " AND ";
+            else
+                query += "WHERE ";
+            i++;
+            query += "Cargo <> 'N/A'";
             if (!txtNombre.Text.Equals(""))
             {
                 if (i != 0)
@@ -498,15 +498,15 @@ namespace Aplicativo
                 i++;
                 query += "Funciones LIKE '%" + txtFunciones.Text + "%'";
             }
-            if (!txtRiesgo.Text.Equals(""))
-            {
-                if (i != 0)
-                    query += " AND ";
-                else
-                    query += "WHERE ";
-                i++;
-                query += "Riesgo LIKE '%" + txtRiesgo.Text + "%'";
-            }
+            //if (!txtRiesgo.Text.Equals(""))
+            //{
+            //    if (i != 0)
+            //        query += " AND ";
+            //    else
+            //        query += "WHERE ";
+            //    i++;
+            //    query += "Riesgo LIKE '%" + txtRiesgo.Text + "%'";
+            //}
             if (checkedListBox1.GetItemCheckState(0).ToString().Equals("Checked"))
             {
                 if (i != 0)
@@ -608,7 +608,7 @@ namespace Aplicativo
             {
                 while (myReader.Read())
                 {
-                    double salario = myReader.GetInt32(3);
+                    double salario = myReader.GetDouble(3);
                     double riesgo = double.Parse(myReader.GetString(5).Replace(".", string.Empty).Replace("%", string.Empty));
                     dataGridView1.Rows.Add();
                     dataGridView1.Rows[j].Cells[0].Value = myReader.GetInt32(0);
